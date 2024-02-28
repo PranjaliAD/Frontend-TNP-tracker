@@ -1,0 +1,59 @@
+.programs{
+    margin:80px auto;
+    width:90%;
+    display:grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); /* Example grid columns */
+    grid-auto-flow: column; /* All grid items will be placed in a single row */
+    row-gap:20px;
+    column-gap: 20px;
+}
+.program img{
+    width:300px;
+    height:300px;
+    border-radius: 10px;
+    display: block;
+
+
+}
+.program{
+    flex-basis:31%;
+    position:relative;
+    /* background-color: rgba(0,15,152,0.3); */
+}
+.caption{
+    border-radius: 10px;
+    position: absolute;
+    top:0;
+    left:0;
+    bottom:0;
+    right:0;
+    background: rgba(0,15,152,0.3);
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    color:#fff;
+    cursor:pointer;
+    opacity:0;
+    padding-top:70%;
+    transition:0.4s;
+}
+.caption img{
+    width:30px;
+    height: 30px;
+    margin-bottom: 10px;
+}
+.caption p{
+    font-weight:bold;
+    opacity: 1;
+}
+.program:hover .caption{
+    opacity:1;
+    padding-top: 0;
+    color:white;
+}
+.program:hover .caption{
+    opacity:1;
+    padding-top: 0;
+    color:white;
+}
