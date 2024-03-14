@@ -1,0 +1,65 @@
+.studnav-container{
+    width: 100%;
+    background: linear-gradient(to right,#5c6bc0,#512da8);
+    color: #fff;
+    padding: 4px 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 10;
+}
+
+.logo{
+    margin-left: 20px;
+    width: 80px;
+}
+
+nav ul li{
+    display: inline-block;
+    list-style: none;
+    margin: 5px 20px;
+    font-size: 16px;
+}
+
+nav ul li:hover{
+    font-weight: 600;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.btn:hover{
+  font-size: 15px;
+}
+
+.dropdown {
+  position: relative;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  display: none;
+  background:linear-gradient(to right,#5c6bc0,#512da8);
+  border: 2.5px solid #ccc;
+  border-radius: 15px;
+  padding: 5px 0;
+}
+
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+.dropdown-menu li {
+  list-style: none;
+}
+
+.dropdown-menu li a {
+  display: block;
+  padding: 8px 15px;
+  text-decoration: none;
+  color: #fff;
+}

@@ -1,0 +1,76 @@
+.box{
+    width: 270px;
+    height: 300px;
+    background-color: #fff;
+    border-radius: 15x;
+    box-shadow: 0 5px 10px rgb(122, 121, 121);
+}
+
+.box .head{
+    background: linear-gradient(to right,#5c6bc0,#512da8);
+    height: 100px;
+    border-bottom-left-radius: 35px;
+    display: flex;
+    align-items: center;
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.box:hover .head {
+    background: linear-gradient(to right, #512da8, #5c6bc0); 
+    height: 102px;
+    border-bottom:2px solid #512da8;
+    box-shadow: 0 5px 5px rgb(145, 142, 142);
+    transition: ease-in-out;
+}
+
+.box .head img {
+    width: 80px; 
+    height: 80px; 
+    border-radius: 50%; 
+    margin: 5px;
+}
+  
+.box .head h3{
+    color: #fff;
+    padding-left: 10px;
+    max-width: 100px;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.box .cbody{
+    display:grid;
+    justify-content: center;
+    align-items: center;
+}
+
+.box .cbody h1{
+    font-size: 40px;
+    font-weight: 500;
+    margin-top: 20px;
+    margin-left: 30px;
+}
+
+.box .cbody p{
+    font-size: 17px;
+    font-weight: 400;
+}
+
+.box .cbody button{
+    margin-top: 20px;
+    font-size: 18px;
+    background-color:rgb(250, 116, 26);
+    color: #fff;
+    padding: 5px 15px;
+    border: 1px solid transparent;
+    border-radius: 8px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+.box .cbody button:hover{
+    font-size: 20px;
+}
+

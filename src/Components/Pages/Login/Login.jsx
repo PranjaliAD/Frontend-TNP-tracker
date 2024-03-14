@@ -5,6 +5,9 @@ import Navbar from '../../Navbar/Navbar'
 
 const Login = () => {
   return (
+    <div>
+    <div className="nav">
+    </div>
     <div className="body">
     <div className='log-container' id='container'>
       <div className="form-container sign-up">
@@ -12,6 +15,7 @@ const Login = () => {
           <h1>Create Account</h1>
           <input type="text" placeholder='Name'/>
           <input type="text" placeholder='Reistration ID'/>
+          <input type="text" placeholder='PRN no.' />
           <input type="email" placeholder='Email'/>
           <input type="password" placeholder='Password'/>
           <button>Sign Up</button>
@@ -40,6 +44,7 @@ const Login = () => {
           </div>
         </div>
       </div>
+    </div>
     </div>
     </div>
   )

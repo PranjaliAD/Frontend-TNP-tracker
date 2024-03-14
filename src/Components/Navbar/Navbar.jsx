@@ -1,31 +1,7 @@
-// import React from 'react';
-// import { Link } from 'react-router-dom'; // Import Link from react-router-dom
-// import './Navbar.css';
-// import logo from '../../Assets/logo.jpg';
-
-// const Navbar = () => {
-//   return (
-//     <nav className='container'>
-//         <img src={logo} alt="" className='logo'/>
-//         <ul>
-//             <li>Home</li>
-//             <li>About Us</li>
-//             <li>Statistics</li>
-//             <li>Placements</li>
-//             <li>Internships</li> 
-//             {/* Use Link to navigate to the login page */}
-//             <li><Link to="/login" className='btn'>Login/Register</Link></li> 
-//         </ul>
-//     </nav>
-//   );
-// }
-
-// export default Navbar;
-// Navbar.jsx
 import React from 'react';
 import { Link } from 'react-router-dom'; // Import Link from react-router-dom
 import './Navbar.css';
-import logo from '../../Assets/logo.jpg';
+import logo from '../../Assets/logo2.png';
 
 const Navbar = () => {
   return (
