@@ -16,12 +16,47 @@ function StudentList() {
     {
       page: "33125",
       description: "Yash",
-      status: "draft",
+      status: "Placed",
     },
     {
-      page: "33126",
+      page: "33127",
       description: "Pranjali",
       status: "Unplaced",
+    },
+    {
+      page: "33128",
+      description: "Priya",
+      status: "Unplaced",
+    },
+    {
+      page: "33129",
+      description: "Shravani",
+      status: "Placed",
+    },
+    {
+      page: "33130",
+      description: "Raj",
+      status: "Unplaced",
+    },
+    {
+      page: "33131",
+      description: "Rahul",
+      status: "Unplaced",
+    },
+    {
+      page: "33132",
+      description: "Jyoti",
+      status: "Placed",
+    },
+    {
+      page: "33133",
+      description: "Radhika",
+      status: "Unplaced",
+    },
+    {
+      page: "33134",
+      description: "Soun",
+      status: "Placed",
     },
   ]);
   const [rowToEdit, setRowToEdit] = useState(null);
@@ -36,32 +71,19 @@ function StudentList() {
     setModalOpen(true);
   };
 
-  const handleSubmit = (newRow) => {
-    rowToEdit === null
-      ? setRows([...rows, newRow])
-      : setRows(
-          rows.map((currRow, idx) => {
-            if (idx !== rowToEdit) return currRow;
-
-            return newRow;
-          })
-        );
-  };
+  
 
   return (
     
     <div className="StudentList">
       <Table rows={rows} deleteRow={handleDeleteRow} editRow={handleEditRow} />
-      <button onClick={() => setModalOpen(true)} className="btn1">
-        Add
-      </button>
       {modalOpen && (
         <Modal
           closeModal={() => {
             setModalOpen(false);
             setRowToEdit(null);
           }}
-          onSubmit={handleSubmit}
+          // onSubmit={handleSubmit}
           defaultValue={rowToEdit !== null && rows[rowToEdit]}
         />
       )}
