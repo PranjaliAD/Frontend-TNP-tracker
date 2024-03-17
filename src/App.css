@@ -1,13 +1,25 @@
 div.container {
-  height: 100%;
-  display: grid;
-  background-color: lightgray;
+  /* height: 100%;
+   display: grid;
+  background-color: rgb(198, 227, 246); */
+  /* display: flex; */
+  /* display: grid; */
+    padding: 20px;
+    width: 100%;
+    height: 350px;
+    background: linear-gradient(to right,#5c6bc0,#512da8);
+    border-bottom-left-radius:15svw;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 5px 5px rgb(145, 142, 142);
 }
 
 div.App {
   background-color: white;
   padding: 2em 1em;
-  margin: auto;
+  /* margin: ; */
+  height: 400px;
+  margin: 150px 150px ;
   width: 400px;
   border-radius: 1em;
   box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.205);
