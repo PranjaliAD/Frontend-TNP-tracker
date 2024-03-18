@@ -1,26 +1,6 @@
-// import React from 'react'
-// import './Navbar.css'
-// import logo from '../../Assets/logo2.png'
-
-// const Navbar = () => {
-//   return (
-//     <nav className='container'>
-//         <img src={logo} alt="" className='logo'/>
-//         <ul>
-//             <li>Home</li>
-//             <li>About Us</li>
-//             <li>Statistics</li>
-
-//             <li><button className='btn'>Login/Register</button></li> 
-//         </ul>
-//     </nav>
-//   )
-// }
-
-// export default Navbar
 import React from 'react';
 import { Link } from 'react-router-dom'; // Import Link from react-router-dom
-import './Navbar.css';
+import './Navbarall.css';
 import logo from '../../Assets/logo2.png';
 
 const Navbar = () => {
@@ -39,4 +19,4 @@ const Navbar = () => {
   );
 }
 
-export default Navbar;
+export default Navbar;
