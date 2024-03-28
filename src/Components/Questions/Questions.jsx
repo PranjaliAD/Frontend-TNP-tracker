@@ -149,34 +149,36 @@ const QuestionsPage = () => {
         </div>
       </div>
       <div className="section-overview">
-        <div className="container">
-          <div className="item">
-            <div className="number">15</div>
-            <div className="label">Chapters</div>
+
+        <div class="container">
+          <div class="item">
+            <div class="number">15</div>
+            <div class="label">Chapters</div>
           </div>
-          <div className="item">
-            <div className="number">10</div>
-            <div className="label">Puzzles</div>
+          <div class="item">
+            <div class="number">10</div>
+            <div class="label">Puzzles</div>
           </div>
-          <div className="item">
-            <div className="number">8</div>
-            <div className="label">Contributors</div>
+          <div class="item">
+            <div class="number">8</div>
+            <div class="label">Contributers</div>
           </div>
-          <div className="item">
-            <div className="number">50+</div>
-            <div className="label">Problems</div>
+          <div class="item">
+            <div class="number">50+</div>
+            <div class="label">Problems</div>
           </div>
         </div>
       </div>
       <div className="section-questions">
+        <h2>Coding Questions</h2>
         <div className="questions-container">
-          <h2>Coding Questions</h2>
+
           <div className="topics-container">
             {Object.keys(topicsAndQuestions).map(topic => (
               <div key={topic} className="topic">
                 <div className="topic-header" onClick={() => setExpandedTopic(expandedTopic === topic ? null : topic)}>
                   {topic}
-                  <i className={`fas fa-chevron-${expandedTopic === topic ? 'up' : 'down'}`}></i>
+                  <i className={`fas fa-chevron-${expandedTopic === topic ? 'up' : 'down'} chevron ${expandedTopic === topic ? 'rotated' : ''}`}></i>
                 </div>
                 {expandedTopic === topic && (
                   <div className="questions-list">
@@ -189,6 +191,9 @@ const QuestionsPage = () => {
             ))}
           </div>
         </div>
+      </div>
+      <div className="section-puzzles">
+        
       </div>
     </div>
   );
