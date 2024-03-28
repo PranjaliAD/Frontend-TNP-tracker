@@ -1,4 +1,4 @@
-.studnav-container{
+nav{
     width: 100%;
     background: linear-gradient(to right,#5c6bc0,#512da8);
     color: #fff;
@@ -30,36 +30,5 @@ nav ul li:hover{
     cursor: pointer;
 }
 
-.btn:hover{
-  font-size: 15px;
-}
 
-.dropdown {
-  position: relative;
-}
 
-.dropdown-menu {
-  position: absolute;
-  top: 100%;
-  left: 0;
-  display: none;
-  background:linear-gradient(to right,#5c6bc0,#512da8);
-  border: 2.5px solid #ccc;
-  border-radius: 15px;
-  padding: 5px 0;
-}
-
-.dropdown:hover .dropdown-menu {
-  display: block;
-}
-
-.dropdown-menu li {
-  list-style: none;
-}
-
-.dropdown-menu li a {
-  display: block;
-  padding: 8px 15px;
-  text-decoration: none;
-  color: #fff;
-}

@@ -1,0 +1,11 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.prof_container{
+    margin: 0;
+    height: 500px;
+    background-color: rgb(155, 163, 170);
+}

@@ -1,9 +1,15 @@
-import React from 'react'
+import React, { useState } from 'react';
 import './Login.css'
 import './Loginjs'
 import Navbar from '../../Navbar/Navbar'
 
 const Login = () => {
+  const [loginType, setLoginType] = useState('student'); // Default login type
+
+  const handleLoginTypeChange = (type) => {
+    setLoginType(type);
+  };
+
   return (
     <div>
     <div className="nav">
