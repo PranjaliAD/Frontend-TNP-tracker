@@ -1,0 +1,75 @@
+.status-container {
+  display: flex;
+  margin: 30px;
+  height: auto;
+  background-color: #f0f0f0;
+  padding: 10px 20px;
+  box-shadow: 0 5px 5px rgb(145, 142, 142);
+}
+
+h2 {
+  display: inline-block; 
+  margin: 0 20px; 
+}
+
+.status-container .status {
+  display: inline-block; 
+  background-color: rgb(39, 154, 39);
+  padding: 5px 10px; 
+  width: 360px;
+  margin-left: 200px; 
+  border-radius: 5px; 
+  text-align: center;
+}
+
+.company{
+  display: flex;
+  flex-direction: column; /* Adjust to column layout */
+  margin: 30px;
+  height: auto;
+  background-color: #f0f0f0;
+  padding: 20px 20px;
+  box-shadow: 0 5px 5px rgb(145, 142, 142);
+}
+
+.company-info {
+  margin-bottom: 5px; /* Adjust bottom margin to create space for the button */
+}
+
+.company .position{
+  display: inline-block; 
+  font-size: 24px;
+  padding: 5px 10px; 
+  margin-left: 370px;
+  color: #3d227b;
+  text-align: center;
+}
+
+.offerlet button {
+  background: linear-gradient(to bottom, #5c6bc0, #512da8);
+  padding: 10px;
+  padding-left: 25px;
+  padding-right: 25px;
+  font-size: 20px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  border-radius: 8px;
+  border: 1px solid transparent;
+  color: #fff;
+  cursor: pointer;
+  margin: 10px 20px; 
+}
+
+.company .msg{
+  background: linear-gradient(to bottom, #5c6bc0, #512da8);
+  margin-top: 10px;
+  border-radius: 10px;
+}
+
+.company .msg h4{
+  color: #f0f0f0;
+  margin: 20px;
+  font-size: 20px;
+  font-weight: 550;
+  max-width: 700px;
+}
