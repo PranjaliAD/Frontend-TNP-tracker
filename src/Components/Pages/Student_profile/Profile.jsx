@@ -5,6 +5,7 @@ import Navbar from '../../Navbar/Studnav';
 import Credentials from './Credentials';
 import Links from './Links'
 import Place_status from './Place_status';
+import Contri_section from './Contri_section';
 
 const Profile = () => {
   return (
@@ -25,6 +26,7 @@ const Profile = () => {
         </div>
         <div className="placement_info">
             <Place_status/>
+            <Contri_section/>
         </div>
       </div>
     </div>

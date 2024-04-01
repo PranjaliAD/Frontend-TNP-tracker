@@ -1,0 +1,14 @@
+.container{
+  /* display: flex; */
+  margin: 30px;
+  height: auto;
+  background-color: #f0f0f0;
+  padding: 10px 20px;
+  box-shadow: 0 5px 5px rgb(145, 142, 142);
+}
+
+.container .question-container{
+  margin: 30px;
+  height: auto;
+  background-color: rgb(192, 205, 215);
+}
