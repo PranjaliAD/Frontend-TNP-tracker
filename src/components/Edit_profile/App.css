@@ -1,0 +1,16 @@
+.App{display: flex;
+/* display: grid; */
+   padding: 20px;
+  width: 1495px;
+  height: 463px;
+  margin-top: 200px;
+  background-color: #afb7df;
+  /* align-items: center; */
+  /* justify-content: center; */
+  /* background: linear-gradient(to right,#5c6bc0,#512da8); */
+ /* border-bottom-left-radius:15svw;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 5px 5px rgb(145, 142, 142);
+  margin-top: 130px; */
+}

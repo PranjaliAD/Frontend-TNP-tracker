@@ -1,0 +1,20 @@
+div.Contaner{
+    background-color: white;
+    padding: 1em 1em;
+    margin-left:50px ;
+    height: 350px;
+    margin-top: 40px;
+    width: 400px;
+    border-radius: 1em;
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.205);
+}
+.descrption,.linkedin,.github,.leetcode,.codechef,.codeforces{
+    display:flex; 
+    flex-direction: row; 
+    justify-content: center;
+     align-items: center;
+     font-size: 18px;
+}
+.input{
+    font-size: 18px;
+}

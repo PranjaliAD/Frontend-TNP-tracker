@@ -7,7 +7,8 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import UserInfo from './UserInfo';
 import StudentList from './StudentList';
 import StaticsticStudent from './StaticsticStudent';
-
+import StudentInfo from './StudentProfile/StudentInfo';
+import Vtry from './Vtry';
 
 function ProInfo() {
     
@@ -37,11 +38,12 @@ function ProInfo() {
                     {/* <Route path="/about" element={<AboutUs/>}/> */}
                     {/* <Route path="/statistics" element={<Statistics/>}/> */}
                     <Route path="/StudentList" element={<StudentList />} />
-                    {/* <Route path="/internships" element={<Internships/>}/> */}
+                    {/* <Route path="./StudentProfile/StudentInfo" element={<StudentInfo/>}/> */}
                     {/* <Route path="/login" element={<Login/>}/> */}
                     <Route path="/StaticsticStudent" element={<StaticsticStudent />} />
                 </Routes>
                 </Router>
+                <a path="/Vtry" element={<Vtry/>}/>
             </div>
 
 
