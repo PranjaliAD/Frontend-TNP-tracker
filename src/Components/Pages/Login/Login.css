@@ -1,4 +1,4 @@
-*{
+/* *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -6,12 +6,30 @@
 
 .body{
     background-color: #fff;
-    /* background: linear-gradient(to right,#e2e2e2,#c9d6ff); */
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
     height: 85vh;
+} */
+
+.btn-container{
+    margin: 20px;
+}
+
+.btn-container .btn{
+    background: linear-gradient(to bottom, #5c6bc0, #512da8);
+    padding: 10px;
+    padding-left: 25px;
+    padding-right: 25px;
+    font-size: 20px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    border-radius: 8px;
+    border: 1px solid transparent;
+    color: #fff;
+    cursor: pointer;
+    margin: 10px 20px;
 }
 
 .log-container{

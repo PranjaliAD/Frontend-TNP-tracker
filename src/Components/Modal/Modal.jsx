@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import './Modal.css';
-import { RxCross1 } from "react-icons/rx";
+// import { RxCross1 } from "react-icons/rx";
 import { MdOpenInNew } from "react-icons/md";
 import { ImCross } from "react-icons/im";
 // import { RxCross1 } from "react-icons/rx";
