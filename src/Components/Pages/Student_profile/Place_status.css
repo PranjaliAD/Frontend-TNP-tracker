@@ -2,19 +2,13 @@
   display: flex;
   margin: 30px;
   height: auto;
-  background-color: #f0f0f0;
   padding: 10px 20px;
-  box-shadow: 0 5px 5px rgb(145, 142, 142);
-}
-
-h2 {
-  display: inline-block; 
-  margin: 0 20px; 
+  background-color: #f0f0f0;
+  box-shadow: 0 3px 3px rgb(145, 142, 142);
 }
 
 .status-container .status {
   display: inline-block; 
-  background-color: rgb(39, 154, 39);
   padding: 5px 10px; 
   width: 360px;
   margin-left: 200px; 
@@ -22,21 +16,34 @@ h2 {
   text-align: center;
 }
 
-.company{
+h2 {
+  display: inline-block; 
+  margin: 0 20px; 
+}
+
+.placed {
+  background-color: rgb(39, 154, 39); /* Color when placed */
+}
+
+.not-placed {
+  background-color: rgb(233, 43, 43); /* Color when not placed */
+}
+
+.company-placed{
   display: flex;
-  flex-direction: column; /* Adjust to column layout */
+  flex-direction: column;
   margin: 30px;
   height: auto;
   background-color: #f0f0f0;
   padding: 20px 20px;
-  box-shadow: 0 5px 5px rgb(145, 142, 142);
+  box-shadow: 0 3px 3px rgb(145, 142, 142);
 }
 
 .company-info {
-  margin-bottom: 5px; /* Adjust bottom margin to create space for the button */
+  margin-bottom: 5px;
 }
 
-.company .position{
+.company-info .position{
   display: inline-block; 
   font-size: 24px;
   padding: 5px 10px; 
@@ -60,13 +67,37 @@ h2 {
   margin: 10px 20px; 
 }
 
-.company .msg{
+.company-placed .msg{
   background: linear-gradient(to bottom, #5c6bc0, #512da8);
   margin-top: 10px;
   border-radius: 10px;
 }
 
-.company .msg h4{
+.company-placed .msg h4{
+  color: #f0f0f0;
+  margin: 20px;
+  font-size: 20px;
+  font-weight: 550;
+  max-width: 700px;
+}
+
+.company-notplaced{
+  display: flex;
+  flex-direction: column; 
+  margin: 30px;
+  height: auto;
+  background-color: #f0f0f0;
+  padding: 20px 20px;
+  box-shadow: 0 3px 3px rgb(145, 142, 142);
+}
+
+.company-notplaced .msg{
+  background: linear-gradient(to bottom, #5c6bc0, #512da8);
+  margin-top: 10px;
+  border-radius: 10px;
+}
+
+.company-notplaced .msg h4{
   color: #f0f0f0;
   margin: 20px;
   font-size: 20px;

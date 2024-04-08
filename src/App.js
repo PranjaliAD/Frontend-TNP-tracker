@@ -31,6 +31,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './Components/Navbar/Navbar';
 import Hero from './Components/Hero/Hero';
 import Login from './Components/Pages/Student_profile/Profile';
+// import Login from './Components/Pages/Login/Login';
 import Placement from './Components/Pages/Placement/Placement';
 import Questions from './Components/Questions/Questions';
 
