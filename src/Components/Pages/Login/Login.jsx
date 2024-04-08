@@ -1,7 +1,7 @@
 import React from 'react'
 import './Login.css'
 import './Loginjs'
-import Navbar from '../../Navbar/Navbar'
+// import Navbar from '../../Navbar/Navbar'
 
 const Login = () => {
   return (
@@ -26,7 +26,7 @@ const Login = () => {
           <h1>Sign In</h1>
           <input type="text" placeholder='Reistration ID'/>
           <input type="password" placeholder='Password'/>
-          <a href="#">Forget Your Password?</a>
+          <a href="/forgot-password">Forget Your Password?</a>
           <button>Sign In</button>
         </form>
       </div>

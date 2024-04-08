@@ -3,6 +3,18 @@
   padding: 0;
   box-sizing: border-box;
 }
+/* Add this style for the navbar */
+.navbar {
+  background-color: #24a; /* Change to the color you want for the navbar background */
+  position: fixed;
+  width: 100%;
+  z-index: 1000;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.statistics-page .navbar {
+  background-color: #24a /* Change to the color you want for the navbar background on the statistics page */
+}
 
 .hero{
     width: 100%;
@@ -26,7 +38,7 @@
     background-repeat: no-repeat;
     background-size: 80%;
     animation: animate 10s linear infinite;
-    -webkit-background-clip: text;
+    /* -webkit-background-clip: text; */
     -webkit-text-fill-color: rgba(255, 255, 255, 0.301);
     margin: 120px;
     font-size: 60px;
@@ -60,7 +72,15 @@
         white-space: nowrap;
         animation: typewriter 4s steps(44) 2s 1 normal both, blinkTextCursor 500ms infinite;
 }
-      
+   /* Hero.css */
+
+
+.statistics-page .hero {
+  /* Styles for the hero section when on the '/statistics2' page */
+  background-color: #f0f0f0; /* Change this to your desired background color */
+  /* Add any other styles you want for the hero section on the '/statistics2' page */
+}
+   
       @keyframes typewriter {
         from {
           width: 0;
