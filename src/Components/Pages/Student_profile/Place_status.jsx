@@ -2,7 +2,7 @@ import React from 'react';
 import './Place_status.css';
 
 const Place_status = () => {
-  const pl_status = 'Not Placed'; 
+  const pl_status = 'Placed'; 
   const comp = 'BNY Mellon';
   const pos = 'Data scientist';
   const msg1 = "Congratulations on your placement!!.. Now you can contribute in others' success by sharing your experiences..";

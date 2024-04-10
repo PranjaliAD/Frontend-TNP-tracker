@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import './Hero.css';
 import dark_arrow from '../../Assets/dark-arrow.png';
 import Title from '../Title/Title';
-import Programs from '../programs/programs';
+import Companies from '../Companies/Companies';
 import Statistics from '../Statistics/Statistics';
 // impo+rt Testimonials from '../Testimonials/Testimonials';
 import Footer from '../Footer/Footer';
@@ -11,7 +11,7 @@ import Announcement from '../Announcement/Announcement';
 // import Charts from '../charts/charts';
 import { Link, useLocation } from 'react-router-dom'; 
 import Test from '../Testimonialss'
-import Alumnicard from '../alumnicard'
+// import Alumnicard from '../alumnicard'
 import ProfileStud from '../Coordinators/Coordinators'
 const Hero = () => {
   const [navbarBackground, setNavbarBackground] = useState(false); // State to manage navbar background color
@@ -45,7 +45,7 @@ const Hero = () => {
       <Announcement />
       <div className="container">
         <Title subTitle='Corporate Engagement Snapshot' title='Explore Trends, Success Rates, and Industry Insights' />
-        <Programs />
+        <Companies />
       </div>
       <Title subTitle='Beyond the Numbers: Insights into Opportunities' title='Discover Companies, Packages, and Hiring Trends' />
       <Statistics />

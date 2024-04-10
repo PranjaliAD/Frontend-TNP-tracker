@@ -133,7 +133,7 @@ import CompCard from '../CompCard/CompCard'
 // }
 
 // export default programs
-import React, { useRef, useState } from 'react';
+// import React, { useRef, useState } from 'react';
 // Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react';
 
@@ -142,7 +142,7 @@ import 'swiper/css';
 import 'swiper/css/effect-coverflow';
 import 'swiper/css/pagination';
 
-import './programs.css';
+import './Companies.css';
 
 // import required modules
 import { EffectCoverflow, Pagination } from 'swiper/modules';
@@ -166,7 +166,7 @@ export default function App() {
         modules={[EffectCoverflow, Pagination]}
         className="mySwiper"
       >
-        <SwiperSlide>
+        <SwiperSlide className='mySwiper-slide'>
           {/* <img src="https://swiperjs.com/demos/images/nature-1.jpg" /> */}
           <CompCard imgSrc={program_1}
             imgAlt="img-comp"
@@ -176,7 +176,7 @@ export default function App() {
             link="CardPage"
           />
         </SwiperSlide>
-        <SwiperSlide>
+        <SwiperSlide className='mySwiper-slide'>
         <CompCard imgSrc={program_2}
             imgAlt="img-comp"
             title="Company Name"
@@ -185,7 +185,7 @@ export default function App() {
             link="CardPage"
           />
         </SwiperSlide>
-        <SwiperSlide>
+        <SwiperSlide className='mySwiper-slide'>
         <CompCard imgSrc={program_3}
             imgAlt="img-comp"
             title="Company Name"
@@ -194,7 +194,7 @@ export default function App() {
             link="CardPage"
           />
         </SwiperSlide>
-        <SwiperSlide>
+        <SwiperSlide className='mySwiper-slide'>
         <CompCard imgSrc={program_3}
             imgAlt="img-comp"
             title="Company Name"
@@ -203,7 +203,7 @@ export default function App() {
             link="CardPage"
           />
         </SwiperSlide>
-        <SwiperSlide>
+        <SwiperSlide className='mySwiper-slide'>
         <CompCard imgSrc={program_2}
             imgAlt="img-comp"
             title="Company Name"
@@ -212,7 +212,7 @@ export default function App() {
             link="CardPage"
           />
         </SwiperSlide>
-        <SwiperSlide>
+        <SwiperSlide className='mySwiper-slide'>
         <CompCard imgSrc={program_1}
             imgAlt="img-comp"
             title="Company Name"
@@ -221,7 +221,7 @@ export default function App() {
             link="CardPage"
           />
         </SwiperSlide>
-        <SwiperSlide>
+        <SwiperSlide className='mySwiper-slide'>
         <CompCard imgSrc={program_3}
             imgAlt="img-comp"
             title="Company Name"
@@ -230,7 +230,7 @@ export default function App() {
             link="CardPage"
           />
         </SwiperSlide>
-        <SwiperSlide>
+        <SwiperSlide className='mySwiper-slide'>
         <CompCard imgSrc={program_2}
             imgAlt="img-comp"
             title="Company Name"
@@ -239,7 +239,7 @@ export default function App() {
             link="CardPage"
           />
         </SwiperSlide>
-        <SwiperSlide>
+        <SwiperSlide className='mySwiper-slide'>
         <CompCard imgSrc={program_1}
             imgAlt="img-comp"
             title="Company Name"

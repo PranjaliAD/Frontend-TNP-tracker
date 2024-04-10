@@ -237,7 +237,7 @@ body {
 .swiper-pagination .swiper-pagination-bullet-active {
   background: var(--primary); */
 /* }  */
-#app { height: 100% }
+/* #app { height: 100% }
 html,
 body {
   position: relative;
@@ -251,24 +251,29 @@ body {
   color: #000;
   margin: 0;
   padding: 0;
-}
+} */
 
-.swiper {
+.mySwiper {
   width: 100%;
-
   padding-top: 50px;
   padding-bottom: 50px;
+
 }
 
-.swiper-slide {
+.mySwiper-slide {
   background-position: center;
   background-size: cover;
+  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  /* color: #000; */
   width: 300px;
   height: 400px;
 }
-.mySwiper.swiper-pagination{
-    bottom:20px;
+
+.mySwiper .swiper-pagination {
+  bottom: 20px;
 }
+
 /* 
 .swiper-slide img {
   display: block;
