@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
-import './Placement.css';
+import './Internship.css';
 import CompanyCards from '../../company_cards';
 import logos from '../../../Assets/place_logo.webp';
 import Questions from '../../Questions/Questions';
 
-const Placement = () => {
+const Internship = () => {
     const [selectedCompany, setSelectedCompany] = useState(null);
 
     const handleSolveClick = (companyName) => {
@@ -17,8 +17,8 @@ const Placement = () => {
             <div className='pl-body'>
                 <div className="heading">
                     <div className="text">
-                        <h1>Campus Placement Pro: Your Roadmap to Success</h1>
-                        <p>Master Your Job Interview: Access company-specific problems, guided pathways, resources, problem lists, and mock tests all in one comprehensive platform.</p>
+                        <h1>Campus Internships Pro: Your Roadmap to Success</h1>
+                        <p>Master Your internship Interviews: Access company-specific problems, guided pathways, resources, problem lists, and mock tests all in one comprehensive platform.</p>
                     </div>
                     <img src={logos} alt="" />
                 </div>
@@ -44,4 +44,4 @@ const Placement = () => {
     );
 };
 
-export default Placement;
+export default Internship;

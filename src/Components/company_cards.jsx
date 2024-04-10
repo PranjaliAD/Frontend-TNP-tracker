@@ -61,17 +61,17 @@ const CompanyCards = () => {
 
     return (
         <div>
-            <div className="box">
-                <div className="head">
+            <div className="comp-box">
+                <div className="comp-head">
                     <a href="https://www.google.com" target="_blank" rel="noopener noreferrer">
                         <img src={logoc} alt="Google Logo" />
                     </a>
                     <h3>Google</h3>
                 </div>
-                <div className="cbody">
-                    <h1>25</h1>
-                    <p>Total Problems</p>
-                    <button onClick={handleSolveClick}>Solve</button>
+                <div className="cardbody">
+                    <h1>25 +</h1>
+                    <p>Total Contributions</p>
+                    <button className='solve' onClick={handleSolveClick}>Solve</button>
                 </div>
             </div>
         </div>

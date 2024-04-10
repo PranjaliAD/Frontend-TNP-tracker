@@ -14,34 +14,22 @@
     height: 85vh;
 }
 
-.btn-container{
-    margin: 20px;
-}
-
-.btn-container .btn{
-    background: linear-gradient(to bottom, #5c6bc0, #512da8);
-    padding: 10px;
-    padding-left: 25px;
-    padding-right: 25px;
-    font-size: 20px;
-    font-weight: 500;
-    letter-spacing: 0.5px;
-    border-radius: 8px;
-    border: 1px solid transparent;
-    color: #fff;
-    cursor: pointer;
-    margin: 10px 20px;
-}
-
 .log-container{
     background-color: #fff;
     border-radius: 15x;
-    box-shadow: 0 5px 15px rgba(0,0,0.35);
+    box-shadow: 0 5px 10px rgb(135, 133, 133);
     position: relative;
     overflow: hidden;
     width: 768px;
     max-width: 100%;
     min-height: 450px;
+}
+
+.log-container h3{
+    margin: 10px;
+    color: #512da8;
+    font-size: 22px;
+    text-decoration:underline;
 }
 
 .log-container p{

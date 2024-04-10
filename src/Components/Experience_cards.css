@@ -1,0 +1,36 @@
+.ex-box{
+    width:350px;
+    height: 250px;
+    background-color: #fff;
+    box-shadow: 0 5px 5px rgb(122, 122, 122);
+    border-radius: 10px;
+}
+
+.ex-box .box-head{
+    height: auto;
+    padding: 15px;
+     align-items: center; 
+     justify-content: center; 
+}
+
+.ex-box .box-head h3{
+    font-size: 20px;
+}
+  
+.ex-box .ex-body{
+    padding: 12px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 310px;
+}
+
+.ex-box .ex-body p{
+    font-size: 16px;
+    font-weight: 400;
+    color: rgb(104, 104, 105);
+}
+
+.ex-box hr{
+    width: 330px;
+}

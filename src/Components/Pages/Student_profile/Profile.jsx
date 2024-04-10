@@ -3,7 +3,7 @@ import './profile.css';
 import back_img from '../../../Assets/stud_profile2.jpg';
 import Navbar from '../../Navbar/Studnav';
 import Credentials from './Credentials';
-import Links from './Links'
+import Links from './Links';
 import Place_status from './Place_status';
 import Contri_section from './Contri_section';
 
