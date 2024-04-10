@@ -1,7 +1,7 @@
 import React from 'react';
 import './profile.css';
 import back_img from '../../../Assets/stud_profile2.jpg';
-import Navbar from '../../Navbar/Studnav';
+import Studnav from '../../Navbar/Studnav';
 import Credentials from './Credentials';
 import Links from './Links'
 import Place_status from './Place_status';
@@ -11,7 +11,7 @@ const Profile = () => {
   return (
     <div>
       <div className="nav">
-        <Navbar/>
+        <Studnav/>
       </div>
       <div className="background_container">
         <img src={back_img} alt="" className="background_image"/>

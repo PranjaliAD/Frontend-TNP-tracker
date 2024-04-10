@@ -6,7 +6,8 @@ import Listtask from '../../Components/List'
 import CompaniesChart from '../../Components/BarChart/BarChart'
 import PieChart from '../PieChart/PieChart';
 import LineChart from '../LineChart/LineChart';
-
+import PieChart2 from '../PieChart2/PieChart2'
+import PieChart3 from '../PieChart3/PieChart3';
 import './Home.css'
 const Home = () => {
     return (
@@ -55,6 +56,14 @@ const Home = () => {
                 <div className='chart-item'>
                 
                     <PieChart/>
+                </div>
+                <div className='chart-item'>
+                
+                    <PieChart2/>
+                </div>
+                <div className='chart-item'>
+                
+                    <PieChart3/>
                 </div>
                 <div className='chart-item'>
                     <LineChart/>

@@ -11,7 +11,7 @@ const Contri_section = () => {
           <p>1. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore magnam explicabo itaque praesentium tenetur excepturi.</p>
           <p>2. Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium tempora assumenda ad error sequi labore rem aut voluptatibus!</p>
         </div>
-        <button>Contribute now</button>
+        <button className='Contri-Btn'>Contribute now</button>
     </div>
   )
 }

@@ -23,11 +23,6 @@ const Navbar = () => {
     };
   }, []);
 
-  // Check if the current location is "statistics2"
-  if (location.pathname === '/statistics2') {
-    return null; // Return null to remove the Navbar
-  }
-
   return (
     <nav className={`nav-container ${scrolling ? 'scrolled' : ''}`}>
       <Link to="/" className='logo-link'>
@@ -35,10 +30,8 @@ const Navbar = () => {
       </Link>
       <ul>
         <li><Link to="/" className={`nav-link ${location.pathname === '/' ? 'active' : ''}`}>Home</Link></li>
-        <li><Link to="/about" className={`nav-link ${location.pathname === '/Announcement' ? 'active' : ''}`}>Announcements</Link></li>
+        <li><Link to="/announcement" className={`nav-link ${location.pathname === '/announcement' ? 'active' : ''}`}>Announcements</Link></li>
         <li><Link to="/statistics" className={`nav-link ${location.pathname === '/statistics' ? 'active' : ''}`}>Statistics</Link></li>
-        {/* <li><Link to="/placements" className={`nav-link ${location.pathname === '/placements' ? 'active' : ''}`}>Placements</Link></li>
-        <li><Link to="/internships" className={`nav-link ${location.pathname === '/internships' ? 'active' : ''}`}>Internships</Link></li>  */}
         <li><Link to="/login" className='btn'>Login/Register</Link></li> 
       </ul>
     </nav>

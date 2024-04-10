@@ -11,7 +11,6 @@ import Announcement from '../Announcement/Announcement';
 // import Charts from '../charts/charts';
 import { Link, useLocation } from 'react-router-dom'; 
 import Test from '../Testimonialss'
-// import Alumnicard from '../alumnicard'
 import ProfileStud from '../Coordinators/Coordinators'
 const Hero = () => {
   const [navbarBackground, setNavbarBackground] = useState(false); // State to manage navbar background color

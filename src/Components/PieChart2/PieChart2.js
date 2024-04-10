@@ -14,7 +14,7 @@ const PieChart = () => {
         const parsedData = rows.map(row => {
           const [Sr_No, visit_date, Company_Name, Comp, IT, ENTC, Sal_lpa, total_no, total, Month] = row.split(',');
           return { Company_Name, IT: parseInt(IT), Sal_lpa: parseFloat(Sal_lpa) };
-        }).filter(entry => entry.Sal_lpa < 10); // Filter out companies with Sal_lpa less than 10
+        }).filter(entry => entry.Sal_lpa > 10 && entry.Sal_lpa < 20); // Filter out companies with Sal_lpa less than 10
         setData(parsedData);
       } catch (error) {
         console.error('Error fetching data:', error);

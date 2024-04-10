@@ -3,16 +3,23 @@ import Slider from 'react-slick';
 
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
+import img1 from '../../Assets/edusity_assets/gallery-1.png';
+import img2 from '../../Assets/edusity_assets/gallery-2.png';
+import img3 from '../../Assets/edusity_assets/gallery-3.png';
+import img4 from '../../Assets/edusity_assets/gallery-4.png';
 
 const LatestNewsSlider = () => {
     const newsItems = [
-        { title: 'Breaking News Title 1', content: 'Content of breaking news 1', image: 'https://via.placeholder.com/150' },
-        { title: 'Breaking News Title 2', content: 'Content of breaking news 2', image: 'https://via.placeholder.com/150' },
-        { title: 'Breaking News Title 3', content: 'Content of breaking news 3', image: 'https://via.placeholder.com/150' },
-        { title: 'Breaking News Title 3', content: 'Content of breaking news 3', image: 'https://via.placeholder.com/150' },
-        { title: 'Breaking News Title 3', content: 'Content of breaking news 3', image: 'https://via.placeholder.com/150' },
-        { title: 'Breaking News Title 3', content: 'Content of breaking news 3', image: 'https://via.placeholder.com/150' },
-        { title: 'Breaking News Title 3', content: 'Content of breaking news 3', image: 'https://via.placeholder.com/150' },
+        { title: 'Breaking News Title 1', content: 'Content of breaking news 1', image: img1 },
+        { title: 'Breaking News Title 2', content: 'Content of breaking news 2', image: img2 },
+        { title: 'Breaking News Title 3', content: 'Content of breaking news 3', image: img3 },
+        { title: 'Breaking News Title 3', content: 'Content of breaking news 3', image: img4 },
+        { title: 'Breaking News Title 3', content: 'Content of breaking news 3', image: img1 },
+        { title: 'Breaking News Title 3', content: 'Content of breaking news 3', image: img2 },
+        { title: 'Breaking News Title 3', content: 'Content of breaking news 3', image: img3 },
+        { title: 'Breaking News Title 3', content: 'Content of breaking news 3', image: img3 },
+        { title: 'Breaking News Title 3', content: 'Content of breaking news 3', image: img3 },
+        { title: 'Breaking News Title 3', content: 'Content of breaking news 3', image: img3 },
         // Add more news items as needed
     ];
 
@@ -39,7 +46,7 @@ const LatestNewsSlider = () => {
                         ))}
                     </Slider>
                 </div>
-                <div className="w-1/2 overflow-y-scroll" style={{ maxHeight: '400px' }}>
+                <div className="w-1/2 overflow-y-scroll" style={{ maxHeight: '500px' }}>
                     <ul role="list" className="divide-y divide-gray-200 dark:divide-gray-700">
                         {newsItems.map((newsItem, index) => (
                             <li key={index} className="py-3 sm:py-4">
