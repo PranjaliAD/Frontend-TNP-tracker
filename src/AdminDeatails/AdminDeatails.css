@@ -1,0 +1,62 @@
+/* div.container {
+  height: 100%;
+  display: grid;
+  background-color: lightgray;
+} */
+
+div.container{
+    background-color: rgb(255, 255, 255);
+    padding: 2em 1em;
+    /* margin: auto; */
+    width: 1500px;
+    border-radius: 1em;
+    /* box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.205); */
+    margin-top: 90px;
+  }
+  
+  div.group {
+    vertical-align: middle;
+    margin: 2em;
+    height: 30px;
+  }
+  
+  div.birthday {
+    font-size: x-large;
+    margin: 0.6em;
+  }
+  
+  label {
+    margin: 0px;
+  }
+  
+  h1 {
+    font-size: large;
+    margin: 0em 0.8em;
+  }
+  
+  h3 {
+    display: inline;
+    font-weight: bold;
+    font-size: large;
+    margin: inherit;
+  }
+  
+  input{
+    position: relative;
+    top: 4px;
+    font-size: medium;
+  }
+  
+  button {
+    border: 1px solid rgb(108, 167, 246);
+    background-color: rgb(117, 163, 248);
+    border-radius: 4px;
+    height: 30px;
+    padding: 0px 1.25em;
+    margin: 1em 0.5em;
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.205);
+  }
+  
+  button:hover {
+    box-shadow: 0px 0px 2px 2px rgba(0, 0, 0, 0.356);
+  }
