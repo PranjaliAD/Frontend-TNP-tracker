@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import Group from './Group1';
-import { months } from '../StudentProfile/tools';
+import { months } from '../tools';
 
 function renderMonthOptions() {
     return months.getMonths().map( (m, i) => {

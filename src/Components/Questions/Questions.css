@@ -1,39 +1,40 @@
-.head {
-  margin-top: 60px;
+.questhead {
+  margin-top: 160px;
   height: 250px;
-  background: linear-gradient(to left, #5c6bc0, #512da8);
+  background: linear-gradient(to bottom, #5c6bc0, #512da8);
   padding-left: 80px;
   padding-top: 25px;
 }
 
-.head h1 {
+.questhead h1 {
   font-size: 44px;
   font-weight: 700;
   color: #f0f0f0;
 }
 
-.head p {
+.questhead p {
   color: rgb(200, 200, 200);
   font-size: 20px;
   font-weight: 400;
   margin-top: 20px;
+  margin-left: 40px;
   line-height: 1.5;
   max-width: 950px;
 }
 
-.head .section-buttons {
+.questhead .section_buttons {
   display: inline-block;
   justify-content: space-between;
   list-style: none;
   margin-left: 18px;
 }
 
-.head .section-buttons button {
-  background: linear-gradient(to right, #5c6bc0, #512da8);
+.questhead .section_buttons .sb{
+  background: linear-gradient(to bottom, #5c6bc0, #512da8);
   color: #fff;
   font-size: 20px;
   padding: 10px;
-  border: 1px solid white;
+  border: 1px solid transparent;
   border-radius: 8px;
   font-weight: 500;
   letter-spacing: 0.5px;
@@ -42,12 +43,19 @@
   cursor: pointer;
 }
 
+.questhead .section_buttons .sb:hover{
+  border: 1px solid white;
+}
+
 .section-overview {
+  margin-bottom: 20px;
   height: 200px;
   background-color: #f0f0f0;
 }
 
-.section-overview .container {
+.section-overview .over-container{
+  padding-left: 10px;
+  padding-right: 10px;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: repeat(2, 1fr);
@@ -75,8 +83,7 @@
 }
 
 .section-questions {
-  top: 0;
-  /* background-color:rgb(232, 232, 232); */
+  margin-top: 45px;
 }
 
 .section-questions h2 {
@@ -223,12 +230,11 @@
 
 .section-experiences {
   padding-bottom: 40px;
-  background: linear-gradient(to right, #5c6bc0, #512da8);
+  background-color: rgb(234, 238, 255);
   height: auto;
 }
 
 .section-experiences h2 {
-  color: #fff;
   margin: 20px;
   padding: 20px 160px;
   font-size: 45px;
@@ -241,8 +247,8 @@
   overflow-y: hidden; /* Hide vertical scrollbar */
   display: flex;
   align-items: center;
-  gap: 20px;
-  padding: 0 30px; /* Add padding to avoid clipping */
+  gap: 30px;
+  padding: 0 40px; /* Add padding to avoid clipping */
 }
 
 .experience-container::-webkit-scrollbar {

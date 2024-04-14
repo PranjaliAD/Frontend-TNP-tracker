@@ -57,7 +57,7 @@
 
 import React,{useEffect} from 'react';
 import './Login.css';
-import Navbar from '../../Navbar/Navbar'
+import Nav from '../../Navbar/Nav'
 
 const Login = () => {
     useEffect(() => {
@@ -73,7 +73,6 @@ const Login = () => {
         container.classList.remove('active');
       });
   
-      // Clean up event listeners when component unmounts
       return () => {
         registerBtn.removeEventListener('click', () => {
           container.classList.add('active');
@@ -86,9 +85,9 @@ const Login = () => {
 
   return (
     <div>
-      <div className="nav">
-      </div>
-      <div className="body">
+      <div className="nav"><Nav/></div>
+      
+      <div className="login-body">
         <div className='log-container' id='container'>
           <div className="form-container sign-up">
             <form>
@@ -96,7 +95,7 @@ const Login = () => {
               <h1>Sign In</h1>
               <input type="text" placeholder='Instructor ID' />
               <input type="password" placeholder='Password' />
-              <button>Sign In</button>
+              <button className='change'>Sign In</button>
             </form>
           </div>
           <div className="form-container sign-in">
@@ -107,7 +106,7 @@ const Login = () => {
               <input type="text" placeholder='PRN No.' />
               <input type="password" placeholder='Password' />
               <a href="#">Forget Your Password?</a>
-              <button>Sign In</button>
+              <button className='change'>Sign In</button>
             </form>
           </div>
           <div className="toggle-container">
@@ -115,12 +114,12 @@ const Login = () => {
               <div className="toggle-pannel toggle-left">
                 <h1>Hello Friend!</h1>
                 <p>Are you a student & want to use all site features? Login as student by clicking here</p>
-                <button className='hidden' id='login'>Student Login</button>
+                <button className='change hidden' id='login'>Student Login</button>
               </div>
               <div className="toggle-pannel toggle-right">
               <h1>Hello, want to sign in as Instructor ?</h1>
                 <p>Login as instructor with your personal details by clicking here and use all of site features</p>
-                <button className='hidden' id='register'>Instructor Login</button>
+                <button className='change hidden' id='register'>Instructor Login</button>
               </div>
             </div>
           </div>

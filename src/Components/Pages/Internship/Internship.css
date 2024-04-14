@@ -1,19 +1,8 @@
-*{
+/* *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-}
-
-.nav{
-    background: linear-gradient(to right, #5c6bc0, #512da8);
-    height: 90px;
-    /* position:fixed; */
-    z-index: 90; 
-}
-
-.pl-body{
-    margin-top: 80px;
-}
+} */
 
 .pl-body .heading{
     display: flex;
@@ -84,11 +73,11 @@
 }
 
 .pl-body .search button:hover{
-    font-size: 12px;
+    font-size: 10px;
 }
 
 .pl-body .comp-container{
-    background-color: rgb(203, 215, 232);
+    background-color: rgb(234, 238, 255);
     top: 0;
     display: flex;
     flex-wrap: wrap;

@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import './UserInfo.css';
-import EditableUserProfile from '../Profile_info/EditableUserProfile1';
-import UserProfile from '../Profile_info/UserProfile1';
+import EditableUserProfile from './Profile_info/EditableUserProfile1';
+import UserProfile from './Profile_info/UserProfile1';
 
 function randomFName() {
     return "First Name Anonymous "

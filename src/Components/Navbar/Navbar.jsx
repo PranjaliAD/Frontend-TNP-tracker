@@ -1,33 +1,11 @@
-// import React from 'react';
-// import { Link } from 'react-router-dom'; // Import Link from react-router-dom
-// import './Navbar.css';
-// import logo from '../../Assets/logo2.png';
-
-// const Navbar = () => {
-//   return (
-//     <nav className='nav-container'>
-//         <img src={logo} alt="" className='logo'/>
-//         <ul>
-//             <li><Link to="/" className='nav-link'>Home</Link></li>
-//             <li><Link to="/about" className='nav-link'>About Us</Link></li>
-//             <li><Link to="/statistics" className='nav-link'>Statistics</Link></li>
-//             <li><Link to="/placements" className='nav-link'>Placements</Link></li>
-//             <li><Link to="/internships" className='nav-link'>Internships</Link></li> 
-//             <li><Link to="/login" className='btn'>Login/Register</Link></li> 
-//         </ul>
-//     </nav>
-//   );
-// }
-
-// export default Navbar;
-
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import './Navbar.css';
 import logo from '../../Assets/logo2.png';
 
 const Navbar = () => {
   const [scrolling, setScrolling] = useState(false);
+  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -46,13 +24,16 @@ const Navbar = () => {
   }, []);
 
   return (
-    <nav className={`nav-container ${scrolling ? 'scrolled' : ''}`}>
-      <img src={logo} alt="" className='logo'/>
+    <nav className={`navbar-container ${scrolling ? 'scrolled' : ''}`}>
+      <Link to="/" className='logo-link'>
+        <img src={logo} alt="Logo" className='logo'/>
+      </Link>
       <ul>
-        <li><Link to="/" className='nav-link'>Home</Link></li>
-        <li><Link to="/about" className='nav-link'>About Us</Link></li>
-        <li><Link to="/statistics" className='nav-link'>Statistics</Link></li>
-        <li><Link to="/login" className='btn'>Login with college</Link></li> 
+        <li><Link to="/" className={`nav-link ${location.pathname === '/' ? 'active' : ''}`}>Home</Link></li>
+        <li><Link to="/announcement" className={`nav-link ${location.pathname === '/announcement' ? 'active' : ''}`}>Announcements</Link></li>
+        <li><Link to="/statistics" className={`nav-link ${location.pathname === '/statistics' ? 'active' : ''}`}>Statistics</Link></li>
+        <li><Link to="/testimonials" className={`nav-link ${location.pathname === '/testimonials' ? 'active' : ''}`}>Testimonials</Link></li>
+        <li><Link to="/login" className='btn'>Login</Link></li> 
       </ul>
     </nav>
   );

@@ -5,10 +5,15 @@ function Edit_links() {
     return(
         <div className="Contaner">
         <Description/>
+        <hr />
         <Linkedin/>
+        <hr />
         <Github/>
+        <hr />
         <Leetcode/>
+        <hr />
         <Codechef/>
+        <hr />
         <Codeforces/>
      </div>
     );

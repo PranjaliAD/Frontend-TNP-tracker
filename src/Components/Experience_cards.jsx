@@ -10,8 +10,9 @@ const ExpCards = () => {
         <div>
             <div className="ex-box">
                 <div className="box-head">
-                    <h3> Pranjali Dharmadhikari- </h3>
-                    <a href="linkedin">https://linkedin.com</a>
+                    <h3> Pranjali Dharmadhikari - </h3>
+                    <br />
+                    <a className='linkedin' href="linkedin"> https://linkedin.com </a>
                 </div>
                 <hr />
                 <div className="ex-body">

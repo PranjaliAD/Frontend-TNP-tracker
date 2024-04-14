@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import Group from './Group1';
-import { months } from '../StudentProfile/tools';
+import { months } from '../tools';
 
 export default function EditableUserProfile1({
     stored,

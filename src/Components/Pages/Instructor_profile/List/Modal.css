@@ -23,15 +23,15 @@
     margin: auto;
   }
   
-  .form-group {
+  .form_group {
     display: flex;
     flex-direction: column;
     margin-bottom: 1rem;
   }
   
-  .form-group input,
-  .form-group textarea,
-  .form-group select {
+  .form_group input,
+  .form_group textarea,
+  .form_group select {
     border: 1px solid black;
     border-radius: 0.3rem;
     padding: 0.3rem;

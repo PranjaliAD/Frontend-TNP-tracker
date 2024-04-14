@@ -1,3 +1,7 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
 @import '@fortawesome/fontawesome-free/css/all.css';
 
@@ -19,33 +23,9 @@ a{
   line-height: 1;
   cursor: pointer;
 }
-
+/* 
 .container{
   padding-left: 10px;
   padding-right: 10px;
 }
-
-.btn{
-  background: #fff;
-  color: #212121;
-  padding: 14px 25px;
-  font-size: 14px;
-  border-radius: 25px;
-  cursor: pointer;
-  border: 0;
-  outline: 0;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.btn:hover{
-  color: #000;
-  font-size: 15px;
-}
-
-.btn img{
-  width: 20px;
-  margin-left: 10px;
-}
-
+ */

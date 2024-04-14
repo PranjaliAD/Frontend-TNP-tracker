@@ -24,49 +24,87 @@
 
 // export default company_cards
 
-// import React from 'react'
-// import './company_cards.css'
-// import logoc from '../Assets/google_logo.jpg'
+// import React, { useState, useEffect } from 'react';
+// import './company_cards.css';
+// import logoc from '../Assets/google_logo.jpg';
+// import axios from 'axios';
 
-// const company_cards = () => {
+// const CompanyCards = () => {
+//     const handleSolveClick = () => {
+//         window.open('/questions', '_blank'); // Open a new window for the Questions page
+//     };
+//     const [usercomp, setUsercomp] = useState(() => {
+//         const storedUsercomp = localStorage.getItem('usercomp');
+//         return storedUsercomp ? JSON.parse(storedUsercomp) : null;
+//       });
+//       useEffect(() => {
+//         if (!usercomp) {
+//           axios.get('https://placement-internship-tracker-backend-mu.vercel.app/api/students/student/questions/?prnNo=72278496B&companyname=Amazon')
+//             .then(response => {
+//               const usercompData = response.data;
+//               localStorage.setItem('usercomp', JSON.stringify(usercompData));
+//               setUsercomp(usercompData);
+//             })
+//             .catch(error => {
+//               console.error('Error fetching data:', error);
+//             });
+//         }
+//       }, [usercomp]);
+
 //     return (
 //         <div>
-//             <div className="box">
-//                 <div className="head">
-//                     <a href="https://www.google.com" target="_blank" rel="noopener noreferrer">
-//                         <img src={logoc} alt="Google Logo" />
-//                     </a>
-//                     <h3>Google </h3>
+//             {usercomp && ( 
+//             <div className="comp-box">
+//                 <div className="comp-head">
+                   
+//                         <img src={usercomp.companylogo} alt="company Logo" />
+                    
+//                     <h3 className='compname'>{usercomp.companyname}</h3>
 //                 </div>
-//                 <div className="cbody">
-//                     <h1>25</h1>
-//                     <p>Total Problems</p>
-//                     <button>Solve</button>
+//                 <div className="cardbody">
+//                     <h1>25 +</h1>
+//                     <p>Total Contributions</p>
+//                     <button className='solve' onClick={handleSolveClick}>Solve</button>
 //                 </div>
 //             </div>
+//             )}
 //         </div>
-//     )
-// }
+//     );
+// };
 
-// export default company_cards
+// export default CompanyCards;
 
-import React from 'react';
+
+import React, { useState, useEffect } from 'react';
 import './company_cards.css';
+import axios from 'axios';
 import logoc from '../Assets/google_logo.jpg';
 
-const CompanyCards = () => {
+const CompanyCards = ({ index }) => {
     const handleSolveClick = () => {
         window.open('/questions', '_blank'); // Open a new window for the Questions page
     };
 
+    const [usercomp, setUsercomp] = useState(null);
+
+    useEffect(() => {
+        axios.get(`https://placement-internship-tracker-backend-mu.vercel.app/api/students/student/questions/?prnNo=72278496B&companyname=Amazon`)
+            .then(response => {
+                const usercompData = response.data;
+                setUsercomp(usercompData[index]); // Set usercomp based on the provided index
+            })
+            .catch(error => {
+                console.error('Error fetching data:', error);
+            });
+    }, [index]); // useEffect will run whenever index changes
+
     return (
         <div>
+            {usercomp && ( 
             <div className="comp-box">
                 <div className="comp-head">
-                    <a href="https://www.google.com" target="_blank" rel="noopener noreferrer">
-                        <img src={logoc} alt="Google Logo" />
-                    </a>
-                    <h3>Google</h3>
+                    <img src={usercomp.companylogo || logoc} alt="company Logo" />
+                    <h3 className='compname'>{usercomp.companyname}</h3>
                 </div>
                 <div className="cardbody">
                     <h1>25 +</h1>
@@ -74,6 +112,7 @@ const CompanyCards = () => {
                     <button className='solve' onClick={handleSolveClick}>Solve</button>
                 </div>
             </div>
+            )}
         </div>
     );
 };

@@ -1,7 +1,7 @@
 import React, { useState, useRef } from "react";
 import { Dialog } from "primereact/dialog";
 import { Button } from "primereact/button";
-import img from "./profile.jpg";
+import img from "../../../../Assets/profile.webp";
 // npm i react-avatar-edit
 import Avatar from 'react-avatar-edit'
 import './ProfilePic.css'

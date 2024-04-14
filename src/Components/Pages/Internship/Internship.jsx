@@ -3,6 +3,7 @@ import './Internship.css';
 import CompanyCards from '../../company_cards';
 import logos from '../../../Assets/place_logo.webp';
 import Questions from '../../Questions/Questions';
+import Studnav from '../../Navbar/Studnav';
 
 const Internship = () => {
     const [selectedCompany, setSelectedCompany] = useState(null);
@@ -13,7 +14,7 @@ const Internship = () => {
 
     return (
         <div>
-            <div className="nav"></div>
+            <div className="nav"><Studnav/></div>
             <div className='pl-body'>
                 <div className="heading">
                     <div className="text">

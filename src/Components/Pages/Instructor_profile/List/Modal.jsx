@@ -51,11 +51,11 @@ export const Modal = ({ closeModal, onSubmit, defaultValue }) => {
     >
       <div className="modal">
         <form>
-          <div className="form-group">
+          <div className="form_group">
             <label htmlFor="page">Roll No</label>
             <input name="page" onChange={handleChange} value={formState.page} />
           </div>
-          <div className="form-group">
+          <div className="form_group">
             <label htmlFor="description">Student Name</label>
             <textarea
               name="description"
@@ -63,7 +63,7 @@ export const Modal = ({ closeModal, onSubmit, defaultValue }) => {
               value={formState.description}
             />
           </div>
-          <div className="form-group">
+          <div className="form_group">
             <label htmlFor="status">Status</label>
             <select
               name="status"

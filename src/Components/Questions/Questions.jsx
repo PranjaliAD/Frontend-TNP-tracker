@@ -172,6 +172,7 @@
 import React, { useState } from 'react';
 import './Questions.css';
 import Expcards from '../../Components/Experience_cards';
+import Studnav from '../Navbar/Studnav';
 
 const QuestionsPage = () => {
   const questionanswer = {
@@ -252,20 +253,20 @@ const QuestionsPage = () => {
 
   return (
     <div>
-      <div className='nav'></div>
-      <div className="head">
+      <div className='nav'><Studnav/></div>
+      <div className="questhead">
         <h1>Placement / Internship Prep</h1>
         <p>Welcome to our comprehensive guide for company placements, where you'll find a wealth of resources, strategies, and practice questions to help you ace your interviews and land your dream opportunity.</p>
         {/* Buttons to scroll to sections */}
-        <div className="section-buttons">
-          <button onClick={() => scrollToSection("overview")}>Overview</button>
-          <button onClick={() => scrollToSection("questions")}>Coding Questions</button>
-          <button onClick={() => scrollToSection("puzzles")}>Puzzles</button>
-          <button onClick={() => scrollToSection("testimonial")}>Interview Experience</button>
+        <div className="section_buttons">
+          <button className='sb' onClick={() => scrollToSection("overview")}>Overview</button>
+          <button className='sb' onClick={() => scrollToSection("questions")}>Coding Questions</button>
+          <button className='sb' onClick={() => scrollToSection("puzzles")}>Puzzles</button>
+          <button className='sb' onClick={() => scrollToSection("testimonial")}>Interview Experience</button>
         </div>
       </div>
       <div className="section-overview" id="overview">
-        <div class="container">
+        <div class="over-container">
           <div class="item">
             <div class="number">15</div>
             <div class="label">Coding Questions</div>
@@ -284,8 +285,9 @@ const QuestionsPage = () => {
           </div>
         </div>
       </div>
-      <hr />
+      
       <div className="section-questions" id="questions">
+        <hr />
         <h2>Coding Questions</h2>
         <div className="questions-container">
           <div className="topics-container">

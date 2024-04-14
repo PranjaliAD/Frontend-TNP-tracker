@@ -7,6 +7,19 @@
   box-shadow: 0 3px 3px rgb(145, 142, 142);
 }
 
+.status-container:hover{
+  cursor: pointer;
+}
+
+.status-container .sh{
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.status-container .st{
+  color: #f0f0f0;
+}
+
 .status-container .status {
   display: inline-block; 
   padding: 5px 10px; 
@@ -16,9 +29,14 @@
   text-align: center;
 }
 
-h2 {
+.company-info h2 {
   display: inline-block; 
-  margin: 0 20px; 
+  margin: 0 30px; 
+}
+
+.comp{
+  font-size: 24px;
+  font-weight: 600;
 }
 
 .placed {
@@ -33,26 +51,26 @@ h2 {
   display: flex;
   flex-direction: column;
   margin: 30px;
-  height: auto;
+  height: 320px;
   background-color: #f0f0f0;
   padding: 20px 20px;
   box-shadow: 0 3px 3px rgb(145, 142, 142);
 }
 
 .company-info {
-  margin-bottom: 5px;
+  margin-bottom: 25px;
 }
 
 .company-info .position{
   display: inline-block; 
-  font-size: 24px;
+  font-size: 20px;
   padding: 5px 10px; 
   margin-left: 370px;
   color: #3d227b;
   text-align: center;
 }
 
-.offerlet button {
+.offerlet .offer_btn {
   background: linear-gradient(to bottom, #5c6bc0, #512da8);
   padding: 10px;
   padding-left: 25px;
@@ -64,12 +82,17 @@ h2 {
   border: 1px solid transparent;
   color: #fff;
   cursor: pointer;
-  margin: 10px 20px; 
+  margin-top: 60px 30px;
+}
+
+.offerlet{
+  padding: 20px;
+  padding-left: 30px;
 }
 
 .company-placed .msg{
   background: linear-gradient(to bottom, #5c6bc0, #512da8);
-  margin-top: 10px;
+  margin-top: 5px;
   border-radius: 10px;
 }
 

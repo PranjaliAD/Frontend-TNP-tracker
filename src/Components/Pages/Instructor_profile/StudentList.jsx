@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "./StudentList.css";
-import { Table } from "../List/Table";
-import { Modal } from "../List/Modal";
+import { Table } from "./List/Table";
+import { Modal } from "./List/Modal";
 import { Route, Router, useNavigate } from "react-router-dom";
 
 function StudentList() {
