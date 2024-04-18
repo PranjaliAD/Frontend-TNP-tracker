@@ -110,8 +110,8 @@ export default function EditableUserProfile1({
             />
         </Group>
         <Group>
-            <button  onClick={handleSaveClicked}>Save</button>
-            <button  onClick={handleCancelClicked}>Cancel</button>
+            <button className='btn2'  onClick={handleSaveClicked}>Save</button>
+            <button className='btn2'  onClick={handleCancelClicked}>Cancel</button>
         </Group>
     </>
 }

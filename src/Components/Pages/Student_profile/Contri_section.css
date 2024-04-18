@@ -52,7 +52,7 @@
 
 .contri-container {
   margin: 30px;
-  height: 400px; 
+  height: auto; 
   background-color: #f0f0f0;
   padding: 20px 20px;
   box-shadow: 0 5px 5px rgb(145, 142, 142);

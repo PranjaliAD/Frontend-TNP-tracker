@@ -82,13 +82,13 @@ const Contri_section = () => {
     <div className='contri-container'>
         <h2 className='conth'>Contributions</h2>
         <hr />
-        <div className="question-container">
+        {/* <div className="question-container">
           <h3 className='headingc'>Your Contributions</h3>
           <p className='q'>1. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore magnam explicabo itaque praesentium tenetur excepturi.</p>
           <p className='q'>2. Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium tempora assumenda ad error sequi labore rem aut voluptatibus!</p>
           <p className='q'>1. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore magnam explicabo itaque praesentium tenetur excepturi.</p>
           <p className='q'>2. Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium tempora assumenda ad error sequi labore rem aut voluptatibus!</p>
-        </div>
+        </div> */}
         <button className='contri-btn' onClick={handleContributeClick}>Contribute now</button>
     </div>
   )

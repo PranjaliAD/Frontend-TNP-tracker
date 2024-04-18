@@ -1,5 +1,5 @@
-import * as React from 'react';
-import { PieChart } from '@mui/x-charts/PieChart';
+import React from 'react';
+import { PieChart, PieArcSeries, PieArcLabel } from '@mui/x-charts';
 
 const data = [
   { id: 0, value: 8, label: 'placed' },

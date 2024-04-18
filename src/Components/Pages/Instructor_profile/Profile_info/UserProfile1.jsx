@@ -10,7 +10,7 @@ export default function EditableUserProfile1({
     console.log()
 
 
-    return <div>
+    return <div className='user1'>
         <Group>
             <h3>First Name:</h3> {stored.fname}
             <h3>Last Name:</h3> {stored.lname}
@@ -27,7 +27,7 @@ export default function EditableUserProfile1({
             <h3>Birthday:</h3> {months.getShortName(stored.month)} {stored.day}
         </Group>
         <Group>
-            <button
+            <button className='btn2'
                 onClick={startEditCallback}
             >Edit</button>
         </Group>

@@ -42,8 +42,6 @@ function Description() {
     );
   }
 
-
-
   function Linkedin() {
     // State to store the text input value
     const [text, setText] = useState('');

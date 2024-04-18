@@ -29,7 +29,7 @@ const ProfilePic = () => {
                 <div className="div">
                     <img
                         style={{
-                            margin: "10px 80px",
+                            marginLeft: "70px",
                             width: "200px",
                             height: "200px",
                             borderRadius: "50%",

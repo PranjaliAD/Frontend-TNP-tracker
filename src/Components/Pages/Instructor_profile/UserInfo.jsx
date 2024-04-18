@@ -22,8 +22,6 @@ function randomPhoneNo() {
     return "9307052498" 
 }
 
-
-
 function UserInfo() {
     const now = new Date(Date.now());
     const defaultBirthday = new Date(now.getTime() + 86400000);
