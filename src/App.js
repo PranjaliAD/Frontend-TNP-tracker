@@ -5,6 +5,7 @@ import Hero from './Components/Hero/Hero';
 import StudLogin from './Components/Pages/Student_profile/Profile';
 import InstLogin from './Components/Pages/Instructor_profile/ProInfo'
 import Login from './Components/Pages/Login/Login';
+import AdminLogin from './Components/Pages/Login/AdminLogin'
 import Placement from './Components/Pages/Placement/Placement';
 import Internship from './Components/Pages/Internship/Internship';
 import Questions from './Components/Questions/Questions';
@@ -25,8 +26,9 @@ function App() {
           <Route path="/placements" element={<Placement/>}/>
           <Route path="/internships" element={<Internship/>}/>
           <Route path="/login" element={<Login/>}/>
+          <Route path="/adlogin" element={<AdminLogin/>}/>
           <Route path="/studlogin" element={<StudLogin/>}/>
-          {/* <Route path="login" element={<InstLogin/>}/> */}
+          <Route path="instlogin" element={<InstLogin/>}/>
           <Route path="/studprofedit" element={<EditStud/>} />
           <Route path="/questions" element={<Questions />} /> 
           <Route path="/contribute" element={<Contribute />} /> 

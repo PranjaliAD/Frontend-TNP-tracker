@@ -38,26 +38,27 @@
 }
 
 .log-container h3{
-    margin: 10px;
+    margin:10px;
     color: #512da8;
+    font-weight: 500;
     font-size: 24px;
     text-decoration:underline;
 }
 
-/* .form-container h1{
+.form-container h1{
     color: #000;
     font-size: 20px;
     font-weight: 500;
-} */
+}
 
-/* .log-container p{
+.log-container p{
     font-size: 14px;
     line-height: 20px;
     letter-spacing: 0.3px;
     margin: 18px 0;
-} */
+}
 
-/* .log-container span{
+.log-container span{
     font-size: 12px;
 }
 
@@ -66,7 +67,7 @@
     font-size: 13px;
     text-decoration: none;
     margin: 15px 0 10px;
-} */
+}
 
 .log-container .change{
     background-color: #512da8;
