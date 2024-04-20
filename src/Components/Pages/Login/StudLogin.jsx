@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import './StudLogin.css';
 import Nav from '../../Navbar/Nav';
 import axios from 'axios';
+import Cookies from 'js-cookie'; // Import Cookies
 
 const Login = () => {
   const [error, setError] = useState('');
@@ -26,6 +27,8 @@ const Login = () => {
       password: password
     })
     .then(response => {
+      // Store student data in cookies
+      Cookies.set('student', response.data.student); // Assuming response.data.student contains the student data
       window.open('/studlogin');
     })
     .catch(error => {
