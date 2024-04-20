@@ -6,7 +6,7 @@
     flex-direction: column;
     margin:0.5rem;
     background-color: white;
-    height:fit-content;
+    height:auto;
 }
 
 .card-img{
@@ -29,4 +29,11 @@
     background-color: #24a;
     text-decoration: none;
     margin:0.5rem auto;
+}
+.Average-package,.No-Of-stud-placed{
+    text-align: center;
+}
+.first-heading{
+    color:#D98B19;
+    font-weight: bold;
 }

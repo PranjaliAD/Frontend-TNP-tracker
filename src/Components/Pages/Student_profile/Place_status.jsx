@@ -11,12 +11,12 @@ const Place_status = () => {
   return (
     <div>
       <div className="status-container">
-        <h2>Placement Status: <div className={`status ${pl_status === 'Placed' ? 'placed' : 'not-placed'}`}><h4>{pl_status}</h4></div></h2>
+        <h2 className='heading-placement-2'>Placement Status: <div className={`status ${pl_status === 'Placed' ? 'placed' : 'not-placed'}`}><h4>{pl_status}</h4></div></h2>
       </div>
       {pl_status === 'Placed' ? (
         <div className="company-placed">
           <div className="company-info">
-            <h2>{comp} - <div className="position"><h5><i>{pos}</i></h5></div></h2>
+            <h2 className='heading-placement-2'>{comp} - <div className="position"><h5><i>{pos}</i></h5></div></h2>
           </div>
           <hr />
           <div className="offerlet">
@@ -24,13 +24,13 @@ const Place_status = () => {
           </div>
           <hr />
           <div className="msg">
-            <h4><i>{msg1}</i></h4>
+            <h4 className='heading-placement'><i>{msg1}</i></h4>
           </div>
         </div>
       ) : (
         <div className="company-notplaced">
           <div className="msg">
-            <h4><i>{msg2}</i></h4>
+            <h4 className='heading-placement'><i>{msg2}</i></h4>
           </div>
         </div>
       )}

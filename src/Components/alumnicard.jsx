@@ -1,11 +1,11 @@
 import React from 'react';
 import '@fortawesome/fontawesome-free/css/all.min.css'; // Import FontAwesome CSS
-
+import img1 from '../Assets/edusity_assets/user-1.png'
 function YourComponent({ imageSrc, name, jobTitle, email, phone, facebookLink, twitterLink, instagramLink }) {
     return (
         <div className="relative flex flex-row text-gray-700 bg-white shadow-md bg-clip-border rounded-xl w-96">
             <div className="relative mx-4 mt-4 overflow-hidden text-gray-700 bg-white bg-clip-border h-48 w-48">
-                <img src={imageSrc} alt="profile-picture" />
+                <img src={img1} alt="profile-picture" />
                 <div className="flex justify-center p-2 gap-2 m-4">
                     <a href={facebookLink} className="block font-sans text-xl antialiased font-normal leading-relaxed text-transparent bg-clip-text bg-gradient-to-tr from-blue-600 to-blue-400">
                         <i className="fab fa-facebook-f" aria-hidden="true"></i> {/* FontAwesome Facebook icon */}

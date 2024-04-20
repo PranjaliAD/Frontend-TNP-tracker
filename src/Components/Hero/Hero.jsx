@@ -12,6 +12,7 @@ import Announcement from '../Announcement/Announcement';
 import { Link, useLocation } from 'react-router-dom'; 
 import Test from '../Testimonialss'
 import ProfileStud from '../Coordinators/Coordinators'
+// import Admin from '../Admin/MainAdmin/MainAdmin'
 const Hero = () => {
   const [navbarBackground, setNavbarBackground] = useState(false); // State to manage navbar background color
   const location = useLocation(); // Get current location using useLocation
@@ -67,6 +68,9 @@ const Hero = () => {
       {/* <Alumnicard/> */}
       <Title subTitle='Training and Internship Coordinators' title='Meet Our Coordinators' />
       <ProfileStud/>
+      <div className="mr-2">
+      {/* <Admin/> */}
+      </div>
       <Footer />
       {/* <p>Hello World <Msgcard/></p> */}
     </div>

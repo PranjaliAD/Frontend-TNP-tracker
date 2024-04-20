@@ -1,4 +1,6 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import axios from 'axios';
+
 import Slider from 'react-slick';
 
 import 'slick-carousel/slick/slick.css';
@@ -9,19 +11,30 @@ import img3 from '../../Assets/edusity_assets/gallery-3.png';
 import img4 from '../../Assets/edusity_assets/gallery-4.png';
 
 const LatestNewsSlider = () => {
-    const newsItems = [
-        { title: 'Breaking News Title 1', content: 'Content of breaking news 1', image: img1 },
-        { title: 'Breaking News Title 2', content: 'Content of breaking news 2', image: img2 },
-        { title: 'Breaking News Title 3', content: 'Content of breaking news 3', image: img3 },
-        { title: 'Breaking News Title 3', content: 'Content of breaking news 3', image: img4 },
-        { title: 'Breaking News Title 3', content: 'Content of breaking news 3', image: img1 },
-        { title: 'Breaking News Title 3', content: 'Content of breaking news 3', image: img2 },
-        { title: 'Breaking News Title 3', content: 'Content of breaking news 3', image: img3 },
-        { title: 'Breaking News Title 3', content: 'Content of breaking news 3', image: img3 },
-        { title: 'Breaking News Title 3', content: 'Content of breaking news 3', image: img3 },
-        { title: 'Breaking News Title 3', content: 'Content of breaking news 3', image: img3 },
-        // Add more news items as needed
-    ];
+    const [announcements, setAnnouncements] = useState([]);
+    useEffect(() => {
+        axios.get('https://placement-internship-tracker-backend-mu.vercel.app/api/')
+          .then(response => {
+            const data = response.data;
+            setAnnouncements(data.announcements);
+          })
+          .catch(error => {
+            console.error('Error fetching data:', error);
+          });
+      }, []);
+    // const newsItems = [
+    //     { title: 'Breaking News Title 1', content: 'Content of breaking news 1', image: img1 },
+    //     { title: 'Breaking News Title 2', content: 'Content of breaking news 2', image: img2 },
+    //     { title: 'Breaking News Title 3', content: 'Content of breaking news 3', image: img3 },
+    //     { title: 'Breaking News Title 3', content: 'Content of breaking news 3', image: img4 },
+    //     { title: 'Breaking News Title 3', content: 'Content of breaking news 3', image: img1 },
+    //     { title: 'Breaking News Title 3', content: 'Content of breaking news 3', image: img2 },
+    //     { title: 'Breaking News Title 3', content: 'Content of breaking news 3', image: img3 },
+    //     { title: 'Breaking News Title 3', content: 'Content of breaking news 3', image: img3 },
+    //     { title: 'Breaking News Title 3', content: 'Content of breaking news 3', image: img3 },
+    //     { title: 'Breaking News Title 3', content: 'Content of breaking news 3', image: img3 },
+    //     // Add more news items as needed
+    // ];
 
     const sliderSettings = {
         dots: true,
@@ -39,24 +52,24 @@ const LatestNewsSlider = () => {
             <div className="flex">
                 <div className="w-1/2 pr-4">
                     <Slider {...sliderSettings}>
-                        {newsItems.map((newsItem, index) => (
+                        {announcements.map((announcement, index) => (
                             <div key={index}>
-                                <img src={newsItem.image} alt={newsItem.title} className="w-full h-auto" />
+                                <img src={img1} alt={announcement.headline} className="w-full h-auto" />
                             </div>
                         ))}
                     </Slider>
                 </div>
                 <div className="w-1/2 overflow-y-scroll" style={{ maxHeight: '500px' }}>
                     <ul role="list" className="divide-y divide-gray-200 dark:divide-gray-700">
-                        {newsItems.map((newsItem, index) => (
+                        {announcements.map((announcement, index) => (
                             <li key={index} className="py-3 sm:py-4">
                                 <div className="flex items-center">
                                     <div className="flex-1 min-w-0 ms-4">
                                         <p className="text-sm font-medium text-gray-900 truncate dark:text-white">
-                                            {newsItem.title}
+                                            {announcement.headline}
                                         </p>
                                         <p className="text-sm text-gray-500 truncate dark:text-gray-400">
-                                            {newsItem.content}
+                                            {announcement.description}
                                         </p>
                                     </div>
                                 </div>

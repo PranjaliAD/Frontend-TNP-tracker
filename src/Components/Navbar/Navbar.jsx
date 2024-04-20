@@ -23,6 +23,20 @@ const Navbar = () => {
     };
   }, []);
 
+  const handleAnnouncementClick = (e) => {
+    e.preventDefault();
+    const announcementSection = document.getElementById('announcement-section');
+    if (announcementSection) {
+      const offsetTop = announcementSection.offsetTop - 50; // Adjusted offset for better visibility
+      window.scrollTo({ top: offsetTop, behavior: 'smooth' });
+    }
+  };
+
+  // Conditionally render the navbar only on the home page
+  if (location.pathname !== '/') {
+    return null;
+  }
+
   return (
     <nav className={`nav-container ${scrolling ? 'scrolled' : ''}`}>
       <Link to="/" className='logo-link'>
@@ -30,8 +44,9 @@ const Navbar = () => {
       </Link>
       <ul>
         <li><Link to="/" className={`nav-link ${location.pathname === '/' ? 'active' : ''}`}>Home</Link></li>
-        <li><Link to="/announcement" className={`nav-link ${location.pathname === '/announcement' ? 'active' : ''}`}>Announcements</Link></li>
+        <li><a href="#!" onClick={handleAnnouncementClick} className='nav-link'>Announcements</a></li>
         <li><Link to="/statistics" className={`nav-link ${location.pathname === '/statistics' ? 'active' : ''}`}>Statistics</Link></li>
+        <li><Link to="/admin" className={`nav-link ${location.pathname === '/admin' ? 'active' : ''}`}>Admin</Link></li>
         <li><Link to="/login" className='btn'>Login/Register</Link></li> 
       </ul>
     </nav>

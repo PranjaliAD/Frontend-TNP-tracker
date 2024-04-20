@@ -1,4 +1,6 @@
-import React, { useRef, useState } from 'react';
+import React, { useEffect, useState } from 'react';
+import axios from 'axios';
+
 // Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react';
 
@@ -11,7 +13,21 @@ import Alumni from '../alumnicard'
 // import required modules
 import { Pagination } from 'swiper/modules';
 import image from '../../Assets/edusity_assets/user-3.png'
+
 export default function App() {
+  const [tnp, setTnp] = useState([]);
+
+  useEffect(() => {
+    axios.get('https://placement-internship-tracker-backend-mu.vercel.app/api/')
+      .then(response => {
+        const data = response.data;
+        setTnp(data.tnp);
+      })
+      .catch(error => {
+        console.error('Error fetching data:', error);
+      });
+  }, []);
+
   return (
     <>
       <Swiper
@@ -24,107 +40,20 @@ export default function App() {
         modules={[Pagination]}
         className="Swiper-Coordinators"
       >
-        <SwiperSlide className='Coordinator'><Alumni
-          imageSrc={image}
-          name="Natalie Paisley"
-          jobTitle="CEO / Co-Founder"
-          email="example@example.com"
-          phone="+1 234 567 890"
-          facebookLink="#facebook"
-          twitterLink="#twitter"
-          instagramLink="#instagram"
-        />
-        </SwiperSlide>
-        <SwiperSlide className='Coordinator'><Alumni
-          imageSrc={image}
-          name="Natalie Paisley"
-          jobTitle="CEO / Co-Founder"
-          email="example@example.com"
-          phone="+1 234 567 890"
-          facebookLink="#facebook"
-          twitterLink="#twitter"
-          instagramLink="#instagram"
-        /></SwiperSlide>
-        <SwiperSlide className='Coordinator'><Alumni
-          imageSrc={image}
-          name="Natalie Paisley"
-          jobTitle="CEO / Co-Founder"
-          email="example@example.com"
-          phone="+1 234 567 890"
-          facebookLink="#facebook"
-          twitterLink="#twitter"
-          instagramLink="#instagram"
-        /></SwiperSlide>
-        <SwiperSlide className='Coordinator'><Alumni
-          imageSrc={image}
-          name="Natalie Paisley"
-          jobTitle="CEO / Co-Founder"
-          email="example@example.com"
-          phone="+1 234 567 890"
-          facebookLink="#facebook"
-          twitterLink="#twitter"
-          instagramLink="#instagram"
-        /></SwiperSlide>
-        <SwiperSlide className='Coordinator'><Alumni
-          imageSrc={image}
-          name="Natalie Paisley"
-          jobTitle="CEO / Co-Founder"
-          email="example@example.com"
-          phone="+1 234 567 890"
-          facebookLink="#facebook"
-          twitterLink="#twitter"
-          instagramLink="#instagram"
-        /></SwiperSlide>
-        <SwiperSlide className='Coordinator'><Alumni
-          imageSrc={image}
-          name="Natalie Paisley"
-          jobTitle="CEO / Co-Founder"
-          email="example@example.com"
-          phone="+1 234 567 890"
-          facebookLink="#facebook"
-          twitterLink="#twitter"
-          instagramLink="#instagram"
-        /></SwiperSlide>
-        <SwiperSlide className='Coordinator'><Alumni
-          imageSrc={image}
-          name="Natalie Paisley"
-          jobTitle="CEO / Co-Founder"
-          email="example@example.com"
-          phone="+1 234 567 890"
-          facebookLink="#facebook"
-          twitterLink="#twitter"
-          instagramLink="#instagram"
-        /></SwiperSlide>
-        <SwiperSlide className='Coordinator'><Alumni
-          imageSrc={image}
-          name="Natalie Paisley"
-          jobTitle="CEO / Co-Founder"
-          email="example@example.com"
-          phone="+1 234 567 890"
-          facebookLink="#facebook"
-          twitterLink="#twitter"
-          instagramLink="#instagram"
-        /></SwiperSlide>
-        <SwiperSlide className='Coordinator'><Alumni
-          imageSrc={image}
-          name="Natalie Paisley"
-          jobTitle="CEO / Co-Founder"
-          email="example@example.com"
-          phone="+1 234 567 890"
-          facebookLink="#facebook"
-          twitterLink="#twitter"
-          instagramLink="#instagram"
-        /></SwiperSlide>
-        <SwiperSlide className='Coordinator'><Alumni
-          imageSrc={image}
-          name="Natalie Paisley"
-          jobTitle="CEO / Co-Founder"
-          email="example@example.com"
-          phone="+1 234 567 890"
-          facebookLink="#facebook"
-          twitterLink="#twitter"
-          instagramLink="#instagram"
-        /></SwiperSlide>
+        {tnp.map((person, index) => (
+          <SwiperSlide key={index} className='Coordinator'>
+            <Alumni
+              imageSrc={person.image}
+              name={person.name}
+              jobTitle={person.position}
+              email={person.tnpemailId}
+              phone={person.department}
+              facebookLink={person.linkedin}
+              twitterLink={person.linkedin}
+              instagramLink={person.linkedin}
+            />
+          </SwiperSlide>
+        ))}
       </Swiper>
     </>
   );

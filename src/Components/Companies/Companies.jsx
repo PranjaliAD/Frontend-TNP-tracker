@@ -135,8 +135,11 @@ import CompCard from '../CompCard/CompCard'
 // export default programs
 // import React, { useRef, useState } from 'react';
 // Import Swiper React components
-import { Swiper, SwiperSlide } from 'swiper/react';
 
+import { Swiper, SwiperSlide } from 'swiper/react';
+import React, { useEffect, useState } from 'react';
+import axios from 'axios';
+// import logo from '../../Assets/barclays.jpg'
 // Import Swiper styles
 import 'swiper/css';
 import 'swiper/css/effect-coverflow';
@@ -148,6 +151,19 @@ import './Companies.css';
 import { EffectCoverflow, Pagination } from 'swiper/modules';
 
 export default function App() {
+  const [companies, setCompanies] = useState([]);
+
+
+  useEffect(() => {
+    axios.get('https://placement-internship-tracker-backend-mu.vercel.app/api/')
+      .then(response => {
+        const data = response.data;
+        setCompanies(data.companies);
+      })
+      .catch(error => {
+        console.error('Error fetching data:', error);
+      });
+  }, []);
   return (
     <>
       <Swiper
@@ -166,88 +182,93 @@ export default function App() {
         modules={[EffectCoverflow, Pagination]}
         className="mySwiper"
       >
-        <SwiperSlide className='mySwiper-slide'>
-          {/* <img src="https://swiperjs.com/demos/images/nature-1.jpg" /> */}
-          <CompCard imgSrc={program_1}
-            imgAlt="img-comp"
-            title="Company Name"
-            description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui, modi!"
-            buttonText="Learn More"
-            link="CardPage"
-          />
-        </SwiperSlide>
-        <SwiperSlide className='mySwiper-slide'>
+        {companies.map((company, index) => (
+          <SwiperSlide key={index} className='mySwiper-slide'>
+            <CompCard
+              imgSrc={company.logo}
+              imgAlt={company.companyname}
+              CompanyName={company.companyname}
+              NoOfStudPlaced={company.numberOfStudentsPlaced}
+              Avgpkg={company.avgPackage}
+              // CompDesp={company.description}
+              LinkLabel='Learn More'
+              link={company.link}
+            />
+            
+          </SwiperSlide>
+        ))}
+        {/* <SwiperSlide className='mySwiper-slide'>
         <CompCard imgSrc={program_2}
             imgAlt="img-comp"
-            title="Company Name"
-            description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui, modi!"
-            buttonText="Learn More"
+            CompanyName="Company Name"
+            NoOfStudPlaced="Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui, modi!"
+            LinkLabel="Learn More"
             link="CardPage"
           />
         </SwiperSlide>
         <SwiperSlide className='mySwiper-slide'>
         <CompCard imgSrc={program_3}
             imgAlt="img-comp"
-            title="Company Name"
-            description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui, modi!"
-            buttonText="Learn More"
+            CompanyName="Company Name"
+            NoOfStudPlaced="Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui, modi!"
+            LinkLabel="Learn More"
             link="CardPage"
           />
         </SwiperSlide>
         <SwiperSlide className='mySwiper-slide'>
         <CompCard imgSrc={program_3}
             imgAlt="img-comp"
-            title="Company Name"
-            description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui, modi!"
-            buttonText="Learn More"
+            CompanyName="Company Name"
+            NoOfStudPlaced="Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui, modi!"
+            LinkLabel="Learn More"
             link="CardPage"
           />
         </SwiperSlide>
         <SwiperSlide className='mySwiper-slide'>
         <CompCard imgSrc={program_2}
             imgAlt="img-comp"
-            title="Company Name"
-            description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui, modi!"
-            buttonText="Learn More"
+            CompanyName="Company Name"
+            NoOfStudPlaced="Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui, modi!"
+            LinkLabel="Learn More"
             link="CardPage"
           />
         </SwiperSlide>
         <SwiperSlide className='mySwiper-slide'>
         <CompCard imgSrc={program_1}
             imgAlt="img-comp"
-            title="Company Name"
-            description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui, modi!"
-            buttonText="Learn More"
+            CompanyName="Company Name"
+            NoOfStudPlaced="Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui, modi!"
+            LinkLabel="Learn More"
             link="CardPage"
           />
         </SwiperSlide>
         <SwiperSlide className='mySwiper-slide'>
         <CompCard imgSrc={program_3}
             imgAlt="img-comp"
-            title="Company Name"
-            description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui, modi!"
-            buttonText="Learn More"
+            CompanyName="Company Name"
+            NoOfStudPlaced="Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui, modi!"
+            LinkLabel="Learn More"
             link="CardPage"
           />
         </SwiperSlide>
         <SwiperSlide className='mySwiper-slide'>
         <CompCard imgSrc={program_2}
             imgAlt="img-comp"
-            title="Company Name"
-            description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui, modi!"
-            buttonText="Learn More"
+            CompanyName="Company Name"
+            NoOfStudPlaced="Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui, modi!"
+            LinkLabel="Learn More"
             link="CardPage"
           />
         </SwiperSlide>
         <SwiperSlide className='mySwiper-slide'>
         <CompCard imgSrc={program_1}
             imgAlt="img-comp"
-            title="Company Name"
-            description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui, modi!"
-            buttonText="Learn More"
+            CompanyName="Company Name"
+            NoOfStudPlaced="Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui, modi!"
+            LinkLabel="Learn More"
             link="CardPage"
           />
-        </SwiperSlide>
+        </SwiperSlide> */}
       </Swiper>
     </>
   );

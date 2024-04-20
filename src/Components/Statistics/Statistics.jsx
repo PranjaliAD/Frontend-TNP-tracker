@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import axios from 'axios';
 import CountUp from 'react-countup';
 import StatCard from '../../Components/StatCard/StatCard';
 import './Statistics.css';
@@ -10,12 +11,16 @@ const StatsComponent = () => {
     const [averagePackage, setAveragePackage] = useState(0);
 
     useEffect(() => {
-        // Simulate data fetching or API call to get actual values
-        setTimeout(() => {
-            setStudentsPlaced(250);
-            setCompaniesVisited(100);
-            setAveragePackage(8.5);
-        }, 1000); // Simulating a delay for fetching data
+        axios.get('https://placement-internship-tracker-backend-mu.vercel.app/api/')
+        .then(response => {
+            const data = response.data;
+            setStudentsPlaced(data.stat.totalStudents);
+            setCompaniesVisited(data.stat.totalCompanies);
+            setAveragePackage(data.stat.avgPackage);
+        })
+        .catch(error => {
+            console.error('Error fetching data:', error);
+        });
     }, []);
 
     return (
@@ -31,7 +36,6 @@ const StatsComponent = () => {
                 <StatCard title="Companies Visited" value={<CountUp end={companiesVisited} duration={2} />} style={{ marginRight: '0.5rem' }} />
                 <StatCard title="Average Package" value={<CountUp end={averagePackage} decimals={1} duration={2} />} />
             </div>
-            
         </div>
     );
 };

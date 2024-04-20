@@ -1,98 +1,63 @@
-import React,{useRef} from 'react'
-import './Testimonials.css'
-import next_icon from '../../Assets/edusity_assets/next-icon.png'
-import back_icon from '../../Assets/edusity_assets/back-icon.png'
-import user_1 from '../../Assets/edusity_assets/user-1.png'
-import user_2 from '../../Assets/edusity_assets/user-2.png'
-import user_3 from '../../Assets/edusity_assets/user-3.png'
-import user_4 from '../../Assets/edusity_assets/user-4.png'
+import React, { useState, useEffect, useRef } from 'react';
+import axios from 'axios';
+import next_icon from '../../Assets/edusity_assets/next-icon.png';
+import back_icon from '../../Assets/edusity_assets/back-icon.png';
 
 const Testimonials = () => {
+  const [alumni, setAlumni] = useState([]);
+
+  useEffect(() => {
+    axios.get('https://placement-internship-tracker-backend-mu.vercel.app/api/')
+      .then(response => {
+        const data = response.data;
+        setAlumni(data.alumni);
+      })
+      .catch(error => {
+        console.error('Error fetching data:', error);
+      });
+  }, [alumni]);
 
   const slider = useRef();
-
   let tx = 0;
 
-
-  const slideForward = ()=>{
-
-    if(tx > -50)
-    {
+  const slideForward = () => {
+    if (tx > -50) {
       tx -= 25;
-
     }
-    slider.current.style.transform = `translateX(${tx}%)`
+    slider.current.style.transform = `translateX(${tx}%)`;
+  };
 
-  }
-  const slideBackward = ()=>{
-    
-    if(tx < 0)
-    {
+  const slideBackward = () => {
+    if (tx < 0) {
       tx += 25;
-
     }
-    slider.current.style.transform = `translateX(${tx}%)`
+    slider.current.style.transform = `translateX(${tx}%)`;
+  };
 
-  }
   return (
     <div className="testimonials">
-      <img src={next_icon} alt="" className='next-btn' onClick={slideForward}/>
-      <img src={back_icon} alt="" className='back-btn' onClick={slideBackward}/>
+      <img src={next_icon} alt="" className="next-btn" onClick={slideForward} />
+      <img src={back_icon} alt="" className="back-btn" onClick={slideBackward} />
       <div className="slider">
         <ul ref={slider}>
-          <li>
-            <div className="slide">
-              <div className="user-info">
-                <img src={user_1} alt="" />
-                <div>
-                  <h3>William Jackson</h3>
-                  <span>Edusity, USA</span>
+          {alumni.map((alumni, index) => (
+            <li key={index}>
+              <div className="slide">
+                <div className="user-info">
+                  <img src={alumni.image} alt={alumni.name} />
+                  <div>
+                    <h3>{alumni.name}</h3>
+                    <span>{alumni.department}</span>
+                  </div>
                 </div>
+                <p>{alumni.testimonial}</p>
               </div>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur dignissimos ut optio accusamus ullam sed tempore eligendi a vitae facilis neque.</p>
-            </div>
-          </li>
-          <li>
-            <div className="slide">
-              <div className="user-info">
-                <img src={user_2} alt="" />
-                <div>
-                  <h3>William Jackson</h3>
-                  <span>Edusity, USA</span>
-                </div>
-              </div>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur dignissimos ut optio accusamus ullam sed tempore eligendi a vitae facilis neque .</p>
-            </div>
-          </li>
-          <li>
-            <div className="slide">
-              <div className="user-info">
-                <img src={user_3} alt="" />
-                <div>
-                  <h3>William Jackson</h3>
-                  <span>Edusity, USA</span>
-                </div>
-              </div>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur dignissimos ut optio accusamus ullam sed tempore eligendi a vitae facilis neque .</p>
-            </div>
-          </li>
-          <li>
-            <div className="slide">
-              <div className="user-info">
-                <img src={user_4} alt="" />
-                <div>
-                  <h3>William Jackson</h3>
-                  <span>Edusity, USA</span>
-                </div>
-              </div>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur dignissimos ut optio accusamus ullam sed tempore eligendi a vitae facilis.</p>
-            </div>
-          </li>
-          
+            </li>
+          ))}
         </ul>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Testimonials
+export default Testimonials;

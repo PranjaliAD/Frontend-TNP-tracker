@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Bar } from 'react-chartjs-2';
 import file from '../../Assets/edusity_assets/final-01.csv';
-
 const BarChart = () => {
   const [data, setData] = useState(null);
 
@@ -14,6 +13,9 @@ const BarChart = () => {
         const parsedData = rows.map(row => {
           const [Sr_No, visit_date, Company_Name, Comp, IT, ENTC, Sal_lpa, total_no, total, Month] = row.split(',');
           return Month;
+        }).sort((a, b) => {
+          const months = ['July', 'August', 'September', 'October', 'November', 'December', 'January', 'February', 'March', 'April', 'May', 'June'];
+          return months.indexOf(a) - months.indexOf(b);
         });
         setData(parsedData);
       } catch (error) {
@@ -43,6 +45,7 @@ const BarChart = () => {
 
   const chartData = {
     labels: Object.keys(companyCountByMonth),
+    
     datasets: [
       {
         label: 'Number of Companies',
@@ -69,6 +72,9 @@ const BarChart = () => {
               title: {
                 display: true,
                 text: 'Month',
+              },
+              ticks: {
+                callback: value => (typeof value === 'string' ? value.substring(0, 3) : value),
               },
             },
             y: {
