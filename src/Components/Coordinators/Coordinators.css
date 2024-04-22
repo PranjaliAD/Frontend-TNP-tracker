@@ -3,7 +3,7 @@
 /* Styles for the Swiper container */
 .Swiper-Coordinators {
     width: 100%; /* Make the Swiper container full width */
-    height: 300px; /* Set a fixed height for the Swiper container */
+    height: 400px; /* Set a fixed height for the Swiper container */
     background-color: #24A;
 }
   
@@ -17,6 +17,7 @@
     padding: 20px; /* Add some padding to the slides */
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add a box shadow for a subtle effect */
     margin-right: 10px; /* Add some spacing between slides */
+    /* max-height: 300px; */
   }
   
   /* Styles for the pagination bullets */

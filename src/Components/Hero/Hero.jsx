@@ -41,12 +41,12 @@ const Hero = () => {
           </div>
         </div>
       )}
-      <Title subTitle='Internship and Placement Achievements' title='Celebrating Student Excellence' />
+      {/* <Title subTitle='Internship and Placement Achievements' title='Celebrating Student Excellence' /> */}
       <Announcement />
-      <div className="container">
+      
         <Title subTitle='Corporate Engagement Snapshot' title='Explore Trends, Success Rates, and Industry Insights' />
         <Companies />
-      </div>
+      
       <Title subTitle='Beyond the Numbers: Insights into Opportunities' title='Discover Companies, Packages, and Hiring Trends' />
       <Statistics />
 

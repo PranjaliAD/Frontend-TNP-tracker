@@ -12,7 +12,7 @@ import './Coordinators.css';
 import Alumni from '../alumnicard'
 // import required modules
 import { Pagination } from 'swiper/modules';
-import image from '../../Assets/edusity_assets/user-3.png'
+// import image from '../../Assets/edusity_assets/user-3.png'
 
 export default function App() {
   const [tnp, setTnp] = useState([]);
@@ -48,9 +48,7 @@ export default function App() {
               jobTitle={person.position}
               email={person.tnpemailId}
               phone={person.department}
-              facebookLink={person.linkedin}
-              twitterLink={person.linkedin}
-              instagramLink={person.linkedin}
+              linkedinlink={person.linkedin}
             />
           </SwiperSlide>
         ))}
