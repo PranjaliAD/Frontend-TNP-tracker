@@ -38,15 +38,19 @@ const Login = () => {
       <div className="nav"><Nav/></div>
       <div className="login-body">
         <div className='log-container' id='container'>
-          <div className="form-container sign-in">
+          <div className="loginform">
             <form onSubmit={handleAdminLogin}>
               <h3>Admin Login</h3>
-              <h1>Sign In</h1>
+              <h1 >Sign In</h1>
               <input type="text" id="emailId" placeholder='Email ID' />
               <input type="password" id="password" placeholder='Password' />
               {error && <div className="error-message">{error}</div>}
-              <button type="submit" className='change'>Login</button>
+              <button type="submit" className='subbtn'>Login</button>
             </form>
+          </div>
+          <div className="sidecont">
+            <h1 className='h1_cont'>Welcome on Admin Page!!</h1>
+            <p>Login as admin to access this website.Enter your valid credentials for access and control of website.</p>
           </div>
         </div>
       </div>

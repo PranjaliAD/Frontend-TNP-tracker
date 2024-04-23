@@ -52,11 +52,10 @@ const Placement = () => {
     const [selectedCompany, setSelectedCompany] = useState(null);
 
     useEffect(() => {
-        // Fetch the data from the API
         axios.get('https://placement-internship-tracker-backend-mu.vercel.app/api/students/questions/?prnNo=72278496B')
             .then(response => {
-                console.log('API Response:', response.data); // Log the response data
-                setCompanies(response.data);
+                const data = response.data;
+                setCompanies(data.companies);
             })
             .catch(error => {
                 console.error('Error fetching companies:', error);
@@ -84,12 +83,11 @@ const Placement = () => {
                 </div>
 
                 <div className='comp-container'>
-                    {/* Map over the companies and render a CompanyCards component for each */}
-                    {companies.map(company => (
+                    {selectedCompany.length > 0 && selectedCompany.map((company, index) => (
                         <CompanyCards
-                            key={company._id}
-                            name={company.companyname} // Accessing companyname property
-                            logo={company.companylogo} // Accessing companylogo property
+                            key={index}
+                            compname={company.questions.companyName}
+                            complogo={company.questions.companylogo}
                             onSolveClick={handleSolveClick}
                         />
                     ))}
