@@ -90,33 +90,33 @@ const Profile = () => {
     return storedUserData ? JSON.parse(storedUserData) : null;
   });
 
-  // useEffect(() => {
-  //   // Fetch userData if not available in localStorage
-  //   if (!userData) {
-  //     const cookies = document.cookie;
-  //     axios.get(`https://placement-internship-tracker-backend-mu.vercel.app/api/students/token/?encryptedprnNo=${cookies}`)
-  //       .then(response => {
-  //         const userData = response.data;
-  //         console.log(response.data)
-  //         // Store userData in localStorage
-  //         localStorage.setItem('userData', JSON.stringify(userData));
-  //         setUserData(userData);
-  //       })
-  //       .catch(error => {
-  //         console.error('Error fetching data:', error);
-  //       });
-  //     // axios.get(`https://placement-internship-tracker-backend-mu.vercel.app/api/students/?prnNo=${userData.prnNo}`)
-  //     //   .then(response => {
-  //     //     const userData = response.data;
-  //     //     // Store userData in localStorage
-  //     //     localStorage.setItem('userData', JSON.stringify(userData));
-  //     //     setUserData(userData);
-  //     //   })
-  //     //   .catch(error => {
-  //     //     console.error('Error fetching data:', error);
-  //     //   });
-  //   }
-  // }, [userData]);
+  useEffect(() => {
+    // Fetch userData if not available in localStorage
+    if (!userData) {
+      const cookies = document.cookie;
+      axios.get(`https://placement-internship-tracker-backend-mu.vercel.app/api/students/token/?encryptedprnNo=${cookies}`)
+        .then(response => {
+          const userData = response.data;
+          console.log(response.data)
+          // Store userData in localStorage
+          localStorage.setItem('userData', JSON.stringify(userData));
+          setUserData(userData);
+        })
+        .catch(error => {
+          console.error('Error fetching data:', error);
+        });
+      // axios.get(`https://placement-internship-tracker-backend-mu.vercel.app/api/students/?prnNo=${userData.prnNo}`)
+      //   .then(response => {
+      //     const userData = response.data;
+      //     // Store userData in localStorage
+      //     localStorage.setItem('userData', JSON.stringify(userData));
+      //     setUserData(userData);
+      //   })
+      //   .catch(error => {
+      //     console.error('Error fetching data:', error);
+      //   });
+    }
+  }, [userData]);
 
   return (
     <div>

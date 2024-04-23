@@ -65,83 +65,6 @@
 
 // export default Login;
 
-// import React, { useState } from 'react';
-// import './StudLogin.css';
-// import axios from 'axios';
-
-// const Login = () => {
-//   const [data, setData] = useState({
-//     regId: "",
-//     prnNo: "",
-//     password: ""
-//   });
-
-//   const handleChange = (e) => {
-//     const { name, value } = e.target;
-//     setData({
-//       ...data,
-//       [name]: value
-//     });
-//   };
-
-//   const handleSubmit = (e) => {
-//     e.preventDefault();
-//     const userData = {
-//       regId: data.regId,
-//       prnNo: data.prnNo,
-//       password: data.password
-//     };
-//     axios.post(`https://placement-internship-tracker-backend-mu.vercel.app/api/Student/`, userData)
-//       .then((response) => {
-//         console.log(response);
-//         document.cookie=response.students;
-//         window.open('/studlogin');
-        
-//       })
-//       .catch((error) => {
-//         console.error('Error logging in:', error);
-//         // Handle error
-//       });
-//   };
-
-//   return (
-//     <div>
-//       <h1>Login Account</h1>
-//       <form onSubmit={handleSubmit}>
-//         <label htmlFor="regId">
-//           Registration ID
-//           <input
-//             type="text"
-//             name="regId"
-//             value={data.regId}
-//             onChange={handleChange}
-//           />
-//         </label>
-//         <label htmlFor="prnNo">
-//           PRN No.
-//           <input
-//             type="text"
-//             name="prnNo"
-//             value={data.prnNo}
-//             onChange={handleChange}
-//           />
-//         </label>
-//         <label htmlFor="password">
-//           Password
-//           <input
-//             type="password"
-//             name="password"
-//             value={data.password}
-//             onChange={handleChange}
-//           />
-//         </label>
-//         <button type="submit">Login</button>
-//       </form>
-//     </div>
-//   );
-// };
-
-// export default Login;
 import React, { useState } from 'react';
 import './StudLogin.css';
 import axios from 'axios';
@@ -168,13 +91,12 @@ const Login = () => {
       prnNo: data.prnNo,
       password: data.password
     };
-    axios.post('https://placement-internship-tracker-backend-mu.vercel.app/api/Student', userData)
+    axios.post(`https://placement-internship-tracker-backend-mu.vercel.app/api/Student/`, userData)
       .then((response) => {
         console.log(response);
-        // Set cookie if needed
-        // document.cookie = 'yourCookieName=yourCookieValue';
-        // Redirect user if needed
-        // window.open('/studlogin');
+        document.cookie=response.students;
+        window.open('/studlogin');
+        
       })
       .catch((error) => {
         console.error('Error logging in:', error);
