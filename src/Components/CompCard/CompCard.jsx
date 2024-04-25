@@ -3,17 +3,21 @@ import './CompCard.css'
 const CompCard = ({
     imgSrc,
     imgAlt,
-    title,
-    description,
-    buttonText,
+    CompanyName,
+    NoOfStudPlaced,
+    Avgpkg,
+    // CompDesp,
+    LinkLabel,
     link,
 }) => {
   return (
     <div className="card-container">
       <img src={imgSrc} alt={imgAlt} className='card-img'/>
-      <h2 className='card-title'>{title}</h2>
-      <p className='card-description'>{description}</p>
-      <a href={link} className='cardbtn'>{buttonText}</a>
+      <h2 className='card-title'>{CompanyName}</h2>
+      <h4 className='No-Of-stud-placed'><span className='first-heading'>Students Placed</span> : {NoOfStudPlaced}</h4>
+      <h4 className='Average-package'><span className='first-heading'>Average Package</span> : {Avgpkg}</h4>
+      {/* <p className='card-description'>{CompDesp}</p> */}
+      <a href={link} className='card-btn'>{LinkLabel}</a>
     </div>
   )
 }

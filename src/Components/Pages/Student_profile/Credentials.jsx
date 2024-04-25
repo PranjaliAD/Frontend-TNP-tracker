@@ -1,12 +1,18 @@
 import React, { useState, useEffect } from 'react';
 import './Credentials.css';
 import axios from 'axios';
+axios.defaults.baseURL='https://placement-internship-tracker-backend.vercel.app/api/students/?prnNo=${value}';
+axios.defaults.headers.common['Access-Control-Allow-Origin'] = '*';
 
 const Credentials = () => {
   const [userData, setUserData] = useState(null);
 
   useEffect(() => {
-    axios.get('https://placement-internship-tracker-backend-mu.vercel.app/api/students/student/?prnNo=72278496B')
+    const cookies = document.cookie;
+    const value=localStorage.getItem('studentsData');
+      console.log(value)
+
+      axios.get(`https://placement-internship-tracker-backend.vercel.app/api/students/?prnNo=${value}`)
       .then(response => {
         setUserData(response.data);
       })
@@ -23,21 +29,21 @@ const Credentials = () => {
     <div className='container1'>
       {userData && (
         <>
-          <h2 className='name'>{userData.firstname} {userData.lastname}</h2>
+          <h2 className='name'>{userData.student.name} </h2>
           <div className="reg">
-            <h2 className='reg_id'>Registration Id:  {userData.regId}</h2>
-            <h2 className='prn_no'>PRN no.:  {userData.prnNo}</h2>
+            <h2 className='reg_id'>Registration Id:  {userData.student.regId}</h2>
+            <h2 className='prn_no'>PRN no.:  {userData.student.prnNo}</h2>
           </div>
           <hr />
-          <p className='description'>Description: {userData.about}</p>
+          <p className='description'>Description: {userData.student.instructoremailId}</p>
           <hr />
           <div className="mail-no">
             <div className="item1">
-              <h4 className='h'>Email: </h4> <p className='p'>{userData.studentemailId}</p>
+              <h4 className='h'>Email: </h4> <p className='p'>{userData.student.studentemailId}</p>
             </div>
             <div className="vertical-line"></div>
             <div className="item1">
-              <h4 className='h'>Contact No.: </h4> <p className='p'>{userData.contactNumber}</p>
+              <h4 className='h'>Contact No.: </h4> <p className='p'>{userData.student.contactNumber}</p>
             </div>
           </div>
           <hr />

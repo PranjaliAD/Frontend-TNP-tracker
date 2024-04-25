@@ -11,7 +11,8 @@ import Announcement from '../Announcement/Announcement';
 // import Charts from '../charts/charts';
 import { Link, useLocation } from 'react-router-dom';
 import Test from '../Testimonialss'
-import ProfileStud from '../Coordinators/Coordinators';
+import ProfileStud from '../Coordinators/Coordinators'
+// import Admin from '../Admin/MainAdmin/MainAdmin'
 const Hero = () => {
   const [navbarBackground, setNavbarBackground] = useState(false); // State to manage navbar background color
   const location = useLocation(); // Get current location using useLocation
@@ -41,18 +42,12 @@ const Hero = () => {
           </div>
         </div>
       )}
-      <hr />
-
-      <Title subTitle='Internship and Placement Achievements' title='Celebrating Student Excellence' />
+      {/* <Title subTitle='Internship and Placement Achievements' title='Celebrating Student Excellence' /> */}
       <Announcement />
-      <hr />
-
-      <div className="container">
+      
         <Title subTitle='Corporate Engagement Snapshot' title='Explore Trends, Success Rates, and Industry Insights' />
         <Companies />
-      </div>
-      <hr />
-
+      
       <Title subTitle='Beyond the Numbers: Insights into Opportunities' title='Discover Companies, Packages, and Hiring Trends' />
       <Statistics />
       <Link to="/statistics2">
@@ -66,7 +61,10 @@ const Hero = () => {
       <hr />
       
       <Title subTitle='Training and Internship Coordinators' title='Meet Our Coordinators' />
-      <ProfileStud />
+      <ProfileStud/>
+      <div className="mr-2">
+      {/* <Admin/> */}
+      </div>
       <Footer />
     </div>
   )

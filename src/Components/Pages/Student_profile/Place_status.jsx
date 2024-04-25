@@ -74,6 +74,7 @@ import React, { useState, useEffect } from 'react';
 import './Place_status.css';
 import axios from 'axios';
 
+
 const Place_status = () => {
   const [showPlacementDetails, setShowPlacementDetails] = useState(false);
   const pl_status = 'Placed'; 
@@ -141,14 +142,14 @@ const Place_status = () => {
           </div>
           <hr/>
           <div className="msg">
-            <h4><i>{msg1}</i></h4>
+            <h4 className='heading-placement'><i>{msg1}</i></h4>
           </div>
         </div>
       )}
       {pl_status !== 'Placed' && (
         <div className="company-notplaced">
           <div className="msg">
-            <h4><i>{msg2}</i></h4>
+            <h4 className='heading-placement'><i>{msg2}</i></h4>
           </div>
         </div>
       )}

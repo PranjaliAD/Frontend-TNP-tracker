@@ -4,13 +4,13 @@ import Navbar from './Components/Navbar/Navbar';
 import Hero from './Components/Hero/Hero';
 import StudLogin from './Components/Pages/Student_profile/Profile';
 import InstLogin from './Components/Pages/Instructor_profile/ProInfo'
-import Login from './Components/Pages/Login/Login';
-import AdminLogin from './Components/Pages/Login/AdminLogin'
+import Login from './Components/Pages/Login/InstLogin';
+import AdminLogin from './Components/Pages/Login/AdminLogin';
 import Placement from './Components/Pages/Placement/Placement';
 import Internship from './Components/Pages/Internship/Internship';
 import Questions from './Components/Questions/Questions';
 import Contribute from './Components/Pages/Student_profile/Contri_ques/Contri_ques';
-import Statistics2 from './Components/Statistics2/Statistics2';
+import Statistics2 from './Components/StatisticsIT/Statistics2/Statistics2';
 import Announcement from './Components/Announcement/Announcement';
 import Testimonials from './Components/Testimonialss';
 import EditStud from './Components/Pages/Student_profile/Edit_Profile/EditStud';
@@ -19,7 +19,7 @@ function App() {
   return (
     <Router>
       <div>
-        {/* <Navbar/> */}
+        <Navbar/>
         <Routes>
           <Route path="/" element={<Hero/>}/>
           {/* <Route path="/statistics" element={<Statistics/>}/> */}

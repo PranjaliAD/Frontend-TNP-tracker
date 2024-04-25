@@ -34,19 +34,105 @@
 //     </div>
 // }
 
-import { useState, useEffect } from 'react';
-import Group from './Group1';
-import { months } from '../tools';
+// import { useState, useEffect } from 'react';
+// import Group from './Group1';
+// import { months } from '../tools';
+// import axios from 'axios';
+// axios.defaults.baseURL='https://placement-internship-tracker-backend.vercel.app/api/instructors/?instructoremailId=${value}';
+// axios.defaults.headers.common['Access-Control-Allow-Origin'] = '*';
+
+
+// const UserProfile1 = () =>{
+//     const [userData, setUserData] = useState(() => {
+//         // Retrieve userData from localStorage
+//         const storedUserData = localStorage.getItem('userData');
+//         return storedUserData ? JSON.parse(storedUserData) : null;
+//       });
+
+//     useEffect(() => {
+//         //         if(!userData)
+//         //             const value=localStorage.getItem('instructorsData');
+//         //             axios.get(`https://placement-internship-tracker-backend.vercel.app/api/instructors/?instructoremailId=${value}`);
+//         //             .then(response => {
+//         //                 const user = response.data;
+//         //                 console.log(response.data)
+//         //                 // Store userData in localStorage
+//         //                 localStorage.setItem('userData', JSON.stringify(user));
+//         //                 setUserData(user);
+//         //               })
+                
+//         //     } catch (error) {
+//         //         console.error('Error fetching data:', error);
+//         //     }
+//         // };
+
+//         // fetchData();
+//         if (!userData) {
+//             const cookies = document.cookie;
+//             const value=localStorage.getItem('instructorsData');
+//             axios.get(`https://placement-internship-tracker-backend.vercel.app/api/instructors/?instructoremailId=${value}`)
+//               .then(response => {
+//                 const user = response.data;
+//                 console.log(response.data)
+//                 // Store userData in localStorage
+//                 localStorage.setItem('userData', JSON.stringify(user));
+//                 setUserData(user);
+//               })
+//               .catch(error => {
+//                 console.error('Error fetching data:', error);
+//               });
+//           }
+//     }, [userData]);
+
+
+//     console.log()
+
+
+//     return <div className='user1'>
+//         <Group>
+//             {userData &&
+//                 userData.instructor &&
+//                 userData.instructor.length > 0 && (
+//                     <h3 className='name'>Name  : {userData.instructor[0].name}</h3>
+//                 )
+//             }
+//         </Group>
+//         <Group>
+//         {/* <h3 className='gmail_Id'>gender  : female</h3>{userData.instructor.gender} */}
+//         {/* <h3>gender: female</h3> */}
+//         {userData &&
+//                 userData.instructor &&
+//                 userData.instructor.length > 0 && (
+//                     <h3 className='department'>department  : {userData.instructor[0].department}</h3>
+//                 )
+//             }
+//         </Group>
+//         <Group>
+//             {/* <h3>Contact Number: 68342899</h3> */}
+//             {/* {userData && (
+//                 <>
+//                     <h3 className='phone_no'>contact number : 6274893749</h3>{userData.instructor.contactNumber}
+//                 </>
+//             )} */}
+//         </Group>
+
+//         {/* <Group>
+//             <button className='btn2'
+//                 onClick={startEditCallback}
+//             >Edit</button>
+//         </Group> */}
+//     </div>
+// }
+
+// export default UserProfile1;
+
+import React, { useState, useEffect } from 'react';
+// import './ProInfo.css';
+// import Nav from '../../Navbar/Nav';
 import axios from 'axios';
 
-
-
-export default function EditableUserProfile1({
-    stored,
-    startEditCallback
-}) {
-
-    const [userData, setUserData] = useState(null); // Initialize userData as null
+const UserProfile1 = () => {
+    const [userData, setUserData] = useState(null);
 
     useEffect(() => {
         const fetchData = async () => {
@@ -55,55 +141,31 @@ export default function EditableUserProfile1({
                 if (storedUserData) {
                     setUserData(JSON.parse(storedUserData));
                 } else {
-                    const response = await axios.get('https://placement-internship-tracker-backend-mu.vercel.app/api/instructors/?instructoremailId=sajakhete@pict.edu');
-                    setUserData(response.data.instructor);
-                    console.log(response.data.instructor)
-                    localStorage.setItem('userData', JSON.stringify(response.data));
+                    const value = localStorage.getItem('instructorsData');
+                    const response = await axios.get(`https://placement-internship-tracker-backend.vercel.app/api/instructors/?instructoremailId=${value}`);
+                    const user = response.data;
+                    localStorage.setItem('userData', JSON.stringify(user));
+                    setUserData(user);
                 }
             } catch (error) {
                 console.error('Error fetching data:', error);
+                // Handle error
             }
         };
-
         fetchData();
     }, []);
 
-
-    console.log()
-
-
-    return <div className='user1'>
-        <Group>
-            {userData &&
-                userData.instructor &&
-                userData.instructor.length > 0 && (
-                    <h3 className='name'>Name  : {userData.instructor[0].name}</h3>
-                )
-            }
-        </Group>
-        <Group>
-        {/* <h3 className='gmail_Id'>gender  : female</h3>{userData.instructor.gender} */}
-        <h3>gender: female</h3>
-        {userData &&
-                userData.instructor &&
-                userData.instructor.length > 0 && (
-                    <h3 className='department'>department  : {userData.instructor[0].department}</h3>
-                )
-            }
-        </Group>
-        <Group>
-            <h3>Contact Number: 68342899</h3>
-            {/* {userData && (
+    return (
+        <div className='user1'>
+            {userData && userData.instructor && userData.instructor.length > 0 && (
                 <>
-                    <h3 className='phone_no'>contact number : 6274893749</h3>{userData.instructor.contactNumber}
+                    <h3 className='name'>Name: {userData.instructor[0].name}</h3>
+                    <h3 className='department'>Department: {userData.instructor[0].department}</h3>
                 </>
-            )} */}
-        </Group>
-
-        <Group>
-            <button className='btn2'
-                onClick={startEditCallback}
-            >Edit</button>
-        </Group>
-    </div>
+            )}
+            
+        </div>
+    );
 }
+
+export default UserProfile1;

@@ -110,20 +110,28 @@ import axios from "axios";
 function StudentList() {
   const [modalOpen, setModalOpen] = useState(false);
   const [rowToEdit, setRowToEdit] = useState(null);
-  const [students, setStudents] = useState([]);
+  const [userData, setUserData] = useState(null);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get("https://placement-internship-tracker-backend-mu.vercel.app/api/instructors/?instructoremailId=asawati@pict.edu");
-        setStudents(response.data.instructor[0].students); // Assuming students are nested under instructor in the response data
-      } catch (error) {
-        console.error("Error fetching data:", error);
-      }
+        const storedUserData = localStorage.getItem('userData');
+        if (storedUserData) {
+            setUserData(JSON.parse(storedUserData));
+        } else {
+            const value = localStorage.getItem('instructorsData');
+            const response = await axios.get(`https://placement-internship-tracker-backend.vercel.app/api/instructors/?instructoremailId=${value}`);
+            const user = response.data;
+            localStorage.setItem('userData', JSON.stringify(user));
+            setUserData(user);
+        }
+    } catch (error) {
+        console.error('Error fetching data:', error);
+        // Handle error
+    }
     };
 
-    fetchData();
-  }, []);
+  }, [userData]);
 
   
   const handleEditRow = (idx) => {
@@ -133,14 +141,14 @@ function StudentList() {
 
   return (
     <div className="StudentList">
-      <Table students={students} editRow={handleEditRow} />
+      <Table students={userData} editRow={handleEditRow} />
       {modalOpen && (
         <Modal
           closeModal={() => {
             setModalOpen(false);
             setRowToEdit(null);
           }}
-          defaultValue={rowToEdit !== null && students[rowToEdit]}
+          defaultValue={rowToEdit !== null && userData[rowToEdit]}
         />
       )}
     </div>

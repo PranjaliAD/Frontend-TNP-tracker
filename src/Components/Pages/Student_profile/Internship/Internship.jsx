@@ -49,6 +49,8 @@
 import React, { useState, useEffect } from 'react';
 import './Internship.css';
 import axios from 'axios';
+axios.defaults.baseURL='https://placement-internship-tracker-backend.vercel.app/api/students/internship?prnNo=${value}';
+axios.defaults.headers.common['Access-Control-Allow-Origin'] = '*';
 
 const Internship = () => {
     const [internData, setInternData] = useState([]);
@@ -58,13 +60,16 @@ const Internship = () => {
             
             try {
                 const storedData = localStorage.getItem('internData');
-                if (storedData) {
+                const value=localStorage.getItem('studentsData');
+      console.log(value)
+
+                if (!storedData) {
                     setInternData(JSON.parse(storedData));
                 } else {
                     console.log("Fetching data from API..");
-                    const response = await axios.get('https://placement-internship-tracker-backend-mu.vercel.app/api/students/internship/?prnNo=72278496B');
+                    const response = await axios.get(`https://placement-internship-tracker-backend.vercel.app/api/students/internship?prnNo=${value}`);
                     console.log("Successfully fetched data from API..");
-                    const newData = response.data;
+                    const newData = response;
                     setInternData(newData);
                     localStorage.setItem('internData', JSON.stringify(newData));
                 }
@@ -78,19 +83,22 @@ const Internship = () => {
 
     return (
         <div>
-            {internData.length > 0 && (
+            {console.log(internData)}
+            {internData && internData.length > 0 && (
+                
                 <div className="company-intern">
+                    
                     <h1 className='titleintern'>Internship Details</h1>
                     <hr />
                     {internData.map((intern, index) => (
                         <div key={index} className="intern-info">
-                            <h2 className='comp'>Company - {intern.companyname} <div className="internrole"><h5><i>Role - {intern.internTitle}</i></h5></div> </h2>
+                            <h2 className='comp'>Company - {intern.student.companyname} <div className="internrole"><h5><i>Role - {intern.student.duration}</i></h5></div> </h2>
                             <hr />
                             <div className="completionlet">
-                                <a href={intern.offerLetter} target="_blank" rel="noopener noreferrer" className="offer_btn">Offer Letter</a>
+                                <a href={intern.student.offerLetter} target="_blank" rel="noopener noreferrer" className="offer_btn">Offer Letter</a>
                             </div>
                             {/* <hr /> */}
-                            <div className="interndesc">{intern.internshipDescription}</div>
+                            <div className="interndesc">{intern.student.internshipDescription}</div>
                         </div>
                     ))}
                 </div>

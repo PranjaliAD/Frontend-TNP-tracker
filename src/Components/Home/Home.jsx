@@ -1,13 +1,11 @@
 import React from 'react';
-import Charts from '../../Components/charts/charts'
 import { BsFillArchiveFill, BsFillGrid3X3GapFill, BsPeopleFill, BsFillBellFill } from 'react-icons/bs';
-import {ResponsiveContainer} from 'recharts';
-import Listtask from '../../Components/List'
-import CompaniesChart from '../../Components/BarChart/BarChart'
-import PieChart from '../PieChart/PieChart';
+import Listtask from '../StatisticsIT/List'
+import CompaniesChart from '../BarChart/BarChart'
+import PieChart from '../StatisticsIT/PieChart/PieChart';
 import LineChart from '../LineChart/LineChart';
-import PieChart2 from '../PieChart2/PieChart2'
-import PieChart3 from '../PieChart3/PieChart3';
+import PieChart2 from '../StatisticsIT/PieChart2/PieChart2'
+import PieChart3 from '../StatisticsIT/PieChart3/PieChart3';
 import Navbar from '../Navbar/Navbar';
 
 import './Home.css'
@@ -53,29 +51,27 @@ const Home = () => {
 
             <div className='charts'>
                 <div className='chart-item'>
-                    
+                        <h2 className="heading-home">Companies Visited in each month</h2>
                        <CompaniesChart/>
-                    
                 </div>
                 <div className='chart-item'>
-                
+                    <h2 className="heading-home">Companies below 10 lpa</h2>
                     <PieChart/>
                 </div>
                 <div className='chart-item'>
-                
+                    <h2 className="heading-home">Companies below 20 lpa and above 10 lpa</h2>
                     <PieChart2/>
                 </div>
                 <div className='chart-item'>
-                
+                    <h2 className="heading-home">Companies above 20 lpa</h2>
                     <PieChart3/>
                 </div>
                 <div className='chart-item'>
+                    <h2 className="heading-home">Trend of placement</h2>
                     <LineChart/>
                 </div>
                 <div className='List'>
-                    
                        <Listtask/>
-                   
                 </div>
             </div>
         </main>

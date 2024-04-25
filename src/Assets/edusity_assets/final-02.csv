@@ -1,0 +1,96 @@
+Sr_No,visit_date,Company_Name,Sal_lpa,total_no,Month
+1,02-08-2022,Siemens,11,20,August
+3,04-08-2022,Espressif Systems,18.9,1,August
+4,07-08-2022,Ittiam Systems,16,6,August
+5,06-08-2022,FinIQ,15,4,August
+6,14-08-2022,Trilogy Innovations,36.5,0,August
+7,08-08-2022,Bajaj Finserv,12.8,52,August
+8,09-08-2022,Avaya,12,9,August
+9,01-08-2022,PhonePe,33.14,4,August
+10,25-08-2022,UBS,12.5,33,August
+11,27-07-2022,Deutsche Bank,19.63,36,July
+12,27-07-2022,ZS Associates,12.58,5,July
+13,27-07-2022,BMC Software,14,8,July
+14,27-07-2022,Tracelink,12.75,4,July
+15,27-07-2022,Goldman Sachs,24,2,July
+16,27-07-2022,Adobe,47.27,3,July
+17,13-08-2022,TIAA India,10.48,8,August
+18,13-08-2022,Barclays,13.32,36,August
+19,16-08-2022,EO Technologic,13.88,11,August
+20,11-08-2022,Mastercard,13.4,24,"August,October,December"
+21,12-08-2022,BNY Mellon,21.64,20,August
+22,13-01-2023,Kylas,13,4,January
+23,15-08-2022,Turtlemint,18,5,August
+25,17-08-2022,PubMatic India,13,16,August
+26,25-08-2022,Druva,20.01,6,August
+27,21-08-2022,Veritas India,15.97,2,August
+28,21-08-2022,Ion,14.1,9,August
+29,23-08-2022,IDeaS,10.17,4,August
+30,30-08-2022,Toshiba,10,3,August
+31,09-09-2022,HSBC,9,15,September
+32,08-09-2022,Incubyte,11,3,September
+33,08-09-2022,Ugam,9,2,September
+34,13-09-2022,Elastic Run,8,2,September
+35,14-10-2022,Trading Technologies,12,1,October
+36,14-10-2022,Credit Suisse,18,8,October
+37,05-09-2022,Aspect Ratio,14,2,September
+38,02-09-2022,RIA Advisory LLP,9.25,9,September
+39,26-08-2022,Lowe's India,18.36,1,August
+40,05-09-2022,Principal Global Services,8,17,September
+43,05-09-2022,Schlumberger,9.58,3,September
+44,13-09-2022,ACI Worldwide,12,14,September
+45,16-09-2022,ZS Associates,13.65,9,September
+46,17-09-2022,CLSA,8.4,9,September
+47,21-09-2022,Source.One,12,3,September
+48,09-10-2022,Quantiphi Analytics,8.5,11,October
+49,15-09-2022,e2open,7.5,20,September
+50,19-09-2022,Searce,12,8,September
+51,27-09-2022,NICE Inc.,8,20,September
+52,28-09-2022,Amdocs,6.5,5,September
+53,29-09-2022,Arista Networks,28.1,2,September
+54,29-09-2022,Energy Exemplar,11,4,September
+55,13-10-2022,Wissen Technology,8,10,October
+56,18-10-2022,EXL,6.5,8,October
+57,30-09-2022,Oracle,7,14,September
+58,17-10-2022,Visteon,7,4,October
+59,02-11-2022,Berkadia,8.5,2,November
+60,18-10-2022,Datametica,10,3,October
+61,27-10-2022,Infogen Labs,8,5,October
+62,27-10-2022,Persistant,8,2,October
+63,19-10-2022,Cloudlex,11.5,3,October
+64,20-10-2022,HDFC Bank,12.42,5,October
+65,28-10-2022,Promobi Technology,8,2,October
+66,02-12-2022,TCS R&I,9,3,December
+67,06-12-2022,RBL Bank,9,6,December
+68,21-11-2022,Media.net,15.8,1,November
+69,26-11-2022,Fold Health,9,3,November
+70,27-11-2022,Launch Ventures,6,4,November
+71,30-11-2022,Deloitte India,7,8,November
+72,08-12-2022,Imagination Technologies,12,1,December
+73,16-12-2022,Dragonfly Financial Technologies,12,10,December
+74,21-12-2022,Findability Sciences,7,2,December
+75,23-12-2022,Miko,12,1,December
+76,22-12-2022,Dataeaze,8,4,December
+77,18-01-2023,AGCO,7.5,11,January
+78,13-01-2023,Sell.Do (Beyondwalls),6,2,January
+79,19-01-2023,Emerson,8,3,January
+80,17-01-2023,Flextrade,11,1,January
+81,30-01-2023,Nihilent,8,3,January
+82,24-01-2023,Cutshort,7,1,January
+83,20-01-2023,Veras Retail,7,2,January
+84,27-01-2023,Bloomberg,11,3,January
+85,07-02-2023,Facctum IT Solutions,6,2,February
+86,21-02-2023,Zinrelo,8,4,February
+87,02-03-2023,e-Emphasys,8,1,March
+88,06-03-2023,ETraveli,8.5,2,March
+89,20-02-2023,Metro GSC,8,2,February
+90,21-02-2023,Suzlon,7.2,1,February
+91,13-03-2023,64 Squares,9.6,3,March
+92,05-03-2023,Cadence,15,1,March
+93,14-05-2023,Avegen,6,3,May
+94,25-02-2023,Altometa,15,2,February
+95,25-02-2023,UPTIQ,22,3,February
+96,25-02-2023,BBD,7.58,3,February
+97,25-02-2023,Ordway Labs,8,9,February
+98,25-02-2023,Ayaan Autonomous,6.35,4,February
+99,23-12-2022,TCS Digital,7,1,December

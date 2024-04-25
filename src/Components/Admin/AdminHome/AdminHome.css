@@ -1,0 +1,23 @@
+.heading-admin-home{
+    color:#24a;
+    /* font-weight: bold; */
+    text-align: center;
+    font-size: 30px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    /* font-style: italic; */
+}
+
+.admin-home{
+    /* display: grid; */
+    padding:10px;
+}
+.admin-item{
+    /* background-color: beige; */
+    box-shadow: 10px grey;
+    border-radius: 3px;
+    margin:20px;
+}
+.admin-info{
+    display: flex;
+    width:100%;
+}

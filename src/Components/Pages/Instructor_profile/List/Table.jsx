@@ -66,9 +66,8 @@ export const Table = ({ deleteRow, editRow }) => {
         if (storedUserData) {
           setUserData(JSON.parse(storedUserData));
         } else {
-          const response = await axios.get(
-            "https://placement-internship-tracker-backend-mu.vercel.app/api/instructors/?instructoremailId=sajakhete@pict.edu"
-          );
+          const value=localStorage.getItem('instructorsData');
+          const response = await axios.get(`https://placement-internship-tracker-backend.vercel.app/api/instructors/?instructoremailId=${value}`);
           setUserData(response.data);
           localStorage.setItem("userData", JSON.stringify(response.data));
         }
