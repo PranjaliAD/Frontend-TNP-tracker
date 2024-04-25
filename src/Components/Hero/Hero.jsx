@@ -3,7 +3,7 @@ import './Hero.css'
 import dark_arrow from '../../Assets/dark-arrow.png'
 import Title from '../Title/Title'
 import Programs from '../programs/programs'
-import Modal from '../Modal/Modal'
+// import Modal from '../Modal/Modal'
 import Statistics from '../Statistics/Statistics'
 import Testimonials from '../Testimonials/Testimonials'
 import Footer from '../Footer/Footer'
@@ -25,7 +25,7 @@ const Hero = () => {
       <div className="container">
         <Title subTitle='OUR ACHIEVEMENTS' title='DREAM OFFERS' />
         <Programs />
-        <Modal />
+        {/* <Modal /> */}
       </div>
       <Title subTitle='STATISTICS' title='Strike our graph' />
       <Statistics />
