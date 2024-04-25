@@ -1,93 +1,58 @@
-import React from 'react';
-import Paper from '@mui/material/Paper';
+import React, { useState,useEffect } from 'react';
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
 import TableCell from '@mui/material/TableCell';
 import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
-import TablePagination from '@mui/material/TablePagination';
 import TableRow from '@mui/material/TableRow';
+import Paper from '@mui/material/Paper';
+import axios from 'axios';
 
-const columns = [
-  { id: 'name', label: 'Name', minWidth: 170 },
-  { id: 'prn', label: 'PRN Number', minWidth: 100 },
-  { id: 'regId', label: 'Registration ID', minWidth: 170 },
-  { id: 'password', label: 'Password', minWidth: 170 },
-];
+function createData(name, gender, contactInfo, email, department) {
+  return { name, gender, contactInfo, email, department };
+}
 
-const createData = (name, prn, regId, password) => {
-  return { name, prn, regId, password };
-};
+export default function UserTable() {
+  const [mentorList, setMentorList] = useState([]);
 
-const rows = [
-  createData('John Doe', 'PRN12345', 'REG67890', 'password1'),
-  createData('Jane Smith', 'PRN54321', 'REG09876', 'password2'),
-  createData('Alice Johnson', 'PRN24680', 'REG13579', 'password3'),
-  createData('Bob Brown', 'PRN98765', 'REG24680', 'password4'),
-  createData('Eve Williams', 'PRN13579', 'REG54321', 'password5'),
-];
 
-const StudentListTable = () => {
-  const [page, setPage] = React.useState(0);
-  const [rowsPerPage, setRowsPerPage] = React.useState(5);
-
-  const handleChangePage = (event, newPage) => {
-    setPage(newPage);
-  };
-
-  const handleChangeRowsPerPage = (event) => {
-    setRowsPerPage(+event.target.value);
-    setPage(0);
-  };
-
+  useEffect(() => {
+    axios.get('https://placement-internship-tracker-backend-mu.vercel.app/api/admins/instructor/?adminemailId=U2FsdGVkX19W5FMjza/wUGYGPNXU3zTpvGDRcdBrtDRNbYwS6AhpmyVmJVokKaiI')
+      .then(response => {
+        const data = response.data;
+        console.log(data)
+        setMentorList(data);
+      })
+      .catch(error => {
+        console.error('Error fetching data:', error);
+      });
+  }, []);
   return (
-    <Paper sx={{ width: '100%', overflow: 'hidden' }}>
-      <TableContainer sx={{ maxHeight: 440 }}>
-        <Table stickyHeader aria-label="sticky table">
-          <TableHead>
-            <TableRow>
-              {columns.map((column) => (
-                <TableCell
-                  key={column.id}
-                  align={column.align}
-                  style={{ minWidth: column.minWidth }}
-                >
-                  {column.label}
-                </TableCell>
-              ))}
+    <TableContainer component={Paper}>
+      <Table sx={{ minWidth: 650 }} aria-label="simple table">
+        <TableHead>
+          <TableRow>
+            <TableCell>Instructor's Name</TableCell>
+            <TableCell align="right">Student Prn</TableCell>
+            <TableCell align="right">Student Name</TableCell>
+            <TableCell align="right">Instructor Password</TableCell>
+            <TableCell align="right">Email Id</TableCell>
+          </TableRow>
+        </TableHead>
+        <TableBody>
+          {mentorList.map((row,index) => (
+            <TableRow key={row.index}>
+              <TableCell component="th" scope="row">
+                {row.name}
+              </TableCell>
+              <TableCell align="right">{row.students[0].prnNo}</TableCell>
+              <TableCell align="right">{row.students[0].name}</TableCell>
+              <TableCell align="right">{row.password}</TableCell>
+              <TableCell align="right">{row.instructoremailId}</TableCell>
             </TableRow>
-          </TableHead>
-          <TableBody>
-            {rows
-              .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
-              .map((row) => {
-                return (
-                  <TableRow hover role="checkbox" tabIndex={-1} key={row.prn}>
-                    {columns.map((column) => {
-                      const value = row[column.id];
-                      return (
-                        <TableCell key={column.id} align={column.align}>
-                          {value}
-                        </TableCell>
-                      );
-                    })}
-                  </TableRow>
-                );
-              })}
-          </TableBody>
-        </Table>
-      </TableContainer>
-      <TablePagination
-        rowsPerPageOptions={[5, 10, 25]}
-        component="div"
-        count={rows.length}
-        rowsPerPage={rowsPerPage}
-        page={page}
-        onPageChange={handleChangePage}
-        onRowsPerPageChange={handleChangeRowsPerPage}
-      />
-    </Paper>
+          ))}
+        </TableBody>
+      </Table>
+    </TableContainer>
   );
-};
-
-export default StudentListTable;
+}

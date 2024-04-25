@@ -1,16 +1,30 @@
-import React from 'react';
+// import React from 'react';
+
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import CryptoJS from 'crypto-js';
 
 const UserProfile = () => {
+  const [profile, setprofile] = useState([]);
+  useEffect(() => {
+    axios.get('https://placement-internship-tracker-backend-mu.vercel.app/api/admins/?adminemailId=U2FsdGVkX19W5FMjza/wUGYGPNXU3zTpvGDRcdBrtDRNbYwS6AhpmyVmJVokKaiI')
+        .then(response => {
+            const data = response.data;
+            // console.log(response);
+            setprofile(data);
+        })
+        .catch(error => {
+            console.error('Error fetching companies:', error);
+        });
+}, []);
   return (
     <div className="bg-white overflow-hidden shadow rounded-lg border h-96 max-h-full overflow-y-auto">
       <div className="px-4 py-5 sm:px-6">
         <h3 className="text-lg leading-6 font-medium text-gray-900">
-          User Profile
+          {profile.name}
         </h3>
         <p className="mt-1 max-w-2xl text-sm text-gray-500">
-          This is some information about the user.
+          Admin's Information
         </p>
       </div>
       <div className="border-t border-gray-200 px-4 py-5 sm:p-0">
@@ -20,7 +34,7 @@ const UserProfile = () => {
               Full name
             </dt>
             <dd className="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
-              John Doe
+              {profile.firstname}
             </dd>
           </div>
           <div className="py-3 sm:py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
@@ -28,7 +42,7 @@ const UserProfile = () => {
               Email address
             </dt>
             <dd className="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
-              johndoe@example.com
+              {profile.adminemailId}
             </dd>
           </div>
           <div className="py-3 sm:py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
@@ -36,16 +50,15 @@ const UserProfile = () => {
               Phone number
             </dt>
             <dd className="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
-              (123) 456-7890
+              {profile.contactNumber}
             </dd>
           </div>
           <div className="py-3 sm:py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
             <dt className="text-sm font-medium text-gray-500">
-              Address
+              Department
             </dt>
             <dd className="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
-              123 Main St <br />
-              Anytown, USA 12345
+              {profile.department}
             </dd>
           </div>
         </dl>

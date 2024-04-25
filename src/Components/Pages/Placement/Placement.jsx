@@ -10,9 +10,10 @@ const Placement = () => {
     const [selectedCompany, setSelectedCompany] = useState(null);
 
     useEffect(() => {
-        axios.get('https://placement-internship-tracker-backend-mu.vercel.app/api/students/questions/?prnNo=72278496B')
+        axios.get('https://placement-internship-tracker-backend-mu.vercel.app/api/students/questions/?prnNo=U2FsdGVkX1/qpDs6wtRNbSA0FhiC330wq9DfvKgxDX1HDgGGAvDS8No8UHh6xIwD')
             .then(response => {
                 const data = response.data;
+                console.log(data);
                 setCompanies(data[0].questions);
             })
             .catch(error => {
