@@ -120,7 +120,7 @@
 
 import React from 'react';
 import './company_cards.css';
-import logoc from '../Assets/google_logo.jpg';
+// import logoc from '../Assets/google_logo.jpg';
 
 const CompanyCards = ({ compname, complogo, handleSolveClick }) => {
     const openQuestionsPage = () => {
