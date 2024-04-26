@@ -10,15 +10,16 @@ const Dash = () => {
   //   padding: '20px',+++++
   
   // };
-  const [openSidebarToggle, setOpenSidebarToggle] = useState(false);
-
-  const OpenSidebar = () => {
-    setOpenSidebarToggle(!openSidebarToggle);
-  };
+  
+  // const [openSidebarToggle, setOpenSidebarToggle] = useState(false);
+  
+  // const OpenSidebar = () => {
+  //   setOpenSidebarToggle(!openSidebarToggle);
+  // };
 
   return (
     <div >
-      <Header OpenSidebar={OpenSidebar}/>
+      <Header />
       {/* <Sidebar openSidebarToggle={openSidebarToggle} OpenSidebar={OpenSidebar}/> */}
       <Home />
     </div>

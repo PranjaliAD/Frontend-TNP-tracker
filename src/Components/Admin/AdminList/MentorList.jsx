@@ -15,9 +15,9 @@ function createData(name, gender, contactInfo, email, department) {
 export default function UserTable() {
   const [mentorList, setMentorList] = useState([]);
 
-
   useEffect(() => {
-    axios.get('https://placement-internship-tracker-backend-mu.vercel.app/api/admins/instructor/?adminemailId=U2FsdGVkX19W5FMjza/wUGYGPNXU3zTpvGDRcdBrtDRNbYwS6AhpmyVmJVokKaiI')
+    const value = localStorage.getItem('adminsData');
+    axios.get(`https://placement-internship-tracker-backend.vercel.app/api/admins/instructor/?adminemailId=${value}`)
       .then(response => {
         const data = response.data;
         console.log(data)
@@ -27,6 +27,9 @@ export default function UserTable() {
         console.error('Error fetching data:', error);
       });
   }, []);
+
+  const filteredMentorList = mentorList.filter(row => row.students.length > 0); // Filter out entries where students array is empty
+
   return (
     <TableContainer component={Paper}>
       <Table sx={{ minWidth: 650 }} aria-label="simple table">
@@ -40,8 +43,8 @@ export default function UserTable() {
           </TableRow>
         </TableHead>
         <TableBody>
-          {mentorList.map((row,index) => (
-            <TableRow key={row.index}>
+          {filteredMentorList.map((row, index) => (
+            <TableRow key={row._id}>
               <TableCell component="th" scope="row">
                 {row.name}
               </TableCell>

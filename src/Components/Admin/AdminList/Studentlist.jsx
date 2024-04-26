@@ -25,7 +25,7 @@ export default function UserTable() {
 
 
   useEffect(() => {
-    axios.get('https://placement-internship-tracker-backend-mu.vercel.app/api/admins/student/?adminemailId=U2FsdGVkX1+8/bVan9hIRGMcSvHdUsHKQXTu1Wil6UtcDoKuX+yReJbNZNJajgEL')
+    axios.get('https://placement-internship-tracker-backend.vercel.app/api/admins/student/?adminemailId=U2FsdGVkX1+8/bVan9hIRGMcSvHdUsHKQXTu1Wil6UtcDoKuX+yReJbNZNJajgEL')
       .then(response => {
         const data = response.data;
         // console.log(data)
@@ -41,10 +41,10 @@ export default function UserTable() {
         <TableHead>
           <TableRow>
             <TableCell>Name</TableCell>
-            <TableCell align="right">Gender</TableCell>
-            <TableCell align="right">Contact Info</TableCell>
+            <TableCell align="right">Registration Id</TableCell>
+            <TableCell align="right">Prn No.</TableCell>
+            <TableCell align="right">Password</TableCell>
             <TableCell align="right">Email Id</TableCell>
-            <TableCell align="right">Department</TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
