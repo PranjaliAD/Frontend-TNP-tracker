@@ -55,7 +55,7 @@ const Navbar = () => {
         <li><Link to="/" className={`nav-link ${location.pathname === '/' ? 'active' : ''}`}>Home</Link></li>
         <li><a href="#!" onClick={handleAnnouncementClick} className='nav-link'>Announcements</a></li>
         <li><a href="#!" onClick={handleStatisticsClick} className='nav-link'>Statistics</a></li>
-       
+        <li><Link to="/admin" className={`nav-link ${location.pathname === '/admin' ? 'active' : ''}`}>Admin</Link></li>
         <li><Link to="/login" className='btn'>Login/Register</Link></li> 
       </ul>
     </nav>

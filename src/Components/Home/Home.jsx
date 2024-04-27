@@ -6,18 +6,11 @@ import PieChart from '../StatisticsIT/PieChart/PieChart';
 import LineChart from '../LineChart/LineChart';
 import PieChart2 from '../StatisticsIT/PieChart2/PieChart2'
 import PieChart3 from '../StatisticsIT/PieChart3/PieChart3';
-import Navbar from '../Navbar/Navbar';
-
 import './Home.css'
 const Home = () => {
     return (
         
         <main className='main-container'>
-            <Navbar/>
-            <div className='main-title'>
-                <h3>DASHBOARD</h3>
-            </div>
-
             <div className='main-cards'>
                 <div className='dash-card'>
                     <div className='dash-card-inner'>

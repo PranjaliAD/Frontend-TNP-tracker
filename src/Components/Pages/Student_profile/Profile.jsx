@@ -161,8 +161,10 @@
 // export default Profile;
 import React, { useState, useEffect } from 'react';
 import './profile.css';
+// import StudNav from '../../Navbar/Studnav';
 import StudNav from '../../Navbar/Studnav';
 import Credentials from './Credentials';
+// import Links from './Links';
 import Links from './Links';
 import Place_status from './Place_status';
 import Internship from './Internship/Internship'; // Assuming Internship component exists
@@ -201,6 +203,7 @@ const Profile = () => {
   return (
     <div>
       <div className="nav">
+        <StudNav/>
         <StudNav/>
       </div>
       {userData && userData.student && userData.student.bgimage && (

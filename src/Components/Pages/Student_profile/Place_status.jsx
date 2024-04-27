@@ -143,12 +143,14 @@ const Place_status = () => {
           <hr/>
           <div className="msg">
             <h4 className='heading-placement'><i>{msg1}</i></h4>
+            <h4 className='heading-placement'><i>{msg1}</i></h4>
           </div>
         </div>
       )}
       {pl_status !== 'Placed' && (
         <div className="company-notplaced">
           <div className="msg">
+            <h4 className='heading-placement'><i>{msg2}</i></h4>
             <h4 className='heading-placement'><i>{msg2}</i></h4>
           </div>
         </div>
