@@ -116,9 +116,9 @@ import axios from 'axios';
 import Nav from '../../Navbar/Nav';
 
 // axios.defaults.baseURL = 'https://dp1d9vc7-5000.inc1.devtunnels.ms/api/Student';
-axios.defaults.baseURL = 'https://placement-internship-tracker-backend.vercel.app/api/Instructor';
+// axios.defaults.baseURL = 'https://placement-internship-tracker-backend.vercel.app/api/Instructor';
 
-const Login = () => {
+const InstructorLogin = () => {
   const [data, setData] = useState({
     instructoremailId: "",
     password: ""
@@ -137,7 +137,7 @@ const Login = () => {
     const userData = {
       instructoremailId: data.instructoremailId,
     };
-    axios.post('', userData)
+    axios.post(`https://placement-internship-tracker-backend.vercel.app/api/Instructor`, userData)
       .then((response) => {
         console.log(response.data); 
         const InstructorJSON = JSON.stringify(response.data);
@@ -190,4 +190,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default InstructorLogin;

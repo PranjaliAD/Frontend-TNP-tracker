@@ -33,40 +33,40 @@ function App() {
   };
   return (
     // <Provider store={store}>
-      <Router>
-        <div>
-          <Navbar />
-          <Routes>
-            <Route path="/" element={<Hero />} />
-            <Route path="/placements" element={<Placement/>}/>
-          <Route path="/internships" element={<Internship/>}/>
-          <Route path="/login" element={<Login/>}/>
-            {/* <Route path="/instprofile" element={<InstProfile />} />
+    <Router>
+      <div>
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<Hero />} />
+          <Route path="/placements" element={<Placement />} />
+          <Route path="/internships" element={<Internship />} />
+          <Route path="/login" element={<Login />} />
+          {/* <Route path="/instprofile" element={<InstProfile />} />
             <Route path="/studlogin" element={<StudLogin />} />
             <Route path="/studprofile" element={<Studprofile />} />
             <Route path="/questions" element={<Questions />} /> */}
-              <Route path="/studlogin" element={<StudLogin/>}/>
-          <Route path="instlogin" element={<InstLogin/>}/>
-          <Route path="/studprofedit" element={<EditStud/>} />
-          <Route path="/questions" element={<Questions />} /> 
-          <Route path="/contribute" element={<Contribute />} /> 
-            <Route path="/statistics2" element={<Statistics2 />} />
-            {/* <Route path="/announcement" element={<Announcement />} /> */}
-            <Route path="/admin" element={<Admin />} />
-            <Route path="/Mentorlist" element={<Mentorlist />} />
-            <Route path="/Studentlist" element={<Studentlist />} />
-            <Route path="/AdminList" element={<Adminlist />} />
-            <Route path="/announcements" element={<Announcement newAnnouncement={newAnnouncement} />} />
-            <Route path="/addannouncement" element={<RegistrationForm onAddAnnouncement={handleAddAnnouncement} />} />
-       
-            <Route path="/adlogin" element={<AdminLogin />} />
-            <Route path="/it" element={<Statistics2 />} />
-            <Route path="/comp" element={<StatisticsCS />} />
-            <Route path="/entc" element={<StatisticsENTC />} />
-            <Route path="/dream" element={<StatisticsDream />} />
-          </Routes>
-        </div>
-      </Router>
+          <Route path="/studlogin" element={<StudLogin />} />
+          <Route path="instlogin" element={<InstLogin />} />
+          <Route path="/studprofedit" element={<EditStud />} />
+          <Route path="/questions" element={<Questions />} />
+          <Route path="/contribute" element={<Contribute />} />
+          <Route path="/statistics2" element={<Statistics2 />} />
+          {/* <Route path="/announcement" element={<Announcement />} /> */}
+          <Route path="/admin" element={<Admin />} />
+          <Route path="/Mentorlist" element={<Mentorlist />} />
+          <Route path="/Studentlist" element={<Studentlist />} />
+          <Route path="/AdminList" element={<Adminlist />} />
+          <Route path="/announcements" element={<Announcement newAnnouncement={newAnnouncement} />} />
+          <Route path="/addannouncement" element={<RegistrationForm onAddAnnouncement={handleAddAnnouncement} />} />
+
+          <Route path="/adlogin" element={<AdminLogin />} />
+          <Route path="/it" element={<Statistics2 />} />
+          <Route path="/comp" element={<StatisticsCS />} />
+          <Route path="/entc" element={<StatisticsENTC />} />
+          <Route path="/dream" element={<StatisticsDream />} />
+        </Routes>
+      </div>
+    </Router>
     // </Provider>
   );
 }
@@ -78,7 +78,7 @@ export default App;
 // import Navbar from './Components/Navbar/Navbar';
 // import Hero from './Components/Hero/Hero';
 // import Login from './Components/Pages/Login/Login';
-// import Profile from './Components/Pages/Student_profile/Profile'; 
+// import Profile from './Components/Pages/Student_profile/Profile';
 // import Placement from './Components/Pages/Placement/Placement';
 // import Internship from './Components/Pages/Internship/Internship';
 // import Questions from './Components/Questions/Questions';
@@ -100,11 +100,11 @@ export default App;
 //           <Route path="/placements" element={<Placement/>}/>
 //           <Route path="/internships" element={<Internship/>}/>
 //           <Route path="/studprofedit" element={<EditStud/>} />
-//           <Route path="/questions" element={<Questions />} /> 
-//           <Route path="/contribute" element={<Contribute />} /> 
+//           <Route path="/questions" element={<Questions />} />
+//           <Route path="/contribute" element={<Contribute />} />
 //           <Route path="/statistics2" element={<Statistics2 />} />
-//           <Route path="/announcement" element={<Announcement />} /> 
-//           <Route path="/testimonials" element={<Testimonials />} /> 
+//           <Route path="/announcement" element={<Announcement />} />
+//           <Route path="/testimonials" element={<Testimonials />} />
 //         </Routes>
 //       </div>
 //     </Router>

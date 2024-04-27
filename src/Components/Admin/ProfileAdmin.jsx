@@ -10,7 +10,7 @@ const UserProfile = () => {
         // if (storedUserData) {
         //   setUserData(JSON.parse(storedUserData));
         // } else {
-          const value = localStorage.getItem('adminsData');
+          const value = localStorage.getItem('adminData');
           const response = await axios.get(`https://placement-internship-tracker-backend.vercel.app/api/admins/?adminemailId=${value}`);
           const user = response.data;
           localStorage.setItem('userData', JSON.stringify(user));

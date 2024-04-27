@@ -172,33 +172,33 @@ import Contri_section from './Contri_section';
 import axios from 'axios';
 import CryptoJS from 'crypto-js'; // Import CryptoJS
 axios.defaults.baseURL='https://placement-internship-tracker-backend.vercel.app/api/students/?prnNo=${value}';
-axios.defaults.headers.common['Access-Control-Allow-Origin'] = '*';
+// axios.defaults.headers.common['Access-Control-Allow-Origin'] = '*';
 
 const Profile = () => {
-  const [userData, setUserData] = useState(() => {
+  const [studData, setStudData] = useState(() => {
     // Retrieve userData from localStorage
-    const storedUserData = localStorage.getItem('userData');
+    const storedUserData = localStorage.getItem('studData');
     return storedUserData ? JSON.parse(storedUserData) : null;
   });
 
   useEffect(() => {
     // Fetch userData if not available in localStorage
-    if (!userData) {
-      const cookies = document.cookie;
+    if (!studData) {
+      // const cookies = document.cookie;
       const value=localStorage.getItem('studentsData');
       axios.get(`https://placement-internship-tracker-backend.vercel.app/api/students/?prnNo=${value}`)
         .then(response => {
           const user = response.data;
           console.log(response.data)
           // Store userData in localStorage
-          localStorage.setItem('userData', JSON.stringify(user));
-          setUserData(user);
+          localStorage.setItem('studData', JSON.stringify(user));
+          setStudData(user);
         })
         .catch(error => {
           console.error('Error fetching data:', error);
         });
     }
-  }, [userData]);
+  }, [studData]);
 
   return (
     <div>
@@ -206,31 +206,31 @@ const Profile = () => {
         <StudNav/>
         <StudNav/>
       </div>
-      {userData && userData.student && userData.student.bgimage && (
+      {studData && studData.student && studData.student.bgimage && (
         <div className="background_container">
-          {userData.student.bgimage}
-          <img src={userData.student.bgimage} alt="" className="background_image"/>
+          {studData.student.bgimage}
+          <img src={studData.student.bgimage} alt="" className="background_image"/>
           <div className="img_overlay">
-            {userData.student.image && (
-              <img src={userData.student.image} alt="profile_pic" />
+            {studData.student.image && (
+              <img src={studData.student.image} alt="profile_pic" />
             )}
           </div>
         </div>
       )}
       <div className="prof_container">
         <div className="prof_info">
-          {userData && userData.student && (
+          {studData && studData.student && (
             <>
-              <Credentials userData={userData.student} />
-              <Links userData={userData.student} />
-              {userData.student.resume && (
-                <a href={userData.student.resume} target="_blank" rel="noopener noreferrer" className="resume_btn">Resume</a>
+              <Credentials studData={studData.student} />
+              <Links studData={studData.student} />
+              {studData.student.resume && (
+                <a href={studData.student.resume} target="_blank" rel="noopener noreferrer" className="resume_btn">Resume</a>
               )}
             </>
           )}
         </div>
         <div className="placement_info">
-          {userData && userData.student && (
+          {studData && studData.student && (
             <>
               <Internship/>
               <Contri_section/>

@@ -21,7 +21,7 @@
     text-align: center;
     margin:0.5rem 5%;
 }
-.cardbtn{
+/* .cardbtn{
     text-align: center;
     width:90%;
     border-radius: 5px;
@@ -29,6 +29,14 @@
     background-color: #24a;
     text-decoration: none;
     margin:0.5rem auto;
+} */
+.company-card-btn{
+    border-radius: 9px;
+  border: 2px solid black;
+  padding: 1px;
+  text-align: center;
+  margin: 10px;
+  background-color: #24a;
 }
 .Average-package,.No-Of-stud-placed{
     text-align: center;

@@ -62,9 +62,9 @@ import axios from 'axios';
 // import Nav from '../../Navbar/Nav';
 
 // axios.defaults.baseURL = 'https://dp1d9vc7-5000.inc1.devtunnels.ms/api/Student';
-axios.defaults.baseURL = 'https://placement-internship-tracker-backend.vercel.app/api/adminLogin';
+// axios.defaults.baseURL = 'https://placement-internship-tracker-backend.vercel.app/api/adminLogin';
 
-const Login = () => {
+const AdminLogin = () => {
   const [data, setData] = useState({
     adminemailId: "",
     password: ""
@@ -80,14 +80,14 @@ const Login = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const userData = {
+    const admindata = {
       adminemailId: data.adminemailId,
     };
-    axios.post('/', userData)
+    axios.post(`https://placement-internship-tracker-backend.vercel.app/api/adminLogin`, admindata)
       .then((response) => {
         console.log(response.data); 
         const AdminJSON = JSON.stringify(response.data);
-        localStorage.setItem('adminsData', AdminJSON);
+        localStorage.setItem('adminData', AdminJSON);
         // Set cookie properly
         // document.cookie = token=${response.data.token};
         // Redirect
@@ -136,4 +136,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default AdminLogin;

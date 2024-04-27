@@ -7,7 +7,7 @@ import Profile from '../ProfileAdmin'
 import AddChanges from '../ChangeItems/ChangeItems'
 import axios from 'axios'
 const MainAdmin = () => {
-  const [userData, setUserData] = useState({}); // Initialize userData as null
+  const [admindata, setAdminData] = useState({}); // Initialize userData as null
   // const [currentComponent, setCurrentComponent] = useState(<Profile />);
   useEffect(() => {
     const fetchData = async () => {
@@ -22,8 +22,8 @@ const MainAdmin = () => {
                 const response = await axios.get(`https://placement-internship-tracker-backend.vercel.app/api/admins/?adminemailId=${value}`);
                 const user = response.data;
 
-                localStorage.setItem('userData', JSON.stringify(user));
-                setUserData(user);
+                localStorage.setItem('admindata', JSON.stringify(user));
+                setAdminData(user);
             // }
         } catch (error) {
             console.error('Error fetching data:', error);
@@ -40,7 +40,7 @@ const MainAdmin = () => {
       <div className="admin-info border-b border-gray-300 flex items-center justify-center">
         <div className='admin-item'>
           <h2 className="heading-admin-home">Profile</h2>
-          <Profile userData = {userData.admin}/>
+          <Profile userData = {admindata.admin}/>
         </div>
         <div className='admin-item'>
           <h2 className="heading-admin-home">Modify Content</h2>

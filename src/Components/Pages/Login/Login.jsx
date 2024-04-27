@@ -4,9 +4,9 @@ import axios from 'axios';
 import Nav from '../../Navbar/Nav';
 
 // axios.defaults.baseURL = 'https://dp1d9vc7-5000.inc1.devtunnels.ms/api/Student';
-axios.defaults.baseURL = 'https://placement-internship-tracker-backend.vercel.app/api/Student';
+// axios.defaults.baseURL = 'https://placement-internship-tracker-backend.vercel.app/api/Student';
 
-const Login = () => {
+const StudentLogin = () => {
   const [data, setData] = useState({
     regId: "",
     prnNo: "",
@@ -23,10 +23,10 @@ const Login = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const userData = {
+    const studData = {
       prnNo: data.prnNo,
     };
-    axios.post('/', userData)
+    axios.post(`https://placement-internship-tracker-backend.vercel.app/api/Student`, studData)
       .then((response) => {
         console.log(response.data); 
         const studentsJSON = JSON.stringify(response.data);
@@ -87,4 +87,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default StudentLogin;
