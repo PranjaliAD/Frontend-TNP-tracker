@@ -202,6 +202,7 @@ const Profile = () => {
     <div>
       <div className="nav">
         <StudNav/>
+        <StudNav/>
       </div>
       {studData && studData.student && studData.student.bgimage && (
         <div className="background_container">
@@ -230,7 +231,7 @@ const Profile = () => {
           {studData && studData.student && (
             <>
               <Internship studData={studData.student}/>
-              <Contri_section />
+              <Contri_section studData={studData.student}/>
             </>
           )}
         </div>

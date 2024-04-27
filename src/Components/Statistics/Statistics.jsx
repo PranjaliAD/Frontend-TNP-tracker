@@ -11,7 +11,7 @@ const Statistics = () => {
     const [averagePackage, setAveragePackage] = useState(0);
     
     useEffect(() => {
-        axios.get('https://placement-internship-tracker-backend-mu.vercel.app/api/')
+        axios.get('https://placement-internship-tracker-backend.vercel.app/api/')
         .then(response => {
             const data = response.data;
             setStudentsPlaced(data.stat.totalStudents);

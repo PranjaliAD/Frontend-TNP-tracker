@@ -16,7 +16,7 @@ export default function App() {
 
 
   useEffect(() => {
-    axios.get('https://placement-internship-tracker-backend-mu.vercel.app/api/')
+    axios.get('https://placement-internship-tracker-backend.vercel.app/api/')
       .then(response => {
         const data = response.data;
         setCompanies(data.companies);

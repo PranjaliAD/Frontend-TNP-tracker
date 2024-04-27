@@ -63,7 +63,7 @@ const Internship = () => {
                 const value=localStorage.getItem('studentsData');
       console.log(value)
 
-                if (!storedData) {
+                if (!storedData) { 
                     setInternData(JSON.parse(storedData));
                 } else {
                     console.log("Fetching data from API..");

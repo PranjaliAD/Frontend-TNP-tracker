@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import Studnav from '../../Navbar/Studnav';
 import './Placement.css';
+import Studnav from '../../Navbar/Studnav'
 import CompanyCards from '../../company_cards';
 import logos from '../../../Assets/place_logo.webp';
 import Questions from '../../Questions/Questions';
@@ -11,9 +11,10 @@ const Placement = () => {
     const [selectedCompany, setSelectedCompany] = useState(null);
 
     useEffect(() => {
-        axios.get('https://placement-internship-tracker-backend-mu.vercel.app/api/students/questions/?prnNo=72278496B')
+        axios.get('https://placement-internship-tracker-backend-mu.vercel.app/api/students/questions/?prnNo=U2FsdGVkX1/qpDs6wtRNbSA0FhiC330wq9DfvKgxDX1HDgGGAvDS8No8UHh6xIwD')
             .then(response => {
                 const data = response.data;
+                console.log(data);
                 setCompanies(data[0].questions);
             })
             .catch(error => {
