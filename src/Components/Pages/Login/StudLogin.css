@@ -1,11 +1,10 @@
-
 .btn-container{
-    margin: 20px;
+    margin: 15px;
 }
 
 .btn-container .btn{
     background: linear-gradient(to bottom, #5c6bc0, #512da8);
-    padding: 10px;
+    padding: 5px;
     padding-left: 25px;
     padding-right: 25px;
     font-size: 20px;
@@ -15,14 +14,12 @@
     border: 1px solid transparent;
     color: #fff;
     cursor: pointer;
-    margin: 10px 20px;
+    margin: 10px 10px;
 }
 
-
- h3{
-    margin:10px;
+.log-container h3{
+    margin-top: 20px;
     color: #512da8;
-    font-weight: 500;
     font-size: 24px;
     text-decoration:underline;
 }
@@ -33,7 +30,7 @@
     font-weight: 500;
 }
 
-.log-container p{
+/* .log-container p{
     font-size: 14px;
     line-height: 20px;
     letter-spacing: 0.3px;
@@ -42,14 +39,14 @@
 
 .log-container span{
     font-size: 12px;
-}
+} */
 
-.log-container a{
+/* .log-container a{
     color: #333;
     font-size: 13px;
     text-decoration: none;
     margin: 15px 0 10px;
-}
+} */
 
 .log-container .change{
     background-color: #512da8;
@@ -70,6 +67,10 @@
     background-color: transparent;
     border-color: #fff;
 }
+
+/* .log-container .form-container{
+
+} */
 
 .log-container form{
     background-color: #fff;
@@ -92,12 +93,12 @@
     outline: none;
 }
 
-.form-container{
+/* .form-container{
     position: relative;
     top: 0;
     height: 100%;
     transition: all 0.6s ease-in-out;
-}
+} */
 
 .sign-in{
     left: 0;

@@ -3,8 +3,8 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './Components/Navbar/Navbar';
 import Hero from './Components/Hero/Hero';
 import StudLogin from './Components/Pages/Student_profile/Profile';
-import InstLogin from './Components/Pages/Instructor_profile/ProInfo'
-import Login from './Components/Pages/Login/InstLogin';
+import InstLogin from './Components/Pages/Instructor_profile/ProInfo';
+import Login from './Components/Pages/Login/StudLogin';
 import AdminLogin from './Components/Pages/Login/AdminLogin';
 import Placement from './Components/Pages/Placement/Placement';
 import Internship from './Components/Pages/Internship/Internship';

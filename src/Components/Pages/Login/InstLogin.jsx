@@ -111,7 +111,7 @@
 
 // export default InstLogin;
 import React, { useState } from 'react';
-import './Login.css';
+import './InstLogin.css';
 import axios from 'axios';
 import Nav from '../../Navbar/Nav';
 
@@ -163,7 +163,7 @@ const Login = () => {
             <h1>Sign In</h1>
             <form onSubmit={handleSubmit}>
               <label htmlFor="instructoremailId">
-               instructoremailId
+               Email Id
                 <input
                   type="text"
                   name="instructoremailId"
@@ -181,7 +181,9 @@ const Login = () => {
                   onChange={handleChange}
                 />
               </label>
-              <button type="submit">Login</button>
+              <div className="btn-container">
+              <button className='btn' type="submit">Login</button>
+              </div>
             </form>
           </div>
         </div>
