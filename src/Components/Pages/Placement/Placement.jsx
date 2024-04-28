@@ -11,23 +11,35 @@ const Placement = () => {
     const [selectedCompany, setSelectedCompany] = useState(null);
 
     useEffect(() => {
-        axios.get('https://placement-internship-tracker-backend-mu.vercel.app/api/students/questions/?prnNo=72278496B')
+        const value = localStorage.getItem('studentsData');
+
+        axios.get(`https://placement-internship-tracker-backend.vercel.app/api/students/student/questions?prnNo=${value}`)
             .then(response => {
+                // const data = response.data;
+                // setCompanies(data[0].questions);
                 const data = response.data;
-                setCompanies(data[0].questions);
+
+                const allQuestions = data.flatMap(item => item.questions);
+                setCompanies(allQuestions);
+                console.log(allQuestions);
+
             })
             .catch(error => {
                 console.error('Error fetching companies:', error);
             });
     }, []);
-    
+
 
     const handleSolveClick = (companyName) => {
+        // const value = localStorage.getItem('studentsData');
+
+        // axios.get(`https://placement-internship-tracker-backend.vercel.app/api/students/student/questions?prnNo=${value}&companyName=${companyName}`)
         setSelectedCompany(companyName);
     };
-    
+
     return (
         <div>
+            {console.log(companies)}
             <div className="navpl"><Studnav /></div>
             <div className='pl-body'>
                 <div className="heading">
@@ -43,9 +55,11 @@ const Placement = () => {
                 </div>
 
                 <div className='comp-container'>
+
                     {companies && companies.map((company, index) => (
+                        // console.log(company.companyname)
                         <CompanyCards
-                            
+
                             key={index}
                             compname={company.companyname}
                             complogo={company.companylogo}

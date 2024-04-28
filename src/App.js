@@ -25,6 +25,7 @@ import Studentlist from './Components/Admin/AdminList/Studentlist';
 import Adminlist from './Components/Admin/AdminList/AdminList';
 import AdminLogin from './Components/Pages/Login/AdminLogin/AdminLogin';
 import EditStud from './Components/Pages/Student_profile/Edit_Profile/EditStud';
+
 function App() {
   const [newAnnouncement, setNewAnnouncement] = useState(null);
 
@@ -41,6 +42,7 @@ function App() {
           <Route path="/placements" element={<Placement />} />
           <Route path="/internships" element={<Internship />} />
           <Route path="/login" element={<Login />} />
+     
           {/* <Route path="/instprofile" element={<InstProfile />} />
             <Route path="/studlogin" element={<StudLogin />} />
             <Route path="/studprofile" element={<Studprofile />} />

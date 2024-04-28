@@ -67,7 +67,7 @@
     text-decoration: none;
     margin: 15px 0 10px;
 } */
-
+/* 
 .log-container .change{
     background-color: #512da8;
     color: #fff;
@@ -214,4 +214,77 @@
 
 .log-container.active .toggle-right{
     transform: translateX(200%);
-}
+} */
+.admin_login_body {
+    background-color: #ecebeb;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* flex-direction: column; */
+    height: 87.5vh;
+  }
+  
+  .admin_log_container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      margin: 5px; 
+      padding: 20px;
+      height: auto;
+      width: 600px;
+      background-color: #fff;
+      border-radius: 15x;
+      box-shadow: 0 5px 10px rgb(155, 154, 154);
+    }
+    
+    .admin_form_container {
+      justify-content: center;
+      background-color: #fff;
+      padding: 30px;
+      max-width: 500px;
+    }
+    
+    .admin_log_container h3 {
+      color: #512da8;
+      font-size: 24px;
+      text-decoration: underline;
+      margin-bottom: 10px;
+      text-align: center;
+    }
+  
+    .admin_form_container form {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      width: 100%;
+    }
+    
+    .admin_form_container input {
+      background-color: #eee;
+      border: none;
+      margin: 15px 0;
+      padding: 10px 15px; 
+      font-size: 13px;
+      border-radius: 8px;
+      width: 100%;
+      outline: none;
+    }
+    
+    .admin_form_container .adminbtn {
+      background: linear-gradient(to bottom, #5c6bc0, #512da8);
+      padding: 10px 25px;
+      font-size: 15px;
+      font-weight: 500;
+      letter-spacing: 0.5px;
+      border-radius: 8px;
+      border: 1px solid transparent;
+      color: #fff;
+      cursor: pointer;
+    }
+  
+    .btn-container .adminbtn:hover{
+      border: 1px solid black;
+      font-size: 15px;
+    }

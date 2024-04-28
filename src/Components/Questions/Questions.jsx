@@ -169,11 +169,11 @@
 //   };
 
 //   export default QuestionsPage;
-import React, { useState } from 'react';
+import React, { useState,useEffect } from 'react';
 import './Questions.css';
 import Expcards from '../../Components/Experience_cards';
 import Studnav from '../Navbar/Studnav';
-
+import axios from 'axios';
 const QuestionsPage = () => {
   const questionanswer = {
     "1. What is an array? ": [
@@ -240,6 +240,39 @@ const QuestionsPage = () => {
 
   const [expandedQuestion, setExpandedQuestion] = useState(null);
   const [expandedPuzzle, setExpandedPuzzle] = useState(null);
+  const[questions,setQuestions] = useState(null)
+//   useEffect(() => {
+//     const value = localStorage.getItem('studentsData');
+
+//     axios.get(`https://placement-internship-tracker-backend.vercel.app/api/students/student/questions/company/open?prnNo=${value}&companyName=${prop.companyName}`)
+//         .then(response => {
+//             // const data = response.data;
+//             // setCompanies(data[0].questions);
+//             const data = response.data;
+
+//             // const allQuestions = data.flatMap(item => item.questions);
+//             setQuestions(data);
+//             console.log(data);
+
+//         })
+//         .catch(error => {
+//             console.error('Error fetching questions:', error);
+//         });
+// }, []);
+useEffect(() => {
+  const value = localStorage.getItem('studentsData');
+
+  axios.get(`https://placement-internship-tracker-backend.vercel.app/api/students/student/questions/company/open?prnNo=${value}&companyName=${props.companyName}`)
+      .then(response => {
+          const data = response.data;
+          setQuestions(data);
+          console.log(data);
+      })
+      .catch(error => {
+          console.error('Error fetching questions:', error);
+      });
+}, [props.companyName]); // Include companyName in the dependency array
+
 
   const scrollToSection = (sectionId) => {
     const section = document.getElementById(sectionId);

@@ -118,7 +118,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 
-const RegistrationForm = ({ addAnnouncement, closeForm }) => {
+const AnnouncementForm = ({ addAnnouncement, closeForm }) => {
   const [headline, setHeadline] = useState('');
   const [description, setDescription] = useState('');
   // const toggleAddAnnouncement = () => {
@@ -128,7 +128,7 @@ const RegistrationForm = ({ addAnnouncement, closeForm }) => {
     e.preventDefault();
 
     try {
-      const value = localStorage.getItem('adminsData');
+      const value = localStorage.getItem('adminData');
       const response = await axios.post(`https://placement-internship-tracker-backend.vercel.app/api/admins/announcement/?adminemailId=${value}`, {
         headline,
         description,
@@ -175,4 +175,4 @@ const RegistrationForm = ({ addAnnouncement, closeForm }) => {
   );
 };
 
-export default RegistrationForm;
+export default AnnouncementForm;

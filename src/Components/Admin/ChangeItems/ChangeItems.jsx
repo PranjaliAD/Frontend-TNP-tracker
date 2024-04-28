@@ -201,12 +201,13 @@
 // export default ChangeItems;
 import React, { useState } from 'react';
 import Addannouncementform from './AddAnnouncement';
-import Addtestimonialform from './Addtestimonials';
+// import Addtestimonialform from './Addtestimonials';
 // import AddCoordinatorForm from './AddCoordinatorForm';
 import UploadCsvAdminForm from './UploadCsvAdminForm';
 import UploadCsvCoordinatorsForm from './UploadCsvCoordinatorsForm';
 import UploadCsvMentorsForm from './UploadCsvMentorsForm';
 import UploadCsvStudentsForm from './UploadCsvStudentsForm';
+import UploadCsvTestimonialsForm from './UploadCsvTestimonialsForm'
 
 const ChangeItems = () => {
   const [isAddAnnouncementVisible, setIsAddAnnouncementVisible] = useState(false);
@@ -216,14 +217,14 @@ const ChangeItems = () => {
   const [isUploadCsvCoordinatorsVisible, setIsUploadCsvCoordinatorsVisible] = useState(false);
   const [isUploadCsvMentorsVisible, setIsUploadCsvMentorsVisible] = useState(false);
   const [isUploadCsvStudentsVisible, setIsUploadCsvStudentsVisible] = useState(false);
-
+  const [isUploadCsvTestimonialsVisible, setIsUploadCsvTestimonialsVisible] = useState(false);
   const toggleAddAnnouncement = () => {
     setIsAddAnnouncementVisible(!isAddAnnouncementVisible);
   };
 
-  const toggleAddTestimonial = () => {
-    setIsAddTestimonialVisible(!isAddTestimonialVisible);
-  };
+  // const toggleAddTestimonial = () => {
+  //   setIsAddTestimonialVisible(!isAddTestimonialVisible);
+  // };
 
   // const toggleAddCoordinator = () => {
   //   setIsAddCoordinatorVisible(!isAddCoordinatorVisible);
@@ -244,6 +245,10 @@ const ChangeItems = () => {
     setIsUploadCsvStudentsVisible(!isUploadCsvStudentsVisible);
   };
 
+  const toggleUploadCsvTestimonials = () => {
+    setIsUploadCsvTestimonialsVisible(!isUploadCsvTestimonialsVisible);
+  };
+
   const handleFileUpload = (event) => {
     const file = event.target.files[0];
     // Handle the file upload logic here
@@ -254,7 +259,7 @@ const ChangeItems = () => {
     <>
       <div className='bg-white overflow-hidden shadow rounded-lg border w-96 h-96 max-h-full overflow-y-auto'>
         {/* Existing code for adding announcements, testimonials, coordinators */}
-        <div className="flex items-center justify-between py-3 sm:py-5 sm:px-6 border-b w-96">
+        <div className="flex items-center justify-between py-3 sm:py-5 sm:px-6 border-b w-96 list-item-modify">
           <dt className="text-lg font-medium text-gray-500">
             Add Announcements 
           </dt>
@@ -262,14 +267,14 @@ const ChangeItems = () => {
             Click here
           </button>
         </div>
-        <div className="flex items-center justify-between py-3 sm:py-5 sm:px-6 border-b w-96">
+        {/* <div className="flex items-center justify-between py-3 sm:py-5 sm:px-6 border-b w-96">
           <dt className="text-lg font-medium text-gray-500">
             Add Testimonials 
           </dt>
           <button onClick={toggleAddTestimonial} className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-2 rounded text-xs">
             Click here
           </button>
-        </div>
+        </div> */}
         {/* <div className="flex items-center justify-between py-3 sm:py-5 sm:px-6 border-b w-96">
           <dt className="text-lg font-medium text-gray-500">
             Delete Coordinators 
@@ -278,7 +283,15 @@ const ChangeItems = () => {
             Click here
           </button>
         </div> */}
-        <div className="flex items-center justify-between py-3 sm:py-5 sm:px-6 border-b w-96">
+        <div className="flex items-center justify-between py-3 sm:py-5 sm:px-6 border-b w-96 list-item-modify">
+          <dt className="text-lg font-medium text-gray-500 text-item">
+            Add csv file of Testimonial
+          </dt>
+          <button onClick={toggleUploadCsvTestimonials} className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-2 rounded text-xs">
+            Click here
+          </button>
+        </div>
+        <div className="flex items-center justify-between py-3 sm:py-5 sm:px-6 border-b w-96 list-item-modify">
           <dt className="text-lg font-medium text-gray-500">
             Add csv file of Admin
           </dt>
@@ -286,7 +299,7 @@ const ChangeItems = () => {
             Click here
           </button>
         </div>
-        <div className="flex items-center justify-between py-3 sm:py-5 sm:px-6 border-b w-96">
+        <div className="flex items-center justify-between py-3 sm:py-5 sm:px-6 border-b w-96 list-item-modify">
           <dt className="text-lg font-medium text-gray-500">
             Add csv file of Coordinators
           </dt>
@@ -294,7 +307,7 @@ const ChangeItems = () => {
             Click here
           </button>
         </div>
-        <div className="flex items-center justify-between py-3 sm:py-5 sm:px-6 border-b w-96">
+        <div className="flex items-center justify-between py-3 sm:py-5 sm:px-6 border-b w-96 list-item-modify">
           <dt className="text-lg font-medium text-gray-500">
             Add csv file of Mentors 
           </dt>
@@ -302,7 +315,7 @@ const ChangeItems = () => {
             Click here
           </button>
         </div>
-        <div className="flex items-center justify-between py-3 sm:py-5 sm:px-6 border-b w-96">
+        <div className="flex items-center justify-between py-3 sm:py-5 sm:px-6 border-b w-96 list-item-modify">
           <dt className="text-lg font-medium text-gray-500">
             Add csv file of Students
           </dt>
@@ -313,6 +326,16 @@ const ChangeItems = () => {
         {/* Other items */}
       </div>
       {/* Upload CSV file form for Admin */}
+      {isUploadCsvTestimonialsVisible && (
+        <div className="fixed top-0 left-0 w-full h-full flex items-center justify-center bg-gray-800 bg-opacity-50 z-50">
+          <div className="bg-white p-6 rounded-lg shadow-lg">
+            <UploadCsvTestimonialsForm />
+            <button onClick={toggleUploadCsvTestimonials} className="mt-4 bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-2 rounded text-xs">
+              Close
+            </button>
+          </div>
+        </div>
+      )}
       {isUploadCsvAdminVisible && (
         <div className="fixed top-0 left-0 w-full h-full flex items-center justify-center bg-gray-800 bg-opacity-50 z-50">
           <div className="bg-white p-6 rounded-lg shadow-lg">
@@ -367,7 +390,7 @@ const ChangeItems = () => {
         </div>
       )}
       {/* Add testimonial form */}
-      {isAddTestimonialVisible && (
+      {/* {isAddTestimonialVisible && (
         <div className="fixed top-0 left-0 w-full h-full flex items-center justify-center bg-gray-800 bg-opacity-50 z-50">
           <div className="bg-white p-6 rounded-lg shadow-lg">
             <Addtestimonialform />
@@ -376,7 +399,7 @@ const ChangeItems = () => {
             </button>
           </div>
         </div>
-      )}
+      )} */}
       {/* Add coordinator form */}
       {/* {isAddCoordinatorVisible && (
         <div className="fixed top-0 left-0 w-full h-full flex items-center justify-center bg-gray-800 bg-opacity-50 z-50">
