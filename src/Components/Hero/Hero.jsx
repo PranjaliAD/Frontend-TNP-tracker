@@ -89,6 +89,7 @@ import ProfileStud from '../Coordinators/Coordinators'
 const Hero = () => {
   const [navbarBackground, setNavbarBackground] = useState(false); // State to manage navbar background color
   const location = useLocation(); // Get current location using useLocation
+  const [scrolling, setScrolling] = useState(false);
 
   useEffect(() => {
     // Check if current location is '/statistics2' and update navbar background accordingly
@@ -98,6 +99,30 @@ const Hero = () => {
       setNavbarBackground(false);
     }
   }, [location.pathname]); // Listen for changes in location.pathname
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 100) {
+        setScrolling(true);
+      } else {
+        setScrolling(false);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
+  const handleTCompaniesClick = (e) => {
+    e.preventDefault();
+    const companiesSection = document.getElementById('companies-section');
+    if (companiesSection) {
+      const offsetTop = companiesSection.offsetTop - 240; // Adjusted offset for better visibility
+      window.scrollTo({ top: offsetTop, behavior: 'smooth' });
+    }
+  };
 
   return (
     <div>
@@ -111,7 +136,9 @@ const Hero = () => {
               at PICT..
             </h1>
             <p>Discover valuable resources, senior guidance, and daily updates of TNP cell drives. Unlock doors to top companies, prestigious organizations, and exciting career opportunities with our support. Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, molestias.</p>
-            <button className="Explorebtn">Explore more <img src={dark_arrow} alt="" /></button>
+            <button className="Explorebtn" onClick={handleTCompaniesClick}>
+      Explore More <img src={dark_arrow} alt="" />
+    </button>
           </div>
         </div>
       )}

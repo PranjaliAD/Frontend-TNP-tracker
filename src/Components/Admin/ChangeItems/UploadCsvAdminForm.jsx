@@ -121,7 +121,7 @@ function UploadCsvAdminForm() {
     formData.append('admin', selectedFile);
 
     try {
-      const value = localStorage.getItem('adminsData');
+      const value = localStorage.getItem('adminData');
       const response = await axios.post(`https://placement-internship-tracker-backend.vercel.app/api/admins/admin?adminemailId=${value}`, formData, {
         headers: {
           'Content-Type': 'multipart/form-data',

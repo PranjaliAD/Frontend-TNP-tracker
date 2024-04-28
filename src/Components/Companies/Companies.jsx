@@ -27,6 +27,7 @@ export default function App() {
   }, []);
   return (
     <>
+    <div id='companies-section'>
       <Swiper
   effect={'coverflow'}
   grabCursor={true}
@@ -64,7 +65,7 @@ export default function App() {
   ))}
 </Swiper>
 
-
+</div>
     </>
   );
 }

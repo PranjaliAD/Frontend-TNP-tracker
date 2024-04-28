@@ -161,8 +161,10 @@
 // export default Profile;
 import React, { useState, useEffect } from 'react';
 import './profile.css';
+// import StudNav from '../../Navbar/Studnav';
 import StudNav from '../../Navbar/Studnav';
 import Credentials from './Credentials';
+// import Links from './Links';
 import Links from './Links';
 import Place_status from './Place_status';
 import Internship from './Internship/Internship'; // Assuming Internship component exists
@@ -170,19 +172,19 @@ import Contri_section from './Contri_section';
 import axios from 'axios';
 import CryptoJS from 'crypto-js'; // Import CryptoJS
 axios.defaults.baseURL='https://placement-internship-tracker-backend.vercel.app/api/students/?prnNo=${value}';
-axios.defaults.headers.common['Access-Control-Allow-Origin'] = '*';
+// axios.defaults.headers.common['Access-Control-Allow-Origin'] = '*';
 
 const Profile = () => {
-  const [studData, setstudData] = useState(() => {
+  const [studData, setStudData] = useState(() => {
     // Retrieve userData from localStorage
-    const storedstudData = localStorage.getItem('studData');
-    return storedstudData ? JSON.parse(storedstudData) : null;
+    const storedUserData = localStorage.getItem('studData');
+    return storedUserData ? JSON.parse(storedUserData) : null;
   });
 
   useEffect(() => {
     // Fetch userData if not available in localStorage
     if (!studData) {
-      const cookies = document.cookie;
+      // const cookies = document.cookie;
       const value=localStorage.getItem('studentsData');
       axios.get(`https://placement-internship-tracker-backend.vercel.app/api/students/?prnNo=${value}`)
         .then(response => {
@@ -190,7 +192,7 @@ const Profile = () => {
           console.log(response.data)
           // Store userData in localStorage
           localStorage.setItem('studData', JSON.stringify(user));
-          setstudData(user);
+          setStudData(user);
         })
         .catch(error => {
           console.error('Error fetching data:', error);
@@ -206,7 +208,6 @@ const Profile = () => {
       </div>
       {studData && studData.student && studData.student.bgimage && (
         <div className="background_container">
-          {studData.student.bgimage}
           <img src={studData.student.bgimage} alt="" className="background_image"/>
           <div className="img_overlay">
             {studData.student.image && (
@@ -230,8 +231,8 @@ const Profile = () => {
         <div className="placement_info">
           {studData && studData.student && (
             <>
-              <Internship studData={studData.student}/>
-              <Contri_section studData={studData.student}/>
+              <Internship/>
+              <Contri_section/>
             </>
           )}
         </div>

@@ -17,7 +17,7 @@ const CompCard = ({
       <h4 className='No-Of-stud-placed'><span className='first-heading'>Students Placed</span> : {NoOfStudPlaced}</h4>
       <h4 className='Average-package'><span className='first-heading'>Average Package</span> : {Avgpkg}</h4>
       {/* <p className='card-description'>{CompDesp}</p> */}
-      <a href={link} className='card-btn'>{LinkLabel}</a>
+      <a href={link} className='company-card-btn'>{LinkLabel}</a>
     </div>
   )
 }

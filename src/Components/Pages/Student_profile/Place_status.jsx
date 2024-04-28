@@ -73,7 +73,7 @@
 import React, { useState, useEffect } from 'react';
 import './Place_status.css';
 import axios from 'axios';
-
+axios.defaults.baseURL='https://placement-internship-tracker-backend.vercel.app/api/students/?prnNo=${value}';
 
 const Place_status = () => {
   const [showPlacementDetails, setShowPlacementDetails] = useState(false);
@@ -85,60 +85,37 @@ const Place_status = () => {
     setShowPlacementDetails(!showPlacementDetails);
   };
 
-  const [userData, setUserData] = useState(null);
-  const [placeData, setPlaceData] = useState(null);
+  const [studData, setStudData] = useState(null);
 
   useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response1 = await axios.get('https://placement-internship-tracker-backend-mu.vercel.app/api/students/student/?prnNo=72278496B');
-        setUserData(response1.data);
-        localStorage.setItem('userData', JSON.stringify(response1.data));
-      } catch (error) {
-        console.error('Error fetching user data:', error);
-      }
-    };
+    // const cookies = document.cookie;
+    const value=localStorage.getItem('studentsData');
+      console.log(value)
 
-    const fetchPlaceData = async () => {
-      try {
-        const response2 = await axios.get('https://placement-internship-tracker-backend-mu.vercel.app/api/students/student/placement/?prnNo=72278496B');
-        setPlaceData(response2.data);
-        localStorage.setItem('placeData', JSON.stringify(response2.data));
-      } catch (error) {
-        console.error('Error fetching placement data:', error);
-      }
-    };
-
-    const storedUserData = JSON.parse(localStorage.getItem('userData'));
-    if (storedUserData) {
-      setUserData(storedUserData);
-    } else {
-      fetchData();
-    }
-
-    const storedPlaceData = JSON.parse(localStorage.getItem('placeData'));
-    if (storedPlaceData) {
-      setPlaceData(storedPlaceData);
-    } else {
-      fetchPlaceData();
-    }
-  }, []); 
+      axios.get(`https://placement-internship-tracker-backend.vercel.app/api/students/?prnNo=${value}`)
+      .then(response => {
+        setStudData(response.data);
+      })
+      .catch(error => {
+        console.error('Error fetching data:', error);
+      });
+  }, []);
 
   return (
     <div>
-      {userData && (
+      {studData && (
         <div className="status-container" onClick={togglePlacementDetails}>
-          <h2 className='sh'>Placement Status: <div className={`status ${pl_status === 'Placed' ? 'placed' : 'not-placed'}`}><h4 className='st'>{userData.placementStatus}</h4></div></h2>
+          <h2 className='sh'>Placement Status: <div className={`status ${pl_status === 'Placed' ? 'placed' : 'not-placed'}`}><h4 className='st'>{studData.placementStatus}</h4></div></h2>
         </div>
       )}
-      {showPlacementDetails && pl_status === 'Placed' && placeData && (
+      {showPlacementDetails && pl_status === 'Placed' && studData && (
         <div className="company-placed">
           <div className="company-info">
-            <h2 className='comp'>Company - {placeData.companyname}<div className="position"><h5><i>Role - {placeData.role}</i></h5></div> </h2>
+            <h2 className='comp'>Company - {studData.companyname}<div className="position"><h5><i>Role - {studData.role}</i></h5></div> </h2>
           </div>
           <hr />
           <div className="offerlet">
-            <a href={placeData.offerLetter} target="_blank" rel="noopener noreferrer" className="offer_btn">Offer Letter</a>
+            <a href={studData.offerLetter} target="_blank" rel="noopener noreferrer" className="offer_btn">Offer Letter</a>
           </div>
           <hr/>
           <div className="msg">

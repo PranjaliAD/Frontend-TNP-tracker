@@ -40,7 +40,7 @@ import React, { useState, useEffect } from 'react';
 import './Links.css';
 import axios from 'axios';
 axios.defaults.baseURL='https://placement-internship-tracker-backend.vercel.app/api/students/?prnNo=${value}';
-axios.defaults.headers.common['Access-Control-Allow-Origin'] = '*';
+// axios.defaults.headers.common['Access-Control-Allow-Origin'] = '*';
 
 const Links = () => {
   const [userLinks, setUserLinks] = useState(() => {

@@ -164,7 +164,6 @@ function ProInfo() {
                 <div className="App">
                     <ProfilePic  />
                     <div className='Permanent_Info'>
-                        <h1 className='credentials'>Credentials</h1>
                         {userData && userData.instructor && userData.instructor.length > 0 && (
                             <h3 className='instructoremailId'> {userData.instructor[0].instructoremailId}</h3>
                         )}
@@ -174,7 +173,6 @@ function ProInfo() {
                     <ul className="internal-navbar">
                         <li><button className="user-btn" onClick={() => renderComponent(<UserInfo userData={userData.instructor}/>)}>User Info</button></li>
                         <li><button className="stuList-btn" onClick={() => renderComponent(<StudentList userData={userData.instructor}/>)}>Student List</button></li>
-                        <li><button className="staticList-btn" onClick={() => renderComponent(<StaticsticStudent userData={userData.instructor}/>)}>Statistics of Student</button></li>
                     </ul>
                     {currentComponent && currentComponent}
                 </div>

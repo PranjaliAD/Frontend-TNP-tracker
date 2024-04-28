@@ -159,8 +159,8 @@ const UserProfile1 = () => {
         <div className='user1'>
             {userData && userData.instructor && userData.instructor.length > 0 && (
                 <>
-                    <h3 className='name'>Name: {userData.instructor[0].name}</h3>
-                    <h3 className='department'>Department: {userData.instructor[0].department}</h3>
+                    <h3 className='name'>Name : {userData.instructor[0].name}</h3>
+                    <h3 className='department'>Department : {userData.instructor[0].department}</h3>
                 </>
             )}
             

@@ -205,7 +205,6 @@ const Login = () => {
         <div className='log-container' id='container'>
           <div className="form-container">
             <h3>Student Login</h3>
-            <h1>Sign In</h1>
             <form onSubmit={handleSubmit}>
               <label htmlFor="regId">
                 Reg ID
@@ -238,6 +237,10 @@ const Login = () => {
               <button className='btn' type="submit">Login</button>
               </div>
             </form>
+          </div>
+          <div className="logcard">
+            <h1>Login as a Student !</h1>
+            <p>Enter your credentials and get access of all features of site..</p>
           </div>
         </div>
       </div>
