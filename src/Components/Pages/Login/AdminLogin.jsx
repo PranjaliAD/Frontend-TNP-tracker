@@ -19,7 +19,7 @@ const Login = () => {
       return;
     }
 
-    axios.post('https://placement-internship-tracker-backend-mu.vercel.app/api/instructor', {
+    axios.post('https://placement-internship-tracker-backend.vercel.app/api/admins/instructor?adminemailId=${value}', {
       emailId: emailId,
       password: password
     })
@@ -44,7 +44,7 @@ const Login = () => {
               <input type="text" id="emailId" placeholder='Email ID' />
               <input type="password" id="password" placeholder='Password' />
               {error && <div className="error-message">{error}</div>}
-              <button type="submit" className='adminbtn'>Login</button>
+              <button type="submit" className='btn'>Login</button>
             </form>
           </div>
         </div>

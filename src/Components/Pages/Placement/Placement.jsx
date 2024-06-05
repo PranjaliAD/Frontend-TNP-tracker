@@ -46,7 +46,6 @@ const Placement = () => {
                 <div className='comp-container'>
                     {companies && companies.map((company, index) => (
                         <CompanyCards
-                            
                             key={index}
                             compname={company.companyname}
                             complogo={company.companylogo}

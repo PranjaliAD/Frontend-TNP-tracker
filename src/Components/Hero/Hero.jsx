@@ -128,7 +128,7 @@ const Hero = () => {
     <div>
       {!navbarBackground && (
         
-        <div className="hero">
+        <div className="hero" id='home-section'>
           <div className="hero-text">
             <h1>
               <span className='animated-text'>Unlock Opportunities </span>

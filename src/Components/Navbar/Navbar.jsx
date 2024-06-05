@@ -90,6 +90,15 @@ const Navbar = () => {
     };
   }, []);
 
+  const handleHomeClick = (e) => {
+    e.preventDefault();
+    const homeSection = document.getElementById('home-section');
+    if (homeSection) {
+      const offsetTop = homeSection.offsetTop - 140; // Adjusted offset for better visibility
+      window.scrollTo({ top: offsetTop, behavior: 'smooth' });
+    }
+  };
+
   const handleAnnouncementClick = (e) => {
     e.preventDefault();
     const announcementSection = document.getElementById('announcement-section');
@@ -132,7 +141,7 @@ const Navbar = () => {
         <img src={logo} alt="Logo" className='logo'/>
       </Link>
       <ul>
-        <li><Link to="/" className={`nav-link ${location.pathname === '/' ? 'active' : ''}`}>Home</Link></li>
+        <li><Link to="/" onClick={handleHomeClick} className={`nav-link ${location.pathname === '/' ? 'active' : ''}`}>Home</Link></li>
         <li><a href="#!" onClick={handleAnnouncementClick} className='nav-link'>Announcements</a></li>
         <li><a href="#!" onClick={handleStatisticsClick} className='nav-link'>Statistics</a></li>
         <li><a href="#!" onClick={handleTestimonialsClick} className='nav-link'>Testimonials</a></li>
