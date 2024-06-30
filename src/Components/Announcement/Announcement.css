@@ -1,11 +1,11 @@
-.card {
+/* /* .card {
   display: flex;
   max-width: 90rem;
   margin: 1rem auto;
   border-radius: 0.5rem solid #999;
   overflow: hidden;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  min-width: 160rem; /* Set a minimum width for the card */
+  min-width: 160rem; 
   min-height: 30rem;
   max-height:30rem;
 }
@@ -56,10 +56,55 @@
 .announcement-section {
   max-height: 30rem;
   overflow-y: auto;
-  flex: 1; /* Ensure the section takes up remaining space */
-  padding-bottom: 0.5rem; /* Add padding to bottom of section */
+  flex: 1; 
+  padding-bottom: 0.5rem; 
 }
 
 .announcement-section p {
-  margin-bottom: 0.5rem; /* Add spacing between announcements */
+  margin-bottom: 0.5rem; 
+} */
+/* CSS for Slideshow */
+/* .slideshow-container {
+  max-width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.mySlides {
+  display: none;
+}
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@keyframes fade {
+  from { opacity: 0; }
+  to { opacity: 1; }
+} */
+/* CSS for Slideshow */
+.slideshow-container {
+  max-width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.mySlides {
+  position: absolute;
+  display: none;
+  transition: opacity 1s ease-in-out;
+}
+
+.mySlides.fade {
+  opacity: 1;
+}
+
+/* Fading animation */
+@keyframes fade {
+  0% {
+      opacity: 0;
+  }
+  100% {
+      opacity: 1;
+  }
 }
