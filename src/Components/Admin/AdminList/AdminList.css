@@ -1,0 +1,23 @@
+.scrollable-table {
+  max-height: 400px; /* Set the max height for scrollable table */
+  overflow-y: auto; /* Enable vertical scroll */
+}
+
+.custom-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.custom-table th, .custom-table td {
+  padding: 20px;
+  text-align: left;
+  border-bottom: 1px solid #ddd; /* Adds a line after each row */
+}
+
+.custom-table th {
+  background-color: #f2f2f2;
+}
+
+.custom-table .table-row:hover {
+  background-color: #f2f2f2; /* Change color on hover */
+}

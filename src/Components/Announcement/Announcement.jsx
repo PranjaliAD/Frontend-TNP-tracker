@@ -13,11 +13,12 @@ import img6 from '../../Assets/edusity_assets/announcment-img-6.jpg';
 import img7 from '../../Assets/edusity_assets/announcment-img-7.jpg';
 import Title from '../Title/Title';
 const Announcement = () => {
-    const [announcements, setAnnouncements] = useState([]);
+    const [announcement, setAnnouncements] = useState([]);
     const [showForm, setShowForm] = useState(false);
 
     useEffect(() => {
-        axios.get('https://placement-internship-tracker-backend.vercel.app/api/')
+        // const value = localStorage.getItem('adminData');
+        axios.get(`https://placement-internship-tracker-backend.vercel.app/api/`)
             .then(response => {
                 const data = response.data;
                 setAnnouncements(data.announcements);
@@ -28,7 +29,7 @@ const Announcement = () => {
     }, []);
 
     const addAnnouncement = (newAnnouncement) => {
-        setAnnouncements([...announcements, newAnnouncement]);
+        setAnnouncements([...announcement, newAnnouncement]);
     };
 
     const toggleForm = () => {
@@ -47,6 +48,7 @@ const Announcement = () => {
 
     return (
         <div id="announcement-section">
+            {/* {console.log(announcement)} */}
             <Title subTitle='Internship and Placement Achievements' title='Celebrating Student Excellence' />
             <div className="w-full min-w-7rem mx-auto p-4 bg-white border border-gray-200 rounded-lg shadow sm:p-8 dark:bg-gray-800 dark:border-gray-700 min-h-300">
                 <div className="flex items-center justify-between mb-4">
@@ -72,10 +74,10 @@ const Announcement = () => {
                         </Slider>
                     </div>
                     <div className="w-1/2 overflow-y-scroll" style={{ maxHeight: '500px' }}>
-                        {announcements.map((announcement, index) => (
+                        {announcement.map((announce, index) => (
                             <div key={index} className="p-4 border-b border-red-500">
-                                <p className="text-sm font-medium text-gray-900 truncate dark:text-white">{announcement.headline}</p>
-                                <p className="text-sm text-gray-500 truncate dark:text-gray-400">{announcement.description}</p>
+                                <p className="text-sm font-medium text-gray-900 truncate dark:text-white">{announce.headline}</p>
+                                <p className="text-sm text-gray-500 truncate dark:text-gray-400">{announce.description}</p>
                             </div>
                         ))}
                     </div>

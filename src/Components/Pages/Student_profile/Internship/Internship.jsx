@@ -61,18 +61,18 @@ const Internship = () => {
             try {
                 // const storedData = localStorage.getItem('internData');
                 const value=localStorage.getItem('studentsData');
-                console.log(value)
+                // console.log(value)
 
-                if (!storedData) { 
-                    setInternData(JSON.parse(storedData));
-                } else {
+                // if (!storedData) {
+                //     setInternData(JSON.parse(storedData));
+                // } else {
                     console.log("Fetching data from API..");
                     const response = await axios.get(`https://placement-internship-tracker-backend.vercel.app/api/students/internship?prnNo=${value}`);
                     console.log("Successfully fetched data from API..");
                     const newData = response.data;
                     setInternData(newData);
                     localStorage.setItem('internData', JSON.stringify(newData));
-                }
+                // }
             } catch (error) {
                 console.error('Error fetching data:', error);
             }
@@ -83,7 +83,7 @@ const Internship = () => {
 
     return (
         <div>
-            {console.log(internData)}
+            {/* {console.log(internData)} */}
             {internData && internData.length > 0 && (
                 
                 <div className="company-intern">
@@ -92,18 +92,35 @@ const Internship = () => {
                     <hr />
                     {internData.map((intern, index) => (
                         <div key={index} className="intern-info">
-                            {console.log(intern.companyname)}
-                            <h2 className='comp'>Company - {intern.companyname} <div className="internrole"><h5><i>Role - {intern.duration}</i></h5></div> </h2>
+                            {/* {console.log(intern.companyname)} */}
+                            <h2 className='comp'>Company - {intern.companyname} <div className="internrole"><h5><i>Duration of Internship - {intern.duration} weeks</i></h5></div> </h2>
                             <hr />
                             <div className="completionlet">
                                 <a href={intern.offerLetter} target="_blank" rel="noopener noreferrer" className="offer_btn">Offer Letter</a>
                             </div>
-                            {/* <hr /> */}
-                            <div className="interndesc">{intern.internshipDescription}</div>
+                            <hr />
+                            {/* <div className="interndesc">{intern.internshipDescription}</div> */}
                         </div>
                     ))}
                 </div>
             )}
+            {/* <div className="company-intern">
+                    {console.log(internData)}
+                    <h1 className='titleintern'>Internship Details</h1>
+                    <hr />
+                    {internData.map((intern, index) => (
+                        <div key={index} className="intern-info">
+                            {console.log(intern.companyname)}
+                            <h2 className='comp'>Company - {internData.companyname} <div className="internrole"><h5><i>Duration Of Internship - {internData.duration}</i></h5></div> </h2>
+                            <hr />
+                            <div className="completionlet">
+                                <a href={internData.offerLetter} target="_blank" rel="noopener noreferrer" className="offer_btn">Offer Letter</a>
+                            </div>
+                            <hr />
+                            <div className="interndesc">{internData.internshipDescription}</div>
+                        </div>
+                    ))}
+                </div> */}
         </div>
     );
 };

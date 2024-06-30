@@ -5,6 +5,7 @@ import Mentorlist from '../AdminList/MentorList'
 import Studentlist from '../AdminList/Studentlist'
 import Profile from '../ProfileAdmin'
 import AddChanges from '../ChangeItems/ChangeItems'
+import Header from '../Header'
 import axios from 'axios'
 const MainAdmin = () => {
   const [admindata, setAdminData] = useState({}); // Initialize userData as null
@@ -36,9 +37,11 @@ const MainAdmin = () => {
 }, []);
 
   return (
-    <div className='admin-main'>
+    <div className='admin-div'>
+      <Header/>
+      <div className="admin-main">
       <div className="admin-info border-b border-gray-300 flex items-center justify-center">
-        <div className='admin-item'>
+        <div className='admin-item profile-admin'>
           <h2 className="heading-admin-home">Profile</h2>
           <Profile userData = {admindata.admin}/>
         </div>
@@ -49,18 +52,19 @@ const MainAdmin = () => {
       </div>
       <div className='Admin-div'>
       
-        <div className='admin-item'>
+        <div className='admin-item-list'>
           <h2 className="heading-admin-home">Admin List</h2>
           <Adminlist />
         </div>
-        <div className='admin-item'>
+        <div className='admin-item-list'>
           <h2 className="heading-admin-home">Mentor List</h2>
           <Mentorlist />
         </div>
-        <div className='admin-item'>
+        <div className='admin-item-list'>
           <h2 className="heading-admin-home">Student List</h2>
           <Studentlist />
         </div>
+      </div>
       </div>
     </div>
   )

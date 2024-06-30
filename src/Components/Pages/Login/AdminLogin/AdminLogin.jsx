@@ -59,7 +59,7 @@
 import React, { useState } from 'react';
 import './AdminLogin.css';
 import axios from 'axios';
-// import Nav from '../../Navbar/Nav';
+import Nav from '../../../Navbar/Nav';
 
 // axios.defaults.baseURL = 'https://dp1d9vc7-5000.inc1.devtunnels.ms/api/Student';
 // axios.defaults.baseURL = 'https://placement-internship-tracker-backend.vercel.app/api/adminLogin';
@@ -101,10 +101,10 @@ const AdminLogin = () => {
 
   return (
     <div>
-      {/* <div className="nav"><Nav/></div> */}
-      <div className="login-body">
-        <div className='log-container' id='container'>
-          <div className="form-container">
+      <div className="nav"><Nav/></div>
+      <div className="admin-login-body">
+        <div className='admin_log_container' id='ad_container'>
+          <div className="admin_form_container">
             <h3>Admin Login</h3>
             <h1>Sign In</h1>
             <form onSubmit={handleSubmit}>
@@ -127,7 +127,7 @@ const AdminLogin = () => {
                   onChange={handleChange}
                 />
               </label>
-              <button type="submit">Login</button>
+              <button type="submit" className="adminbtn">Login</button>
             </form>
           </div>
         </div>
