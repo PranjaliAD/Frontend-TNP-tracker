@@ -64,14 +64,67 @@
 //     </TableContainer>
 //   );
 // }
+// import React, { useState, useEffect } from 'react';
+// import Table from '@mui/material/Table';
+// import TableBody from '@mui/material/TableBody';
+// import TableCell from '@mui/material/TableCell';
+// import TableContainer from '@mui/material/TableContainer';
+// import TableHead from '@mui/material/TableHead';
+// import TableRow from '@mui/material/TableRow';
+// import Paper from '@mui/material/Paper';
+// import axios from 'axios';
+
+// const createData = (name, gender, contactInfo, email, department) => ({ name, gender, contactInfo, email, department });
+
+// const StudentTable = () => {
+//   const [studentList, setStudentList] = useState([]);
+
+//   useEffect(() => {
+//     axios
+//       .get('https://placement-internship-tracker-backend.vercel.app/api/admins/student/?adminemailId=U2FsdGVkX1+8/bVan9hIRGMcSvHdUsHKQXTu1Wil6UtcDoKuX+yReJbNZNJajgEL')
+//       .then((response) => {
+//         const data = response.data;
+//         setStudentList(data);
+//       })
+//       .catch((error) => {
+//         console.error('Error fetching data:', error);
+//       });
+//   }, []);
+
+//   return (
+//     <div style={{ maxHeight: 400, overflowY: 'auto' }}>
+//       <TableContainer component={Paper}>
+//         <Table sx={{ minWidth: 650 }} aria-label="simple table">
+//           <TableHead>
+//             <TableRow>
+//               <TableCell>Name</TableCell>
+//               <TableCell align="right">Registration Id</TableCell>
+//               <TableCell align="right">Prn No.</TableCell>
+//               <TableCell align="right">Password</TableCell>
+//               {/* <TableCell align="right">Email Id</TableCell> */}
+//             </TableRow>
+//           </TableHead>
+//           <TableBody>
+//             {studentList.map((row, index) => (
+//               <TableRow key={index}>
+//                 <TableCell component="th" scope="row">
+//                   {row.name}
+//                 </TableCell>
+//                 <TableCell align="right">{row.regId}</TableCell>
+//                 <TableCell align="right">{row.prnNo}</TableCell>
+//                 <TableCell align="right">{row.password}</TableCell>
+//                 {/* <TableCell align="right">{row.emailId}</TableCell> */}
+//               </TableRow>
+//             ))}
+//           </TableBody>
+//         </Table>
+//       </TableContainer>
+//     </div>
+//   );
+// };
+
+// export default StudentTable;
 import React, { useState, useEffect } from 'react';
-import Table from '@mui/material/Table';
-import TableBody from '@mui/material/TableBody';
-import TableCell from '@mui/material/TableCell';
-import TableContainer from '@mui/material/TableContainer';
-import TableHead from '@mui/material/TableHead';
-import TableRow from '@mui/material/TableRow';
-import Paper from '@mui/material/Paper';
 import axios from 'axios';
 
 const createData = (name, gender, contactInfo, email, department) => ({ name, gender, contactInfo, email, department });
@@ -93,32 +146,28 @@ const StudentTable = () => {
 
   return (
     <div style={{ maxHeight: 400, overflowY: 'auto' }}>
-      <TableContainer component={Paper}>
-        <Table sx={{ minWidth: 650 }} aria-label="simple table">
-          <TableHead>
-            <TableRow>
-              <TableCell>Name</TableCell>
-              <TableCell align="right">Registration Id</TableCell>
-              <TableCell align="right">Prn No.</TableCell>
-              <TableCell align="right">Password</TableCell>
-              {/* <TableCell align="right">Email Id</TableCell> */}
-            </TableRow>
-          </TableHead>
-          <TableBody>
-            {studentList.map((row, index) => (
-              <TableRow key={index}>
-                <TableCell component="th" scope="row">
-                  {row.name}
-                </TableCell>
-                <TableCell align="right">{row.regId}</TableCell>
-                <TableCell align="right">{row.prnNo}</TableCell>
-                <TableCell align="right">{row.password}</TableCell>
-                {/* <TableCell align="right">{row.emailId}</TableCell> */}
-              </TableRow>
-            ))}
-          </TableBody>
-        </Table>
-      </TableContainer>
+      <table style={{ minWidth: 650 }}>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th align="right">Registration Id</th>
+            <th align="right">Prn No.</th>
+            <th align="right">Password</th>
+            {/* <th align="right">Email Id</th> */}
+          </tr>
+        </thead>
+        <tbody>
+          {studentList.map((row, index) => (
+            <tr key={index}>
+              <td>{row.name}</td>
+              <td align="right">{row.regId}</td>
+              <td align="right">{row.prnNo}</td>
+              <td align="right">{row.password}</td>
+              {/* <td align="right">{row.emailId}</td> */}
+            </tr>
+          ))}
+        </tbody>
+      </table>
     </div>
   );
 };

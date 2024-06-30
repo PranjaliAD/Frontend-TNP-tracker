@@ -174,7 +174,7 @@ import './Questions.css';
 import Expcards from '../../Components/Experience_cards';
 import Studnav from '../Navbar/Studnav';
 import axios from 'axios';
-const QuestionsPage = () => {
+const QuestionsPage = (props) => {
   const questionanswer = {
     "1. What is an array? ": [
       "An array is a collection of items of the same data type stored at contiguous memory locations. An array is a group of similar elements or data items of the same type collected at contiguous memory locations. In simple words, we can say that in computer programming, arrays are generally used to organize the same type of data.",
