@@ -8,7 +8,7 @@ import StudLogin from './Components/Pages/Student_profile/Profile';
 import InstLogin from './Components/Pages/Instructor_profile/ProInfo';
 import Drop1Login from './Components/Pages/Login/StudLogin'
 import Drop2Login from './Components/Pages/Login/InstLogin';
-import AdminLogin from './Components/Pages/Login/AdminLogin';
+import AdminLogin from './Components/Pages/Login/AdminLogin/AdminLogin';
 import Placement from './Components/Pages/Placement/Placement';
 import Internship from './Components/Pages/Internship/Internship';
 import Questions from './Components/Questions/Questions';
